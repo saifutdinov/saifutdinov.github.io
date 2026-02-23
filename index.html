@@ -6,10 +6,9 @@
     <title>Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)</title>
     <meta
       name="description"
-      content="Senior backend engineer (Go, PHP/Laravel). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations. Case studies with outcomes and deliverables."
+      content="Senior Backend Engineer (Go, PHP/Laravel) with 10+ years of experience. Architecture, APIs, PostgreSQL, Docker, CI/CD, DevOps, legacy modernization, integrations, reporting, AI-assisted workflows."
     />
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://saifutdinov.github.io/" />
 
     <!-- Open Graph -->
@@ -21,23 +20,18 @@
     />
     <meta
       property="og:description"
-      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, SQL, Docker, CI/CD. Clear experience + case studies."
+      content="10+ years. Go, PHP/Laravel, PostgreSQL, Docker, CI/CD, DevOps, legacy modernization, integrations, production ownership."
     />
     <meta property="og:url" content="https://saifutdinov.github.io/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ru_RU" />
-
     <meta
       property="og:image"
       content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
-    <meta
-      property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/og/og-en.png"
-    />
-    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta
       property="og:image:alt"
       content="Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)"
@@ -51,7 +45,7 @@
     />
     <meta
       name="twitter:description"
-      content="Backend: Go + PHP/Laravel. Clean Architecture, SQL, Docker, CI/CD, integrations and production delivery."
+      content="Backend: Go + PHP/Laravel, PostgreSQL, CI/CD, Docker, DevOps, integrations, production ownership."
     />
     <meta
       name="twitter:image"
@@ -67,17 +61,24 @@
         --muted: rgba(15, 23, 42, 0.74);
         --muted2: rgba(15, 23, 42, 0.6);
         --border: rgba(15, 23, 42, 0.12);
+        --border-strong: rgba(15, 23, 42, 0.18);
         --accent: #2563eb;
         --accent2: #10b981;
-        --shadow: 0 10px 28px rgba(2, 6, 23, 0.1);
+        --accent3: #7c3aed;
+        --soft: #f8fafc;
+        --soft2: #f1f5f9;
+        --shadow: 0 10px 28px rgba(2, 6, 23, 0.08);
+        --shadow-sm: 0 6px 16px rgba(2, 6, 23, 0.05);
+        --radius: 16px;
+        --radius-lg: 20px;
         --mono:
           ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
           "Liberation Mono", "Courier New", monospace;
         --sans:
-          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-          Cantarell, "Noto Sans", Arial;
-        --radius: 16px;
+          Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Ubuntu, Cantarell, "Noto Sans", Arial;
       }
+
       * {
         box-sizing: border-box;
       }
@@ -93,21 +94,24 @@
         background:
           radial-gradient(
             900px 520px at 10% 0%,
-            rgba(37, 99, 235, 0.1),
+            rgba(37, 99, 235, 0.08),
             transparent 60%
           ),
           radial-gradient(
-            900px 520px at 90% 10%,
-            rgba(16, 185, 129, 0.08),
-            transparent 55%
+            900px 520px at 92% 8%,
+            rgba(16, 185, 129, 0.07),
+            transparent 58%
           ),
           radial-gradient(
-            900px 520px at 50% 110%,
-            rgba(37, 99, 235, 0.06),
+            700px 360px at 50% 100%,
+            rgba(124, 58, 237, 0.05),
             transparent 60%
           ),
           var(--bg);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
+
       a {
         color: var(--accent);
         text-decoration: none;
@@ -115,34 +119,41 @@
       a:hover {
         text-decoration: underline;
       }
+
       .wrap {
-        max-width: 1200px;
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 24px 16px 56px;
+        padding: 24px 16px 52px;
       }
+
       .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        margin-bottom: 14px;
         flex-wrap: wrap;
+        margin-bottom: 14px;
       }
       .brand {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        flex-wrap: wrap;
       }
       .brand-mark {
         width: 12px;
         height: 12px;
         border-radius: 4px;
         background: linear-gradient(135deg, var(--accent), var(--accent2));
-        box-shadow: 0 10px 22px rgba(37, 99, 235, 0.15);
+        box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+        flex: 0 0 auto;
       }
       .brand-title {
         font-weight: 850;
         letter-spacing: 0.2px;
+      }
+      .mono {
+        font-family: var(--mono);
       }
       .actions {
         display: flex;
@@ -153,30 +164,29 @@
       .pill {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         padding: 8px 12px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.72);
         border-radius: 999px;
-        box-shadow: var(--shadow);
-        font-size: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow-sm);
         color: var(--muted);
+        font-size: 13px;
       }
       .pill strong {
         color: var(--text);
-        font-weight: 750;
       }
-      .pill .sep {
+      .sep {
         opacity: 0.45;
       }
 
       .layout {
         display: grid;
-        grid-template-columns: 360px 1fr;
+        grid-template-columns: 380px 1fr;
         gap: 16px;
         align-items: start;
       }
-      @media (max-width: 980px) {
+      @media (max-width: 1080px) {
         .layout {
           grid-template-columns: 1fr;
         }
@@ -184,19 +194,25 @@
 
       .panel {
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.78);
-        border-radius: var(--radius);
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.82);
         box-shadow: var(--shadow);
         overflow: hidden;
         position: relative;
       }
-      .panel:before {
+      .panel::before {
         content: "";
         position: absolute;
         inset: 0 0 auto 0;
         height: 3px;
-        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          var(--accent2),
+          var(--accent3)
+        );
       }
+
       .pad {
         padding: 18px;
       }
@@ -210,12 +226,12 @@
         align-items: center;
       }
       .avatar {
-        width: 92px;
-        height: 92px;
-        border-radius: 16px;
+        width: 96px;
+        height: 96px;
+        border-radius: 18px;
         border: 1px solid var(--border);
-        background: rgba(2, 6, 23, 0.03);
         overflow: hidden;
+        background: linear-gradient(180deg, #f8fafc, #eef2f7);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -230,73 +246,104 @@
         object-fit: cover;
         display: block;
       }
+
       h1 {
         margin: 0;
         font-size: 22px;
-        line-height: 1.15;
-        letter-spacing: 0.2px;
+        line-height: 1.12;
+        letter-spacing: 0.15px;
       }
       .subtitle {
         margin-top: 6px;
         color: var(--muted);
         font-size: 14px;
       }
+      .sub2 {
+        margin-top: 6px;
+        color: var(--muted2);
+        font-size: 12px;
+      }
+
       .chips {
-        margin-top: 12px;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
+        margin-top: 12px;
       }
       .chip {
-        font-size: 12px;
-        padding: 6px 10px;
-        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.76);
-        color: rgba(15, 23, 42, 0.92);
+        background: rgba(255, 255, 255, 0.86);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 12px;
         white-space: nowrap;
       }
+      .chip svg {
+        width: 13px;
+        height: 13px;
+        opacity: 0.85;
+        flex: 0 0 auto;
+      }
+
+      .note {
+        margin-top: 12px;
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        background: rgba(37, 99, 235, 0.055);
+        color: rgba(15, 23, 42, 0.92);
+        border-radius: 14px;
+        padding: 12px 13px;
+        font-size: 13px;
+      }
+
       h2 {
         margin: 0 0 10px;
         font-size: 15px;
         letter-spacing: 0.2px;
       }
-      .muted {
-        color: var(--muted);
-      }
       .small {
         font-size: 13px;
         color: var(--muted);
       }
-      .mono {
-        font-family: var(--mono);
+      .muted {
+        color: var(--muted);
+      }
+      .muted2 {
+        color: var(--muted2);
       }
 
+      .kv-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
       .kv {
         display: grid;
-        grid-template-columns: 92px 1fr;
+        grid-template-columns: 30px 1fr;
         gap: 10px;
-        padding: 10px 12px;
+        align-items: start;
         border: 1px solid var(--border);
         border-radius: 14px;
-        background: rgba(2, 6, 23, 0.02);
+        background: rgba(2, 6, 23, 0.018);
+        padding: 10px 12px;
         font-size: 13px;
       }
-      .kv .k {
+      .kv .icon {
+        width: 18px;
+        height: 18px;
         color: var(--muted2);
+        margin-top: 1px;
       }
       .kv .v {
         overflow-wrap: anywhere;
       }
-
-      .note {
-        margin-top: 12px;
-        padding: 12px 14px;
-        border: 1px solid rgba(37, 99, 235, 0.22);
-        background: rgba(37, 99, 235, 0.06);
-        border-radius: 14px;
-        font-size: 13px;
-        color: rgba(15, 23, 42, 0.92);
+      .kv .label {
+        display: block;
+        color: var(--muted2);
+        font-size: 11px;
+        margin-bottom: 2px;
       }
 
       .section {
@@ -306,21 +353,60 @@
         border-top: 1px solid var(--border);
       }
 
+      .headline {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px 12px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .headline h2 {
+        margin: 0;
+      }
+      .tagline {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .outcomes {
+        margin-top: 10px;
+        border: 1px solid rgba(16, 185, 129, 0.22);
+        background: rgba(16, 185, 129, 0.055);
+        border-radius: 14px;
+        padding: 10px 12px;
+      }
+      .outcomes b {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.35px;
+        color: rgba(15, 23, 42, 0.82);
+      }
+
       .timeline {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
+
       .card {
         border: 1px solid var(--border);
-        background: rgba(2, 6, 23, 0.02);
+        background: rgba(2, 6, 23, 0.018);
         border-radius: 16px;
         padding: 14px;
       }
+
       .head {
         display: flex;
-        align-items: flex-start;
         justify-content: space-between;
+        align-items: flex-start;
         gap: 10px 12px;
         flex-wrap: wrap;
         margin-bottom: 8px;
@@ -335,11 +421,11 @@
       }
       .when {
         font-size: 12px;
-        padding: 5px 10px;
-        border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.75);
-        color: rgba(15, 23, 42, 0.76);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+        padding: 5px 10px;
+        color: rgba(15, 23, 42, 0.78);
         white-space: nowrap;
       }
       .stackline {
@@ -348,62 +434,6 @@
         font-size: 12px;
       }
 
-      .grid2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-      @media (max-width: 980px) {
-        .grid2 {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .skill {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 10px 12px;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.75);
-      }
-      .lvl {
-        font-size: 12px;
-        padding: 5px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(2, 6, 23, 0.02);
-        color: rgba(15, 23, 42, 0.78);
-        white-space: nowrap;
-      }
-
-      .case-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 10px;
-      }
-      @media (max-width: 980px) {
-        .case-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      .box {
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(2, 6, 23, 0.02);
-        padding: 10px 12px;
-      }
-      .box b {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 12px;
-        letter-spacing: 0.3px;
-        text-transform: uppercase;
-        color: rgba(15, 23, 42, 0.78);
-      }
       ul {
         margin: 10px 0 0 18px;
         padding: 0;
@@ -412,63 +442,314 @@
         margin: 6px 0;
       }
 
-      .outcomes {
-        margin-top: 10px;
-        padding: 10px 12px;
-        border: 1px solid rgba(16, 185, 129, 0.22);
-        background: rgba(16, 185, 129, 0.06);
-        border-radius: 14px;
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
       }
-      .outcomes b {
-        display: block;
+      .grid3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 980px) {
+        .grid2,
+        .grid3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .skill-card {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.82);
+        border-radius: 14px;
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .lvl {
+        font-size: 11px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 9px;
+        color: var(--muted);
+        white-space: nowrap;
+        background: rgba(2, 6, 23, 0.02);
+      }
+
+      .case {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.72);
+        border-radius: 15px;
+        padding: 12px;
+      }
+      .case h3 {
+        margin: 0 0 8px;
+        font-size: 14px;
+        line-height: 1.25;
+      }
+      .case .case-meta {
         font-size: 12px;
-        letter-spacing: 0.3px;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .kv4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      @media (max-width: 700px) {
+        .kv4 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .mini {
+        border: 1px solid var(--border);
+        background: rgba(2, 6, 23, 0.015);
+        border-radius: 12px;
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+      .mini b {
+        display: block;
+        margin-bottom: 4px;
         text-transform: uppercase;
-        color: rgba(15, 23, 42, 0.78);
+        letter-spacing: 0.3px;
+        font-size: 10px;
+        color: var(--muted2);
+      }
+
+      /* Collapsible blocks */
+      .fold {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.72);
+        border-radius: 14px;
+        overflow: hidden;
+        margin-top: 10px;
+      }
+      .fold > summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.78);
+      }
+      .fold > summary::-webkit-details-marker {
+        display: none;
+      }
+      .fold > summary::after {
+        content: "+";
+        font-weight: 800;
+        color: var(--muted);
+        flex: 0 0 auto;
+      }
+      .fold[open] > summary {
+        border-bottom: 1px solid var(--border);
+        background: rgba(2, 6, 23, 0.012);
+      }
+      .fold[open] > summary::after {
+        content: "–";
+      }
+      .fold-body {
+        padding: 10px 12px;
+      }
+      .fold-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      @media (max-width: 800px) {
+        .fold-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .project {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 14px;
+        padding: 12px;
+      }
+      .project-title {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
         margin-bottom: 6px;
+      }
+      .project-title .name {
+        font-weight: 800;
+        font-size: 14px;
+      }
+      .repo-badge {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 11px;
+        color: var(--muted);
+        background: rgba(2, 6, 23, 0.02);
+        white-space: nowrap;
+      }
+
+      .footer {
+        padding: 16px 18px 20px;
+        color: var(--muted2);
+        font-size: 12px;
+        border-top: 1px solid var(--border);
+      }
+
+      .i {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: -3px;
+        color: currentColor;
       }
 
       @media print {
         body {
           background: #fff;
         }
+        .wrap {
+          max-width: none;
+          padding: 0;
+        }
         .panel {
           box-shadow: none;
+          background: #fff;
         }
         .pill {
           box-shadow: none;
+          background: #fff;
         }
         a {
           color: #0f172a;
           text-decoration: none;
         }
+        .topbar {
+          margin-bottom: 8px;
+        }
+        .section {
+          padding: 14px;
+        }
+        .card,
+        .case,
+        .project {
+          break-inside: avoid;
+        }
+        details.fold {
+          break-inside: avoid;
+        }
+        details.fold[open] > summary::after {
+          content: "";
+        }
       }
     </style>
   </head>
-
   <body>
+    <!-- SVG sprite -->
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <symbol id="ic-mail" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2-8 5-8-5V6l8 5 8-5Z"
+        />
+      </symbol>
+      <symbol id="ic-gh" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2A10 10 0 0 0 8.84 21.5c.5.09.68-.22.68-.48v-1.72c-2.78.6-3.37-1.18-3.37-1.18-.46-1.14-1.11-1.44-1.11-1.44-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.1-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.9-1.3 2.75-1.02 2.75-1.02.55 1.39.2 2.42.1 2.67.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+        />
+      </symbol>
+      <symbol id="ic-linkedin" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56a1.96 1.96 0 1 0-3.92 0a1.96 1.96 0 0 0 3.92 0ZM20.44 13.28c0-3.24-1.73-4.75-4.03-4.75c-1.86 0-2.69 1.02-3.16 1.74V8.5H9.87V20h3.38v-6.28c0-1.66.31-3.28 2.36-3.28c2.02 0 2.05 1.88 2.05 3.39V20h3.38v-6.72Z"
+        />
+      </symbol>
+      <symbol id="ic-telegram" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M9.78 15.54 9.4 20.9c.54 0 .78-.23 1.06-.5l2.53-2.42 5.24 3.84c.96.53 1.64.25 1.9-.89l3.44-16.1.01-.01c.3-1.4-.5-1.95-1.43-1.6L1.94 11c-1.38.53-1.36 1.3-.24 1.65l5.17 1.61L18.9 6.7c.57-.35 1.09-.16.66.2"
+        />
+      </symbol>
+      <symbol id="ic-pin" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2a7 7 0 0 0-7 7c0 4.98 7 13 7 13s7-8.02 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+        />
+      </symbol>
+      <symbol id="ic-brief" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M10 4h4a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v3H3V9a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2Zm4 3V6h-4v1h4Zm7 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5h8v1h2v-1h8Z"
+        />
+      </symbol>
+      <symbol id="ic-db" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2C7.58 2 4 3.79 4 6v12c0 2.21 3.58 4 8 4s8-1.79 8-4V6c0-2.21-3.58-4-8-4Zm0 2c3.87 0 6 .99 6 2s-2.13 2-6 2-6-.99-6-2 2.13-2 6-2Zm0 16c-3.87 0-6-.99-6-2v-2c1.45 1.02 3.93 1.5 6 1.5s4.55-.48 6-1.5v2c0 1.01-2.13 2-6 2Zm0-5c-3.87 0-6-.99-6-2v-2c1.45 1.02 3.93 1.5 6 1.5s4.55-.48 6-1.5v2c0 1.01-2.13 2-6 2Z"
+        />
+      </symbol>
+      <symbol id="ic-server" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M4 3h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 2v4h12V5H6Zm-2 8h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Zm2 2v4h12v-4H6Zm1 1h2v2H7v-2Zm0-10h2v2H7V6Z"
+        />
+      </symbol>
+      <symbol id="ic-code" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="m8.7 16.6-4.3-4.3L8.7 8l1.4 1.4-2.9 2.9 2.9 2.9-1.4 1.4Zm6.6 0-1.4-1.4 2.9-2.9-2.9-2.9L15.3 8l4.3 4.3-4.3 4.3ZM10.4 20l2.8-16h1.8l-2.8 16h-1.8Z"
+        />
+      </symbol>
+      <symbol id="ic-ai" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2 9.8 7.3 4 9.5l5.8 2.2L12 17l2.2-5.3L20 9.5l-5.8-2.2L12 2Zm-6 14 1.2 2.8L10 20l-2.8 1.2L6 24l-1.2-2.8L2 20l2.8-1.2L6 16Zm12 0 1.2 2.8L22 20l-2.8 1.2L18 24l-1.2-2.8L14 20l2.8-1.2L18 16Z"
+        />
+      </symbol>
+      <symbol id="ic-linux" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2c-2.2 0-4 1.8-4 4v2c0 .6.1 1.2.4 1.7-.9.8-1.4 2-1.4 3.3v1c0 1.7.9 3.3 2.3 4.1l-1 2.9H10l.7-2h2.6l.7 2h1.7l-1-2.9A4.98 4.98 0 0 0 17 14v-1c0-1.3-.5-2.5-1.4-3.3.3-.5.4-1.1.4-1.7V6c0-2.2-1.8-4-4-4Zm-1.5 5a.75.75 0 1 1 0-1.5A.75.75 0 0 1 10.5 7Zm3 0a.75.75 0 1 1 0-1.5A.75.75 0 0 1 13.5 7Z"
+        />
+      </symbol>
+    </svg>
+
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
           <div class="brand-mark" aria-hidden="true"></div>
           <div class="brand-title">Resume</div>
-          <div class="pill" style="padding: 6px 10px">
+          <div class="pill">
             <span class="mono">saifutdinov.github.io</span>
           </div>
         </div>
         <div class="actions">
           <div class="pill">
-            <span class="muted">Language:</span> <strong>EN</strong>
-            <span class="sep">|</span> <a href="/ru">RU</a>
+            Language: <strong>EN</strong> <span class="sep">|</span>
+            <a href="/ru/">RU</a>
           </div>
-          <div class="pill">
-            <span class="muted">Print:</span> <strong>Ctrl/Cmd + P</strong>
-          </div>
+          <div class="pill">Print: <strong>Ctrl/Cmd + P</strong></div>
         </div>
       </div>
 
       <div class="layout">
-        <!-- LEFT -->
+        <!-- LEFT SIDEBAR -->
         <aside class="panel">
           <div class="pad">
             <div class="hero">
@@ -487,20 +768,35 @@
                 <div class="subtitle">
                   Senior Backend Engineer — Go & PHP (Laravel/Symfony)
                 </div>
+                <div class="sub2">
+                  10+ years in software development • backend ownership •
+                  production mindset
+                </div>
                 <div class="chips">
-                  <span class="chip">API-first</span>
-                  <span class="chip">Clean Architecture</span>
-                  <span class="chip">SQL-first thinking</span>
-                  <span class="chip">Docker • CI/CD</span>
+                  <span class="chip"
+                    ><svg><use href="#ic-code" /></svg>API-first</span
+                  >
+                  <span class="chip"
+                    ><svg><use href="#ic-brief" /></svg>Clean Architecture</span
+                  >
+                  <span class="chip"
+                    ><svg><use href="#ic-db" /></svg>Data-first</span
+                  >
+                  <span class="chip"
+                    ><svg><use href="#ic-server" /></svg>CI/CD • DevOps</span
+                  >
                 </div>
               </div>
             </div>
 
             <div class="note">
-              I build and support production backend systems: predictable
-              business logic (transactions/idempotency), integrations,
-              reporting, and full-cycle delivery (CI/CD, Docker, Nginx, mail
-              deliverability).
+              I take ownership of backend end-to-end:
+              <b
+                >architecture → business logic → database → API → release →
+                production support</b
+              >. Strong at legacy modernization, safe changes, and solving
+              cross-functional technical problems (infra, email deliverability,
+              reporting, integrations).
             </div>
           </div>
 
@@ -508,40 +804,58 @@
 
           <div class="pad">
             <h2>Contacts</h2>
-            <div style="display: flex; flex-direction: column; gap: 10px">
+            <div class="kv-list">
               <div class="kv">
-                <div class="k">Email</div>
+                <svg class="icon"><use href="#ic-mail" /></svg>
                 <div class="v">
-                  <a href="mailto:sayfutdinov.aydar.web@gmail.com"
+                  <span class="label">Email</span
+                  ><a href="mailto:sayfutdinov.aydar.web@gmail.com"
                     >sayfutdinov.aydar.web@gmail.com</a
                   >
                 </div>
               </div>
               <div class="kv">
-                <div class="k">GitHub</div>
+                <svg class="icon"><use href="#ic-gh" /></svg>
                 <div class="v">
-                  <a href="https://github.com/Saifutdinov"
-                    >github.com/Saifutdinov</a
+                  <span class="label">GitHub</span
+                  ><a
+                    href="https://github.com/saifutdinov"
+                    target="_blank"
+                    rel="noopener"
+                    >github.com/saifutdinov</a
                   >
                 </div>
               </div>
               <div class="kv">
-                <div class="k">LinkedIn</div>
+                <svg class="icon"><use href="#ic-linkedin" /></svg>
                 <div class="v">
-                  <a href="https://www.linkedin.com/in/sayfutdinov-aydar"
+                  <span class="label">LinkedIn</span
+                  ><a
+                    href="https://www.linkedin.com/in/sayfutdinov-aydar"
+                    target="_blank"
+                    rel="noopener"
                     >linkedin.com/in/sayfutdinov-aydar</a
                   >
                 </div>
               </div>
               <div class="kv">
-                <div class="k">Telegram</div>
+                <svg class="icon"><use href="#ic-telegram" /></svg>
                 <div class="v">
-                  <a href="https://t.me/Saifutdinov_a">@Saifutdinov_a</a>
+                  <span class="label">Telegram</span
+                  ><a
+                    href="https://t.me/Saifutdinov_a"
+                    target="_blank"
+                    rel="noopener"
+                    >@Saifutdinov_a</a
+                  >
                 </div>
               </div>
               <div class="kv">
-                <div class="k">Location</div>
-                <div class="v">Spain • Remote / relocation possible</div>
+                <svg class="icon"><use href="#ic-pin" /></svg>
+                <div class="v">
+                  <span class="label">Location</span>Spain • Remote / relocation
+                  possible
+                </div>
               </div>
             </div>
           </div>
@@ -549,51 +863,61 @@
           <div class="divider"></div>
 
           <div class="pad">
-            <h2>Skills summary</h2>
+            <h2>Core strengths</h2>
             <div style="display: flex; flex-direction: column; gap: 10px">
-              <div class="skill">
+              <div class="skill-card">
                 <div>
-                  <div class="title">Backend</div>
+                  <div class="title">Backend & Architecture</div>
                   <div class="small">
-                    Go (Echo/gRPC), PHP (Laravel/Symfony), API design, error
-                    handling, concurrency
+                    Go (Echo/gRPC), PHP (Laravel/Symfony), REST APIs, Clean
+                    Architecture, domain logic
                   </div>
                 </div>
                 <div class="lvl">Advanced</div>
               </div>
-              <div class="skill">
+              <div class="skill-card">
                 <div>
-                  <div class="title">Databases</div>
+                  <div class="title">Databases & Data</div>
                   <div class="small">
-                    PostgreSQL/MySQL (schema, indexes, migrations), MongoDB
-                    (legacy)
+                    PostgreSQL/MySQL/MongoDB, schema evolution, indexes, complex
+                    SQL, reporting/export flows
                   </div>
                 </div>
                 <div class="lvl">Advanced</div>
               </div>
-              <div class="skill">
+              <div class="skill-card">
                 <div>
-                  <div class="title">Delivery & Ops</div>
+                  <div class="title">Reliability & Operations</div>
                   <div class="small">
-                    Docker/Compose, GitLab CI/CD, Nginx, TLS (Let’s Encrypt),
-                    SMTP/Exim, SPF/DKIM/DMARC
+                    Production debugging, bottlenecks, memory issues, highload
+                    thinking, observability mindset
                   </div>
                 </div>
                 <div class="lvl">Strong</div>
               </div>
-              <div class="skill">
+              <div class="skill-card">
                 <div>
-                  <div class="title">Frontend (support)</div>
+                  <div class="title">DevOps & Delivery</div>
                   <div class="small">
-                    React/Vue + TypeScript, Tailwind, Vite; only when needed to
-                    ship end-to-end
+                    Docker, GitLab CI/CD, Nginx, Exim, TLS, SPF/DKIM/DMARC,
+                    Linux console
                   </div>
                 </div>
-                <div class="lvl">Working</div>
+                <div class="lvl">Strong</div>
+              </div>
+              <div class="skill-card">
+                <div>
+                  <div class="title">Teamwork & Mentoring</div>
+                  <div class="small">
+                    Code reviews, knowledge sharing, architecture discussions,
+                    onboarding support, documentation
+                  </div>
+                </div>
+                <div class="lvl">Strong</div>
               </div>
             </div>
 
-            <h2 style="margin-top: 14px">Core stack</h2>
+            <h2 style="margin-top: 14px">Main stack</h2>
             <div class="chips">
               <span class="chip">Go</span>
               <span class="chip">Echo</span>
@@ -603,441 +927,1359 @@
               <span class="chip">Symfony</span>
               <span class="chip">PostgreSQL</span>
               <span class="chip">MySQL</span>
+              <span class="chip">MongoDB</span>
               <span class="chip">Redis</span>
               <span class="chip">Docker</span>
               <span class="chip">Nginx</span>
-              <span class="chip">GitLab CI</span>
-              <span class="chip">SMTP/Exim</span>
-              <span class="chip">Elasticsearch</span>
+              <span class="chip">GitLab CI/CD</span>
+              <span class="chip">Exim</span>
+              <span class="chip">Prometheus</span>
+              <span class="chip">Grafana</span>
+              <span class="chip">ELK</span>
+              <span class="chip">React</span>
+              <span class="chip">Vue</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Python</span>
+            </div>
+
+            <h2 style="margin-top: 14px">Engineering breadth</h2>
+            <div class="chips">
+              <span class="chip"
+                ><svg><use href="#ic-linux" /></svg>Linux console
+                (confident)</span
+              >
+              <span class="chip"
+                ><svg><use href="#ic-ai" /></svg>AI workflows & prompting</span
+              >
+              <span class="chip">Telegram bots</span>
+              <span class="chip">3rd-party API integrations</span>
+              <span class="chip">PDF / OCR automation</span>
+              <span class="chip">Image processing</span>
+              <span class="chip">Browser extensions (experimental)</span>
             </div>
 
             <h2 style="margin-top: 14px">Languages</h2>
             <div class="chips">
-              <span class="chip">Russian — native</span>
-              <span class="chip">English — working proficiency</span>
-              <span class="chip">Spanish — learning</span>
+              <span class="chip">Russian — Native</span>
+              <span class="chip">English — Working proficiency</span>
+              <span class="chip">Spanish — Learning</span>
             </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="pad">
+            <h2>What I bring to a company</h2>
+            <ul>
+              <li>
+                I reduce regression risk through architecture boundaries and
+                code review culture.
+              </li>
+              <li>
+                I improve delivery speed by owning code + CI/CD + infra +
+                production support.
+              </li>
+              <li>
+                I handle technical areas that often fall between roles: legacy,
+                migrations, email, reporting, integrations.
+              </li>
+              <li>
+                I help teams grow through mentoring, documentation, and
+                engineering discipline.
+              </li>
+              <li>
+                I focus on long-term maintainability, not just short-term
+                implementation.
+              </li>
+            </ul>
           </div>
         </aside>
 
-        <!-- RIGHT -->
+        <!-- MAIN CONTENT -->
         <main class="panel">
           <section class="section">
-            <h2>Executive summary</h2>
+            <div class="headline">
+              <h2>Professional Summary</h2>
+              <div class="tagline">
+                Backend ownership • Product + Ops mindset
+              </div>
+            </div>
+
             <div class="muted">
-              Senior backend engineer with production experience in Go and PHP.
-              I’m effective in legacy-heavy environments: stabilize, structure,
-              and deliver features without breaking existing flows. Strong at
-              data modeling, safe migrations, integrations, and “production
-              delivery” work (CI/CD, Docker, Nginx, deliverability).
+              Senior backend engineer with
+              <b>10+ years of software development experience</b>, specializing
+              in <b>Golang and PHP (Laravel/Symfony)</b>. I take end-to-end
+              ownership of backend systems: architecture, domain logic, data
+              model, APIs, delivery pipelines, and production support.
             </div>
-            <div class="outcomes">
-              <b>Value I bring</b>
-              <ul>
-                <li>
-                  Predictable systems: clear architecture boundaries, safer
-                  changes, fewer regressions.
-                </li>
-                <li>
-                  Data-first thinking: schema design, indexes, migrations, and
-                  reporting stability.
-                </li>
-                <li>
-                  Delivery ownership: repeatable builds, CI/CD pipelines,
-                  operational hygiene.
-                </li>
-              </ul>
+            <div class="muted" style="margin-top: 8px">
+              Strong in <b>legacy modernization without business downtime</b>,
+              safe database changes, CI/CD + Docker + Nginx, email
+              deliverability, integrations with external APIs,
+              reporting/document workflows, and team-level engineering
+              practices.
             </div>
+
+            <details class="fold" open>
+              <summary>Why this matters for employers</summary>
+              <div class="fold-body">
+                <ul>
+                  <li>
+                    You get more than a feature developer — you get an engineer
+                    who drives changes all the way to production.
+                  </li>
+                  <li>
+                    Fewer hidden issues at the intersection of backend / infra /
+                    integrations / reporting.
+                  </li>
+                  <li>
+                    Better release predictability and lower long-term
+                    maintenance cost.
+                  </li>
+                </ul>
+              </div>
+            </details>
           </section>
 
           <section class="section">
-            <h2>Experience</h2>
+            <div class="headline">
+              <h2>Experience</h2>
+              <div class="tagline">What I did → what it changed</div>
+            </div>
+
             <div class="timeline">
               <!-- Azimuth -->
               <div class="card">
                 <div class="head">
                   <div>
                     <div class="title">
-                      Senior Backend Engineer (Go) — Azimuth (Employee
-                      Assessment Platform)
+                      Senior Backend Engineer (Go) — Azimuth (HR Tech / employee
+                      assessment platform)
                     </div>
                     <div class="meta">
-                      Engagement surveys, psychological/ability tests, 360°
-                      feedback, business sociometry
+                      Engagement surveys, psychometric tests, ability tests, 360
+                      reviews, business sociometry
                     </div>
                   </div>
                   <div class="when">2022 — Present</div>
                 </div>
                 <div class="stackline">
                   Go • Echo • Clean Architecture • PostgreSQL • Redis • Docker •
-                  Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • Let’s Encrypt •
-                  React (Player)
+                  Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • React • Linux
+                  console
                 </div>
 
                 <div class="outcomes">
-                  <b>Key outcomes</b>
+                  <b>Impact</b>
                   <ul>
                     <li>
-                      Stabilized inherited code and reduced change risk by
-                      enforcing code review and architecture boundaries.
+                      <b>Improved backend stability and change safety</b>
+                      through code review and architecture alignment → fewer
+                      risky changes, clearer team discussions.
                     </li>
                     <li>
-                      Delivered multiple schema evolution stages with safe
-                      migrations and fewer production surprises.
+                      <b>Evolved PostgreSQL schema through major migrations</b>
+                      → the product kept growing without breaking reporting or
+                      core flows.
                     </li>
                     <li>
-                      Improved reliability of heavy calculation pipelines
-                      (processor) by fixing inherited complex logic.
+                      <b>Stabilized a critical Go processor service</b> (heavy
+                      math + result aggregation) → improved reliability in a
+                      business-critical computation area.
                     </li>
                     <li>
-                      <span class="muted"
-                        >[Add metrics if you want: e.g., “reduced incident rate
-                        by X%”, “migrated N tables”, “p95 latency improved from
-                        A to B”]</span
-                      >
+                      <b>Contributed to React “Player” frontend flow</b> when
+                      needed → better end-to-end delivery, improved
+                      loading/adaptivity/UX for respondents.
+                    </li>
+                    <li>
+                      <b>Handled a substantial part of DevOps/infra work</b>
+                      (CI/CD, Docker, Nginx, TLS, email stack) → more
+                      predictable releases and fewer operational surprises.
                     </li>
                   </ul>
                 </div>
 
-                <ul>
-                  <li>
-                    <b>Architecture:</b> aligned backend around Clean
-                    Architecture (Delivery/Usecase/Repository); moved business
-                    logic into usecases and kept transport/storage concerns
-                    isolated.
-                  </li>
-                  <li>
-                    <b>API & domain logic:</b> implemented flows for collecting,
-                    preparing, storing, and serving questionnaire data; designed
-                    predictable error paths.
-                  </li>
-                  <li>
-                    <b>PostgreSQL:</b> designed and evolved schema; led multiple
-                    major migration stages using incremental patterns (add →
-                    backfill → switch → cleanup), and improved query/index
-                    strategy.
-                  </li>
-                  <li>
-                    <b>Processor (Go):</b> maintained heavy computations / final
-                    result aggregation; delivered substantial fixes & stability
-                    improvements in inherited modules.
-                  </li>
-                  <li>
-                    <b>Frontend support:</b> contributed to React “Player” to
-                    ship end-to-end (question flow correctness, responsive UX,
-                    stable contracts with backend).
-                  </li>
-                  <li>
-                    <b>Ops:</b> Docker builds, GitLab pipelines/runners, Nginx
-                    configuration/logging, TLS automation, email deliverability
-                    setup (SPF/DKIM/DMARC).
-                  </li>
-                </ul>
+                <details class="fold">
+                  <summary>
+                    Expand details (architecture, backend, DB, processor, infra,
+                    internal tooling)
+                  </summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        <b>Backend (Go / Echo):</b> designed and maintained
+                        business logic for collecting, preparing, storing and
+                        serving data for surveys/tests.
+                      </li>
+                      <li>
+                        <b>Architecture:</b> supported and reinforced Clean
+                        Architecture boundaries (Delivery / Usecase /
+                        Repository), keeping domain logic in use cases.
+                      </li>
+                      <li>
+                        <b>PostgreSQL:</b> schema design/evolution, migrations,
+                        indexing, and stability of reporting-related data flows.
+                      </li>
+                      <li>
+                        <b>Processor service:</b> fixed and stabilized a large
+                        inherited Go computation block (heavy calculations +
+                        final aggregations), including edge cases.
+                      </li>
+                      <li>
+                        <b>Frontend support:</b> contributed to React “Player”
+                        and lightweight SSR results pages to close end-to-end
+                        product scenarios.
+                      </li>
+                      <li>
+                        <b>Ops/Delivery:</b> GitLab CE / runners / pipelines,
+                        Docker, Nginx, Let’s Encrypt, Exim, DNS, SPF/DKIM/DMARC,
+                        Redis.
+                      </li>
+                      <li>
+                        <b>Internal tooling:</b> Telegram bots for deploy/error
+                        notifications and separate bot flows for team/service
+                        utilities.
+                      </li>
+                      <li>
+                        <b>Go package engineering:</b> built internal Go
+                        utilities/packages (including <b>rarutils</b>) for
+                        project-specific needs with minimal dependency overhead.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
               </div>
 
-              <!-- BSSL legacy -->
+              <!-- BSSL -->
               <div class="card">
                 <div class="head">
                   <div>
                     <div class="title">
-                      Senior PHP Engineer — Legacy Assessment System (BSSL)
+                      Senior PHP Engineer — BSSL (legacy employee assessment
+                      platform)
                     </div>
                     <div class="meta">
-                      Ongoing maintenance & feature delivery (part-time
-                      alongside main role)
+                      Full-time • Custom PHP engine (PHP 5.x) + MongoDB •
+                      enterprise clients • custom reporting
                     </div>
                   </div>
-                  <div class="when">2019 — Present</div>
+                  <div class="when">2019 — 2022</div>
                 </div>
                 <div class="stackline">
-                  PHP 5.x (legacy) • MongoDB • Reporting (Excel/PDF/HTML)
+                  PHP 5.x • MongoDB • Excel/PDF/HTML reporting • legacy
+                  maintenance
                 </div>
 
                 <div class="outcomes">
-                  <b>Key outcomes</b>
+                  <b>Impact</b>
                   <ul>
                     <li>
-                      Delivered client-requested features without breaking
-                      legacy flows (risk-aware development).
-                    </li>
-                    <li>
-                      Improved reporting stability: Excel exports, PDF
-                      generation, HTML templates.
-                    </li>
-                    <li>
-                      <span class="muted"
-                        >[Optional metric: “generated N report variants”,
-                        “reduced manual report work by X hours/week”]</span
+                      <b
+                        >Maintained and extended legacy software without
+                        business interruption</b
                       >
+                      → client-facing features continued shipping without a
+                      costly immediate rewrite.
+                    </li>
+                    <li>
+                      <b>Built strong reporting/document expertise</b>
+                      (Excel/PDF/HTML) → more predictable outputs and fewer
+                      manual corrections.
+                    </li>
+                    <li>
+                      <b>Learned “safe legacy change” execution</b> → changes
+                      were delivered carefully, with risk awareness and minimal
+                      disruption.
                     </li>
                   </ul>
                 </div>
 
-                <ul>
-                  <li>
-                    Maintained a long-lived singleton-style system; implemented
-                    changes carefully to avoid regressions.
-                  </li>
-                  <li>
-                    Worked with MongoDB data models and enterprise reporting
-                    requirements.
-                  </li>
-                  <li>
-                    Produced many exports (Excel) and documents (PDF), refined
-                    templates and formatting consistency.
-                  </li>
-                </ul>
+                <details class="fold">
+                  <summary>
+                    Expand details (legacy constraints, MongoDB, reporting,
+                    client requests)
+                  </summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Implemented new features requested by enterprise clients
+                        inside a legacy custom PHP system.
+                      </li>
+                      <li>
+                        Worked with MongoDB-based models and non-standard client
+                        requirements around data collection and presentation.
+                      </li>
+                      <li>
+                        Handled a high volume of document/reporting tasks: Excel
+                        exports, PDF generation, HTML report templates.
+                      </li>
+                      <li>
+                        Grew from a developer into a systems-oriented engineer:
+                        code + data + business requirements + change risk
+                        awareness.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
               </div>
 
-              <!-- Freelance -->
+              <!-- University / early practical experience -->
               <div class="card">
                 <div class="head">
                   <div>
                     <div class="title">
-                      Freelance — Backend / Full-Stack (Go + PHP)
+                      Early engineering experience (university + practical
+                      development)
                     </div>
                     <div class="meta">
-                      Selected shipped cases (API-first, Dockerized delivery,
-                      minimal dependencies)
+                      Independent software building, team projects, MVP
+                      thinking, documentation and presentation practice
                     </div>
                   </div>
-                  <div class="when">2023 — Present</div>
+                  <div class="when">2015 — 2019</div>
                 </div>
                 <div class="stackline">
-                  Laravel • Go (Echo) • PostgreSQL/MySQL • Docker • CI/CD •
-                  Vue/React/TypeScript
+                  PHP 5.6 • MVC • SQL/NoSQL • frontend layout • documentation •
+                  SEO basics
                 </div>
 
                 <div class="outcomes">
-                  <b>How I work in freelance</b>
+                  <b>Impact</b>
                   <ul>
                     <li>
-                      Ship fast, but keep architecture and data model
-                      predictable for future growth.
+                      <b>Built my own PHP MVC engine</b> → early experience with
+                      system design, not only coursework coding.
                     </li>
                     <li>
-                      Prefer “standard library / framework built-ins” instead of
-                      heavy dependencies.
+                      <b>Worked in team-based annual projects</b> → practical
+                      experience in scope splitting, technical delivery,
+                      documentation, and presentation.
                     </li>
                     <li>
-                      Deliver reproducible setup: Docker + clear run commands +
-                      README.
+                      <b>Learned idea → MVP → presentation cycle</b> → formed a
+                      product-aware engineering mindset early.
                     </li>
                   </ul>
                 </div>
 
-                <div class="grid2" style="margin-top: 12px">
-                  <div class="card" style="margin: 0">
-                    <div class="title">
-                      Case 1: Laravel API template — auth, filters, uploads (no
-                      extra libs)
-                    </div>
-                    <div class="small">
-                      Auth via cookies/tokens • Eloquent query filters • file
-                      uploads via trait/enums • SMTP sending
-                    </div>
+                <details class="fold">
+                  <summary>
+                    Expand details (personal engine, team projects, SEO,
+                    hands-on learning)
+                  </summary>
+                  <div class="fold-body">
                     <ul>
                       <li>
-                        <b>Problem:</b> build an API that is easy to extend and
-                        search, without JSON hacks or heavy packages.
+                        Developed a custom PHP 5.6 engine with MVC-style
+                        architecture and different storage approaches for
+                        different tasks.
                       </li>
                       <li>
-                        <b>Shipped:</b> auth flow, validation, filter layer for
-                        queries, file storage conventions, image serving
-                        endpoint.
+                        Built frontend/layout for diploma project and coursework
+                        submissions.
                       </li>
                       <li>
-                        <b>Outcome:</b> API became predictable for frontend;
-                        faster onboarding for new features.
-                        <span class="muted"
-                          >[Add metric: “delivered in N days”, “reduced
-                          endpoints duplication by X%”]</span
-                        >
+                        Participated in annual team projects (backend / frontend
+                        / mobile + documentation + final defense).
+                      </li>
+                      <li>
+                        Completed project promotion / SEO coursework as part of
+                        the university program.
                       </li>
                     </ul>
                   </div>
-
-                  <div class="card" style="margin: 0">
-                    <div class="title">
-                      Case 2: Perfex PDF module — block-based editing + real
-                      preview
-                    </div>
-                    <div class="small">
-                      Many notes/blocks • JSON block schema • generator-friendly
-                      styles • maintainable JS structure
-                    </div>
-                    <ul>
-                      <li>
-                        <b>Problem:</b> support many annotations like a PDF
-                        editor and still render reliably in a generator.
-                      </li>
-                      <li>
-                        <b>Shipped:</b> structured block types + config schema,
-                        modular JS organization, preview filled with real
-                        project/customer data.
-                      </li>
-                      <li>
-                        <b>Outcome:</b> scalable UI architecture: adding new
-                        block types doesn’t break existing ones.
-                        <span class="muted"
-                          >[Add metric: “supported N block types”, “handled N
-                          notes per page”]</span
-                        >
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="card" style="margin: 0">
-                    <div class="title">
-                      Case 3: OCR docx → docx — strict page ordering for
-                      printing
-                    </div>
-                    <div class="small">
-                      90+ pages • per-page artifacts • clean runs • final merge
-                      1:1
-                    </div>
-                    <ul>
-                      <li>
-                        <b>Problem:</b> extract text from images inside Word
-                        pages while preserving exact page count and order.
-                      </li>
-                      <li>
-                        <b>Shipped:</b> per-page outputs (docx/txt), cleaned
-                        workspace each run, final merged document, consistent
-                        formatting.
-                      </li>
-                      <li>
-                        <b>Outcome:</b> predictable deliverable for printing and
-                        review.
-                        <span class="muted"
-                          >[Add metric: “processed N pages”, “time saved vs
-                          manual copy”]</span
-                        >
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="card" style="margin: 0">
-                    <div class="title">
-                      Additional: Go WebSocket patterns + Steam/Dota
-                      integrations planning
-                    </div>
-                    <div class="small">
-                      Global WS notifier pattern • usecase integration •
-                      lobby/matchmaking constraints
-                    </div>
-                    <ul>
-                      <li>
-                        <b>Focus:</b> designing reliable notification flow and
-                        state transitions for real-time products.
-                      </li>
-                      <li>
-                        <b>Outcome:</b> clear architecture for WS events and
-                        domain rules.
-                        <span class="muted">[Add metric if applicable]</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                </details>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2>Case studies (short format)</h2>
+            <div class="headline">
+              <h2>Selected Case Studies</h2>
+              <div class="tagline">
+                Context → Action → Result → Business value
+              </div>
+            </div>
 
-            <div class="timeline">
-              <div class="card">
-                <div class="head">
-                  <div>
-                    <div class="title">
-                      Azimuth: Architecture stabilization under live product
-                      constraints
+            <details class="fold" open>
+              <summary>
+                Core product & architecture cases (Azimuth / BSSL)
+              </summary>
+              <div class="fold-body">
+                <div class="grid2">
+                  <article class="case">
+                    <h3>
+                      1) Stabilizing backend architecture in a live product
+                      (Azimuth)
+                    </h3>
+                    <div class="case-meta">
+                      Go • Echo • Clean Architecture • code review
                     </div>
-                    <div class="meta">
-                      Clean Architecture • code review • safe refactors
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Growing codebase with uneven patterns and
+                        rising regression risk.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Reinforced code review culture and
+                        architecture consistency (CA boundaries).
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Safer changes and clearer team-level
+                        engineering decisions.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Lower maintenance cost and reduced
+                        technical chaos.
+                      </div>
                     </div>
-                  </div>
-                  <div class="when">Delivered</div>
-                </div>
-                <div class="case-grid">
-                  <div class="box">
-                    <b>Problem</b> Fast-growing product on inherited code:
-                    changes became risky and hard to review.
-                  </div>
-                  <div class="box">
-                    <b>Constraints</b> No rewrite; production releases continue;
-                    mixed team seniority.
-                  </div>
-                  <div class="box">
-                    <b>Solution</b> Enforced code review, split layers, moved
-                    domain logic into usecases, standardized error handling.
-                  </div>
-                  <div class="box">
-                    <b>Result</b> Safer releases, clearer ownership of code,
-                    easier onboarding. <span class="muted">[Add metric]</span>
-                  </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      2) Evolving PostgreSQL schema through major migrations
+                    </h3>
+                    <div class="case-meta">
+                      PostgreSQL • migrations • indexes • data-first
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Product growth required major data model
+                        changes in a running system.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Designed/evolved schema and managed
+                        migration impact on API/reporting flows.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Data model better matched product needs
+                        without breaking critical usage.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Product can keep growing without fear of
+                        touching the database.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      3) Stabilizing a heavy computation processor service (Go)
+                    </h3>
+                    <div class="case-meta">
+                      Go • processor • result aggregation • legacy fixes
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> A critical inherited computation block
+                        was complex and error-prone.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Investigated logic, fixed issues, handled
+                        edge cases, stabilized integration.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Improved reliability in a
+                        business-critical results processing area.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Reduced risk of incorrect results and
+                        production incidents.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      4) Legacy feature delivery without rewrite (BSSL, PHP 5.x)
+                    </h3>
+                    <div class="case-meta">
+                      PHP 5.x • MongoDB • legacy • enterprise
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Business needed new features in an old,
+                        fragile custom platform.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Implemented risk-aware changes and
+                        client-requested functionality.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Platform remained useful and evolving
+                        without immediate rewrite costs.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Protected revenue/client workflows and
+                        saved budget.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      5) Reporting and document outputs (Excel / PDF / HTML)
+                    </h3>
+                    <div class="case-meta">
+                      Reporting • exports • PDF • HTML templates
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Enterprise clients require strict formats
+                        and repeatable reporting outputs.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built/maintained reporting flows and
+                        custom templates under legacy constraints.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> More predictable reporting outputs with
+                        fewer manual fixes.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Better client trust and lower support
+                        overhead.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      6) End-to-end delivery support via React Player
+                      contributions
+                    </h3>
+                    <div class="case-meta">
+                      React • frontend support • UX flow • backend/frontend
+                      bridge
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Some UX issues lived at the
+                        backend/frontend boundary and slowed delivery.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Contributed to React Player iterations
+                        (loading/adaptivity/flow correctness).
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Faster, better respondent flow across
+                        devices.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Better product quality and less cross-team
+                        friction.
+                      </div>
+                    </div>
+                  </article>
                 </div>
               </div>
+            </details>
 
-              <div class="card">
-                <div class="head">
-                  <div>
-                    <div class="title">
-                      Delivery: CI/CD, Docker, Nginx, TLS & email deliverability
+            <details class="fold">
+              <summary>DevOps, infrastructure & delivery cases</summary>
+              <div class="fold-body">
+                <div class="grid2">
+                  <article class="case">
+                    <h3>
+                      7) “One-person orchestra” DevOps ownership in a product
+                      team
+                    </h3>
+                    <div class="case-meta">
+                      GitLab CI/CD • Docker • Nginx • TLS • Redis
                     </div>
-                    <div class="meta">
-                      GitLab runners • repeatable builds • SPF/DKIM/DMARC
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Backend value depends on reproducible
+                        delivery and stable operations.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built/maintained pipelines, containers,
+                        Nginx configs, TLS automation, operational setup.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> More repeatable deployments and fewer
+                        release-time surprises.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Faster feature delivery and lower
+                        operational risk.
+                      </div>
                     </div>
-                  </div>
-                  <div class="when">Operational</div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      8) Email deliverability improvement (Exim +
+                      SPF/DKIM/DMARC)
+                    </h3>
+                    <div class="case-meta">
+                      Exim • DNS • anti-spam • email reliability
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Product notifications and invitations are
+                        business-critical and must not land in spam.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Configured Exim + DNS records + email
+                        signatures and deliverability checks.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Improved email delivery quality and
+                        operational confidence.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> More reliable user/client communication and
+                        fewer missed notifications.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      9) Dockerized environments and repeatable startup
+                      workflows
+                    </h3>
+                    <div class="case-meta">
+                      Dockerfiles • docker-compose • Makefile • team
+                      productivity
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Inconsistent local environments slow
+                        teams down and complicate onboarding.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Standardized containerized setups and
+                        repeatable run/ops flows.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Easier local startup and fewer “works on
+                        my machine” issues.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Faster onboarding and more predictable
+                        development process.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      10) Linux console-driven operational troubleshooting
+                    </h3>
+                    <div class="case-meta">
+                      Linux CLI • logs • services • production support
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Production/debugging work often requires
+                        fast CLI-based diagnosis and action.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Daily Linux console work: logs, service
+                        configs, deploy/debug routines, infra checks.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Faster root-cause analysis and practical
+                        production support.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Reduced downtime and quicker recovery in
+                        real-world scenarios.
+                      </div>
+                    </div>
+                  </article>
                 </div>
-                <div class="case-grid">
-                  <div class="box">
-                    <b>Problem</b> “It works locally” is not enough: deployment
-                    and mail delivery issues can kill a product.
-                  </div>
-                  <div class="box">
-                    <b>Constraints</b> Multiple services, environments, and
-                    reliability expectations.
-                  </div>
-                  <div class="box">
-                    <b>Solution</b> Dockerized builds, pipeline hygiene, Nginx
-                    configs/logging, Let’s Encrypt automation, deliverability
-                    setup.
-                  </div>
-                  <div class="box">
-                    <b>Result</b> More predictable releases and fewer delivery
-                    incidents. <span class="muted">[Add metric]</span>
-                  </div>
+              </div>
+            </details>
+
+            <details class="fold">
+              <summary>
+                Freelance / tooling / automation / side engineering cases
+              </summary>
+              <div class="fold-body">
+                <div class="grid2">
+                  <article class="case">
+                    <h3>
+                      11) Go utility package: rarutils (RAR/UNRAR workflows)
+                    </h3>
+                    <div class="case-meta">
+                      Go packages • internal tooling • low-dependency approach
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Product/team-specific tasks are not
+                        always well-served by generic external packages.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built Go utility package(s), including
+                        <b>rarutils</b>, for practical archive workflows.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> More controlled implementation aligned
+                        with project needs.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Lower dependency risk and easier long-term
+                        ownership.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      12) Telegram bots for internal notifications and team
+                      utilities
+                    </h3>
+                    <div class="case-meta">
+                      Telegram bots • deploy/error notifications • team tooling
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Teams need quick feedback loops for
+                        deploys/errors and service-level events.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built bots for deploy/error notifications
+                        and separate utility/testing bot flows.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Faster feedback and better visibility into
+                        technical events.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Improved reaction time and smoother team
+                        coordination.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      13) Laravel API template: auth + filters + uploads + SMTP
+                    </h3>
+                    <div class="case-meta">
+                      Laravel • Eloquent • traits/enums • API design
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Needed a clean API foundation that scales
+                        without day-one technical debt.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Designed auth, validation, filters, upload
+                        trait/enums, image endpoint, SMTP setup.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Stable API contract and a maintainable
+                        foundation for future features.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Faster iteration and easier
+                        handoff/support.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      14) Perfex PDF module: block editor + preview → generate
+                      flow
+                    </h3>
+                    <div class="case-meta">
+                      JS modules • JSON block types • PDF workflow design
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Complex document blocks caused
+                        maintenance pain and unreliable PDF generation.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Introduced structured block types, modular
+                        JS, and a cleaner preview→generate pipeline.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Safer feature additions and more
+                        predictable final PDFs.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Lower bug rate and cheaper document feature
+                        development.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>15) OCR docx → docx with strict page mapping (1:1)</h3>
+                    <div class="case-meta">
+                      OCR workflow • large docs • page preservation •
+                      print-ready output
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Need editable output while preserving
+                        page order/count for printing and verification.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Designed per-page artifacts, cleanup
+                        routines, and a page-consistent merge workflow.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Predictable output for large OCR-heavy
+                        document conversions.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Saves post-processing time and reduces
+                        formatting/page mismatch risk.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      16) Python image processing: photo → diamond mosaic + PDF
+                      generation
+                    </h3>
+                    <div class="case-meta">
+                      Python • image processing • printable PDF artifacts •
+                      freelance
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Needed a practical pipeline for turning
+                        photos into printable diamond mosaic layouts.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built image processing + color
+                        mapping/prep + PDF generation workflow.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Working printable mosaic-generation
+                        pipeline.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Demonstrates engineering breadth across
+                        graphics, automation, and document outputs.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      17) Third-party API integrations across freelance /
+                      product work
+                    </h3>
+                    <div class="case-meta">
+                      External APIs • contracts • failure handling •
+                      maintainability
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> External systems are inconsistent and can
+                        break product expectations.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built integrations with clear contract
+                        handling, error paths, and supportability in mind.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> More predictable integration behavior in
+                        production.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Faster external service rollout and fewer
+                        integration incidents.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>18) AI-assisted engineering workflows & prompting</h3>
+                    <div class="case-meta">
+                      AI tools • prompting • analysis • docs/prototyping
+                      acceleration
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Complex tasks require quick structuring,
+                        research, and draft solution generation.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Use multiple AI tools and strong prompting
+                        to accelerate analysis, documentation, and prototyping.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Faster iteration while retaining
+                        engineering judgment and control.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Higher personal/team productivity without
+                        sacrificing quality ownership.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      19) Python trading automation experiment (pump.fun /
+                      Solana)
+                    </h3>
+                    <div class="case-meta">
+                      Python • automation • APIs/network • experimental domain
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Exploration of automation in a
+                        fast-moving trading ecosystem.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Built an experimental Python program for
+                        platform/network interactions.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Hands-on practice with automation and
+                        unfamiliar domain constraints.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Proves adaptability and fast learning in
+                        new technical domains.
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="case">
+                    <h3>
+                      20) Testing & documentation mindset in practical delivery
+                    </h3>
+                    <div class="case-meta">
+                      Maintainability • handoff • docs • testability thinking
+                    </div>
+                    <div class="kv4">
+                      <div class="mini">
+                        <b>Context</b> Solutions are hard to scale/support
+                        without documentation and testability awareness.
+                      </div>
+                      <div class="mini">
+                        <b>Action</b> Emphasized clear project structure,
+                        README/setup docs, and testability-aware design
+                        boundaries.
+                      </div>
+                      <div class="mini">
+                        <b>Result</b> Better handoff, easier onboarding, clearer
+                        engineering communication.
+                      </div>
+                      <div class="mini">
+                        <b>Value</b> Lower bus factor and stronger long-term
+                        maintainability.
+                      </div>
+                    </div>
+                  </article>
                 </div>
+              </div>
+            </details>
+          </section>
+
+          <section class="section">
+            <div class="headline">
+              <h2>Selected Projects (GitHub)</h2>
+              <div class="tagline">Practical code samples & utilities</div>
+            </div>
+
+            <div class="grid2">
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">
+                    <a
+                      href="https://github.com/saifutdinov/vnv"
+                      target="_blank"
+                      rel="noopener"
+                      >vnv</a
+                    >
+                  </div>
+                  <div class="repo-badge">Game project</div>
+                </div>
+                <div class="small">
+                  “Believe / Don’t Believe” online game project. Demonstrates
+                  product thinking, game/domain modeling, and full-stack
+                  architectural planning.
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>Domain rules design and gameplay state thinking.</li>
+                      <li>
+                        Backend/frontend coordination and feature decomposition.
+                      </li>
+                      <li>Project structuring for iterative delivery.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">
+                    <a
+                      href="https://github.com/saifutdinov/par-php-8.4"
+                      target="_blank"
+                      rel="noopener"
+                      >par-php-8.4</a
+                    >
+                  </div>
+                  <div class="repo-badge">PHP bootstrap template</div>
+                </div>
+                <div class="small">
+                  Minimal PHP 8.4 starter project for quickly launching
+                  micro-projects (PHP + Composer + public directory).
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Practical developer experience and fast project
+                        bootstrapping.
+                      </li>
+                      <li>Minimalist, low-overhead setup approach.</li>
+                      <li>Reusable foundation for small services/tools.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">
+                    <a
+                      href="https://github.com/saifutdinov/rarutils"
+                      target="_blank"
+                      rel="noopener"
+                      >rarutils</a
+                    >
+                  </div>
+                  <div class="repo-badge">Go utility package</div>
+                </div>
+                <div class="small">
+                  Go utility for working with RAR/UNRAR flows. Built to solve
+                  practical archive handling tasks with clear ownership and
+                  minimal dependency noise.
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Writing your own Go packages for real project needs.
+                      </li>
+                      <li>
+                        Tooling mindset and pragmatic utility engineering.
+                      </li>
+                      <li>
+                        Preference for maintainable, controlled solutions.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">
+                    <a
+                      href="https://github.com/saifutdinov/ca-ctx-tx"
+                      target="_blank"
+                      rel="noopener"
+                      >ca-ctx-tx</a
+                    >
+                  </div>
+                  <div class="repo-badge">Go architecture pattern</div>
+                </div>
+                <div class="small">
+                  Context-based transaction handling implementation for Clean
+                  Architecture use cases. Useful for keeping transaction
+                  boundaries explicit and testable.
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Clean Architecture-oriented transaction orchestration.
+                      </li>
+                      <li>Backend design thinking beyond basic CRUD.</li>
+                      <li>
+                        Reusability and engineering communication through code.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2>Education</h2>
-            <div class="card">
+            <div class="headline">
+              <h2>Technology & Engineering Practices</h2>
+              <div class="tagline">Grouped by value, not just buzzwords</div>
+            </div>
+
+            <div class="grid3">
+              <div class="card" style="margin: 0">
+                <div class="title">Backend & APIs</div>
+                <ul>
+                  <li>Golang (Echo, gRPC, middleware, service layer)</li>
+                  <li>PHP (Laravel, Symfony, legacy PHP 5.x)</li>
+                  <li>REST APIs, JSON/XML</li>
+                  <li>Auth, validation, error handling</li>
+                  <li>Third-party API integrations</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin: 0">
+                <div class="title">Data & Storage</div>
+                <ul>
+                  <li>PostgreSQL / MySQL / MongoDB</li>
+                  <li>SQL optimization, indexes, complex queries</li>
+                  <li>Schema evolution & migrations</li>
+                  <li>Redis / caching</li>
+                  <li>Reporting (Excel/PDF/HTML)</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin: 0">
+                <div class="title">DevOps & Operations</div>
+                <ul>
+                  <li>Linux console (daily production/dev workflow)</li>
+                  <li>Docker / Dockerfile / docker-compose</li>
+                  <li>Nginx, TLS, Let’s Encrypt</li>
+                  <li>GitLab CE / Runner / CI/CD pipelines</li>
+                  <li>Exim, SPF/DKIM/DMARC, email deliverability</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin: 0">
+                <div class="title">Reliability & Performance</div>
+                <ul>
+                  <li>Production debugging</li>
+                  <li>Bottleneck and memory issue analysis</li>
+                  <li>Highload-oriented thinking</li>
+                  <li>Monitoring / logging mindset</li>
+                  <li>Prometheus / Grafana / ELK (working context)</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin: 0">
+                <div class="title">Frontend Support</div>
+                <ul>
+                  <li>React / React.js</li>
+                  <li>Vue</li>
+                  <li>TypeScript / JavaScript</li>
+                  <li>Vite / Tailwind</li>
+                  <li>HTML5 / CSS / jQuery (legacy support)</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin: 0">
+                <div class="title">Engineering Breadth</div>
+                <ul>
+                  <li>Telegram bots (team tooling / notifications)</li>
+                  <li>Go internal packages (e.g., rarutils)</li>
+                  <li>Python image processing & PDF generation</li>
+                  <li>AI tools + prompting for engineering workflows</li>
+                  <li>Browser extensions (experiments)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="headline">
+              <h2>Testing & Documentation Mindset</h2>
+              <div class="tagline">Maintainability drives team speed</div>
+            </div>
+
+            <div class="muted">
+              In projects where long-term team velocity matters, I focus not
+              only on “working code now” but also on
+              <b
+                >clear project structure, documentation, and testability-aware
+                design</b
+              >.
+            </div>
+
+            <details class="fold" open>
+              <summary>
+                Expand details (what I do in practice and why it matters)
+              </summary>
+              <div class="fold-body">
+                <div class="fold-grid">
+                  <div class="card" style="margin: 0">
+                    <div class="title">What I do in practice</div>
+                    <ul>
+                      <li>
+                        Document architecture decisions and constraints (to
+                        prevent repeated rediscovery).
+                      </li>
+                      <li>
+                        Prefer clear module/project structure for handoff and
+                        scaling.
+                      </li>
+                      <li>
+                        Provide README/setup commands for reproducible startup
+                        and onboarding.
+                      </li>
+                      <li>
+                        Think about testability while designing business logic
+                        boundaries.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card" style="margin: 0">
+                    <div class="title">Why it helps the company</div>
+                    <ul>
+                      <li>Faster onboarding of new engineers.</li>
+                      <li>
+                        Lower bus factor and less hidden “tribal knowledge”.
+                      </li>
+                      <li>
+                        Easier support and feature evolution after release.
+                      </li>
+                      <li>Better technical communication across the team.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <section class="section">
+            <div class="headline">
+              <h2>Education</h2>
+              <div class="tagline">
+                Systems foundation + early hands-on development
+              </div>
+            </div>
+
+            <div class="card" style="margin: 0">
               <div class="head">
                 <div>
                   <div class="title">
-                    Moscow Polytechnic University (Mospolytech)
+                    Moscow Polytechnic University (Moscow Polytech)
                   </div>
                   <div class="meta">
-                    Information Systems and Technologies • Web Development
+                    Bachelor’s Degree • Information Systems and Technologies •
+                    Specialization: Web Development • Moscow, Russia
                   </div>
                 </div>
-                <div class="when">2015 — 2019</div>
+                <div class="when">09/2015 — 06/2019</div>
               </div>
-              <ul>
-                <li>
-                  Team projects: from idea to MVP, documentation, and
-                  presentations.
-                </li>
-                <li>SEO / promotion course within the program.</li>
-              </ul>
+
+              <div class="outcomes" style="margin-top: 0">
+                <b>Thesis</b>
+                Request management system for creation of intellectual property
+                results (RID) in higher education: incoming request tracking,
+                request profiling, expert panel formation, and a digital trace
+                for each request.
+              </div>
+
+              <details class="fold">
+                <summary>
+                  Expand details (relevant practical experience during studies)
+                </summary>
+                <div class="fold-body">
+                  <ul>
+                    <li>
+                      Combined studies with practical software development work.
+                    </li>
+                    <li>
+                      Built a custom PHP MVC engine and frontend layouts for
+                      academic/project tasks.
+                    </li>
+                    <li>
+                      Worked in team projects covering backend/frontend/mobile +
+                      documentation + final presentations.
+                    </li>
+                    <li>
+                      Completed a project promotion / SEO course as part of the
+                      program.
+                    </li>
+                    <li>
+                      Learned the full path from idea to MVP to
+                      technical/product presentation.
+                    </li>
+                  </ul>
+                </div>
+              </details>
             </div>
           </section>
+
+          <section class="section">
+            <div class="headline">
+              <h2>Why I’m useful to a team</h2>
+              <div class="tagline">
+                Not just writing code — improving systems and delivery
+              </div>
+            </div>
+
+            <details class="fold" open>
+              <summary>Expand value summary (technical + team impact)</summary>
+              <div class="fold-body">
+                <div class="grid2">
+                  <div class="card" style="margin: 0">
+                    <div class="title">Technical impact</div>
+                    <ul>
+                      <li>
+                        I can own backend end-to-end: architecture, APIs,
+                        databases, optimization, releases, production support.
+                      </li>
+                      <li>
+                        I stabilize complex and legacy systems without
+                        disrupting business operations.
+                      </li>
+                      <li>
+                        I solve cross-role technical gaps: infra, email,
+                        reporting, integrations, internal tooling.
+                      </li>
+                      <li>
+                        I’m strong with Linux console workflows and practical
+                        operational troubleshooting.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">Team impact</div>
+                    <ul>
+                      <li>
+                        I help engineers ramp up faster and become productive
+                        sooner.
+                      </li>
+                      <li>
+                        I use code reviews to explain trade-offs and reasoning,
+                        not just point out issues.
+                      </li>
+                      <li>
+                        I simplify collaboration through clearer technical
+                        decisions and documentation.
+                      </li>
+                      <li>
+                        I’m comfortable in dynamic environments and can
+                        coordinate across roles.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <div class="footer">
+            EN version • HTML resume (expanded, collapsible sections) •
+            print-ready • based on real project and case history.
+          </div>
         </main>
       </div>
     </div>
