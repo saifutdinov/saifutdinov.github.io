@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)</title>
+    <meta
+      name="description"
+      content="Senior backend разработчик: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции, фриланс."
+    />
+
+    <link rel="canonical" href="https://saifutdinov.github.io/ru.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Айдар Сайфутдинов — Резюме" />
+    <meta
+      property="og:title"
+      content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)"
+    />
+    <meta
+      property="og:description"
+      content="Backend-инженер: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции и продакшн-доставка."
+    />
+    <meta property="og:url" content="https://saifutdinov.github.io/ru.html" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <meta
+      property="og:image"
+      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Айдар Сайфутдинов — Backend Engineer (Go & PHP)"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)"
+    />
+    <meta
+      name="twitter:description"
+      content="Go, PHP/Laravel, Clean Architecture, SQL, Docker, CI/CD, интеграции."
+    />
+    <meta
+      name="twitter:image"
+      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+    />
+
+    <meta name="theme-color" content="#0b0f17" />
+
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --paper: #0f1523;
+        --card: #121a2c;
+        --border: rgba(255, 255, 255, 0.1);
+        --text: #eaf0ff;
+        --muted: rgba(234, 240, 255, 0.72);
+        --muted2: rgba(234, 240, 255, 0.58);
+        --accent: #69a8ff;
+        --accent2: #6effc3;
+        --shadow: 0 16px 46px rgba(0, 0, 0, 0.45);
+        --mono:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        --sans:
+          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, "Noto Sans", Arial;
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        color: var(--text);
+        line-height: 1.55;
+        background:
+          radial-gradient(
+            900px 520px at 10% 0%,
+            rgba(105, 168, 255, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 90% 10%,
+            rgba(110, 255, 195, 0.1),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 520px at 50% 110%,
+            rgba(105, 168, 255, 0.12),
+            transparent 60%
+          ),
+          var(--bg);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 26px 16px 70px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-badge {
+        width: 12px;
+        height: 12px;
+        border-radius: 4px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 10px 25px rgba(105, 168, 255, 0.25);
+      }
+      .brand-title {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .top-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 999px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .pill strong {
+        color: var(--text);
+        font-weight: 750;
+      }
+      .pill .sep {
+        opacity: 0.45;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      @media (max-width: 960px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .panel {
+        border: 1px solid var(--border);
+        background: rgba(18, 26, 44, 0.76);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+      .panel:before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        opacity: 0.85;
+      }
+
+      .pad {
+        padding: 18px;
+      }
+      .divider {
+        border-top: 1px solid var(--border);
+      }
+
+      .hero {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .avatar {
+        width: 92px;
+        height: 92px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        color: var(--muted2);
+        font-size: 12px;
+        text-align: center;
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: 0.2px;
+      }
+      .subtitle {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .chips {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chip {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(234, 240, 255, 0.92);
+        white-space: nowrap;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .mono {
+        font-family: var(--mono);
+      }
+
+      .kv {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        font-size: 13px;
+      }
+      .kv .k {
+        color: var(--muted2);
+      }
+      .kv .v {
+        overflow-wrap: anywhere;
+      }
+
+      .note {
+        margin-top: 12px;
+        padding: 12px 14px;
+        border: 1px solid rgba(105, 168, 255, 0.22);
+        background: rgba(105, 168, 255, 0.08);
+        border-radius: 14px;
+        font-size: 13px;
+        color: rgba(234, 240, 255, 0.92);
+      }
+
+      .section {
+        padding: 18px;
+      }
+      .section + .section {
+        border-top: 1px solid var(--border);
+      }
+
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .job {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 14px;
+      }
+      .job-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px 12px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .job-title {
+        font-weight: 780;
+        letter-spacing: 0.2px;
+      }
+      .job-meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .when {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.18);
+        color: rgba(234, 240, 255, 0.78);
+        white-space: nowrap;
+      }
+      .stackline {
+        margin-top: 6px;
+        color: rgba(234, 240, 255, 0.7);
+        font-size: 12px;
+      }
+      ul {
+        margin: 10px 0 0 18px;
+        padding: 0;
+      }
+      li {
+        margin: 6px 0;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 960px) {
+        .cols {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer {
+        margin-top: 14px;
+        text-align: center;
+        color: rgba(234, 240, 255, 0.65);
+        font-size: 12px;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          color: #111;
+        }
+        .panel {
+          box-shadow: none;
+          background: #fff;
+          border: 1px solid #ddd;
+        }
+        .panel:before {
+          display: none;
+        }
+        .chip,
+        .when,
+        .pill {
+          border: 1px solid #ddd;
+          background: #fff;
+          color: #111;
+        }
+        .muted,
+        .small {
+          color: #444;
+        }
+        a {
+          color: #111;
+          text-decoration: none;
+        }
+        .note {
+          border: 1px solid #ddd;
+          background: #fff;
+          color: #111;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div class="brand-title">Резюме</div>
+          <div class="pill" style="padding: 6px 10px">
+            <span class="mono">saifutdinov.github.io</span>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <div class="pill">
+            <span class="muted">Язык:</span> <a href="index.html">EN</a>
+            <span class="sep">|</span> <strong>RU</strong>
+          </div>
+          <div class="pill">
+            <span class="muted">PDF:</span> <strong>Ctrl/Cmd + P</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout">
+        <!-- LEFT -->
+        <aside class="panel">
+          <div class="pad">
+            <div class="hero">
+              <div class="avatar">
+                <img
+                  src="/assets/images/avatar.jpg"
+                  alt="Айдар Сайфутдинов"
+                  onerror="
+                    this.remove();
+                    this.parentElement.textContent =
+                      'Аватар (assets/avatar.jpg)';
+                  "
+                />
+              </div>
+              <div>
+                <h1>Айдар Сайфутдинов</h1>
+                <div class="subtitle">
+                  Senior Backend Engineer — Go & PHP (Laravel/Symfony)
+                </div>
+                <div class="chips">
+                  <span class="chip">Go (Echo / gRPC)</span>
+                  <span class="chip">PHP 8.x</span>
+                  <span class="chip">Laravel</span>
+                  <span class="chip">PostgreSQL / MySQL</span>
+                  <span class="chip">Docker • CI/CD</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="note">
+              Фокус: API-first системы, чистая архитектура, предсказуемая
+              бизнес-логика (транзакции/идемпотентность), интеграции и
+              продакшн-доставка (Docker, CI/CD, доставляемость почты).
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="pad">
+            <h2>Контакты</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div class="kv">
+                <div class="k">Email</div>
+                <div class="v">
+                  <a href="mailto:sayfutdinov.aydar.web@gmail.com"
+                    >sayfutdinov.aydar.web@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">GitHub</div>
+                <div class="v">
+                  <a href="https://github.com/Saifutdinov"
+                    >github.com/Saifutdinov</a
+                  >
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">LinkedIn</div>
+                <div class="v">
+                  <a href="https://www.linkedin.com/in/sayfutdinov-aydar"
+                    >linkedin.com/in/sayfutdinov-aydar</a
+                  >
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">Telegram</div>
+                <div class="v">
+                  <a href="https://t.me/Saifutdinov_a">@Saifutdinov_a</a>
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">Локация</div>
+                <div class="v">Испания • Remote / релокация возможна</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="pad">
+            <h2>Ключевой стек</h2>
+            <div class="chips">
+              <span class="chip">Go: Echo, gRPC, concurrency</span>
+              <span class="chip">PHP: Laravel, Symfony</span>
+              <span class="chip">SQL: PostgreSQL, MySQL</span>
+              <span class="chip">MongoDB (legacy)</span>
+              <span class="chip">Redis</span>
+              <span class="chip">Docker / Compose</span>
+              <span class="chip">Nginx</span>
+              <span class="chip">GitLab CI</span>
+              <span class="chip">SMTP / Exim</span>
+              <span class="chip">SPF/DKIM/DMARC</span>
+              <span class="chip">Let’s Encrypt</span>
+              <span class="chip">Elasticsearch</span>
+            </div>
+
+            <h2 style="margin-top: 14px">Языки</h2>
+            <div class="chips">
+              <span class="chip">Русский — родной</span>
+              <span class="chip">English — рабочий</span>
+              <span class="chip">Испанский — изучаю</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT -->
+        <main class="panel">
+          <section class="section">
+            <h2>О себе</h2>
+            <div class="muted">
+              Backend-инженер с продакшн-опытом в Go и PHP. Умею поддерживать
+              легаси и модернизировать систему, делать интеграции, отчёты, и
+              доводить решения до продакшна. Предпочитаю Clean Architecture,
+              явный код и предсказуемое поведение в проде.
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Опыт</h2>
+
+            <div class="timeline">
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Senior Backend Engineer (Go) — Azimuth (оценка персонала)
+                    </div>
+                    <div class="job-meta">
+                      Опросы вовлеченности, психологические тесты, тесты
+                      способностей, «360°», бизнес-социометрия
+                    </div>
+                  </div>
+                  <div class="when">2022 — н.в.</div>
+                </div>
+                <div class="stackline">
+                  Go • Echo • Clean Architecture • PostgreSQL • Redis • Docker •
+                  Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • Let’s Encrypt •
+                  React (Player)
+                </div>
+                <ul>
+                  <li>
+                    Стабилизировал унаследованную кодовую базу: внедрили code
+                    review и выровняли бэк под Clean Architecture
+                    (Delivery/Usecase/Repository).
+                  </li>
+                  <li>
+                    Развивал API и сложную бизнес-логику: сбор, подготовка,
+                    хранение и выдача данных опросников.
+                  </li>
+                  <li>
+                    Проектировал схему PostgreSQL и провёл систему через
+                    несколько крупных этапов миграций; улучшал запросы и модель
+                    данных.
+                  </li>
+                  <li>
+                    Поддерживал и улучшал Go-“processor” (тяжелые вычисления и
+                    финальная агрегация результатов); сделал заметный объём
+                    фиксов и стабилизаций.
+                  </li>
+                  <li>
+                    Подключался к React “Player” (проигрыватель опросника):
+                    корректный сценарий вопросов и надёжная отправка ответов;
+                    ускорили загрузку и сделали полноценную адаптивность.
+                  </li>
+                  <li>
+                    Закрывал эксплуатацию: Docker-сборки,
+                    GitLab-пайплайны/раннеры, Nginx-конфиги и логи,
+                    TLS-автоматизация, настройка доставляемости почты.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Senior PHP Engineer — Legacy система оценки (BSSL)
+                    </div>
+                    <div class="job-meta">
+                      Долгоживущий singleton-легаси проект (PHP + MongoDB)
+                    </div>
+                  </div>
+                  <div class="when">2019 — н.в.</div>
+                </div>
+                <div class="stackline">
+                  PHP 5.x/8.x (легаси + расширения) • MongoDB • Отчёты
+                  (Excel/PDF/HTML)
+                </div>
+                <ul>
+                  <li>
+                    Поддержка и развитие легаси-архитектуры с минимальными
+                    рисками: новые фичи по запросам клиентов без ломки текущих
+                    сценариев.
+                  </li>
+                  <li>
+                    Работа с моделями данных MongoDB и нестандартными отчётными
+                    требованиями корпоративных клиентов.
+                  </li>
+                  <li>
+                    Большое количество Excel-выгрузок и PDF-отчётов; улучшение
+                    шаблонов и стабильности результата.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Фриланс — Backend / Full-Stack (Go + PHP)
+                    </div>
+                    <div class="job-meta">
+                      Клиентские проекты: быстрый запуск, предсказуемые API,
+                      докеризация, интеграции
+                    </div>
+                  </div>
+                  <div class="when">2023 — н.в.</div>
+                </div>
+                <div class="stackline">
+                  Laravel • Go (Echo) • PostgreSQL/MySQL • Docker • CI/CD •
+                  Vue/React/TypeScript (по необходимости)
+                </div>
+                <ul>
+                  <li>
+                    API-first сервисы на Laravel: auth, валидация, ресурсы/DTO,
+                    загрузка файлов без тяжёлых зависимостей.
+                  </li>
+                  <li>
+                    Реляционные модели под “динамические поля”, когда JSON не
+                    подходит из-за поиска/индексов и скорости.
+                  </li>
+                  <li>
+                    Докеризация проектов (PHP/Nginx/PostgreSQL/Redis/Memcached),
+                    удобные команды запуска и онбординг.
+                  </li>
+                  <li>
+                    Интеграции: SMTP-почта, фоновые задачи/очереди и инструменты
+                    под прод.
+                  </li>
+                  <li>
+                    Фронт при необходимости: Vue 3 + Vite / React + TypeScript,
+                    адаптивная верстка и стабильные контракты.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Начало карьеры — PHP web development
+                    </div>
+                    <div class="job-meta">
+                      От учебных/командных проектов до продакшн-задач
+                    </div>
+                  </div>
+                  <div class="when">2014 — 2018</div>
+                </div>
+                <div class="stackline">
+                  PHP • MySQL • HTML/CSS/JS • База деплоя и серверов
+                </div>
+                <ul>
+                  <li>
+                    Разработка веб-приложений и API; работа со схемами SQL,
+                    интеграциями и деплоем.
+                  </li>
+                  <li>
+                    Сформировал прочную базу в backend-мышлении, данных и
+                    прагматичной поставке задач.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Сильные стороны</h2>
+            <div class="cols">
+              <div class="job">
+                <div class="job-title">Архитектура и качество</div>
+                <ul>
+                  <li>
+                    Clean Architecture: тестируемые usecases, понятные границы.
+                  </li>
+                  <li>Code review, безопасный рефакторинг в легаси-среде.</li>
+                  <li>
+                    Предсказуемая обработка ошибок и “production-safe”
+                    изменения.
+                  </li>
+                </ul>
+              </div>
+              <div class="job">
+                <div class="job-title">Интеграции и эксплуатация</div>
+                <ul>
+                  <li>Docker, CI/CD, Nginx, автоматизация TLS.</li>
+                  <li>Почта: SPF/DKIM/DMARC, доставляемость и антиспам.</li>
+                  <li>Производительность: индексы, запросы, кеш Redis.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Проекты</h2>
+            <div class="cols">
+              <div class="job">
+                <div class="job-title">
+                  Dota league platform — матчмейкинг и лобби
+                </div>
+                <div class="small">
+                  Go backend • Steam интеграция • real-time уведомления
+                </div>
+                <ul>
+                  <li>
+                    Правила пати (1/2/3/5), слияние лобби, баланс по рейтингу.
+                  </li>
+                  <li>
+                    Планирование WebSocket-уведомлений и безопасных переходов
+                    состояний.
+                  </li>
+                </ul>
+              </div>
+              <div class="job">
+                <div class="job-title">
+                  Инфраструктурные шаблоны и dev-образы
+                </div>
+                <div class="small">Debian-образы • утилиты • единый DX</div>
+                <ul>
+                  <li>Стандартизация Docker-образов и bootstrap-скриптов.</li>
+                  <li>Инструменты для дебага, логов и повторяемых сборок.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div class="footer">
+        Аватар: <span class="mono">/assets/avatar.jpg</span>. Страница готова
+        для печати в PDF.
+      </div>
+    </div>
+  </body>
+</html>

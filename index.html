@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)</title>
+    <meta
+      name="description"
+      content="Senior backend engineer: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, freelance experience."
+    />
+
+    <link rel="canonical" href="https://saifutdinov.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aidar Saifutdinov — Resume" />
+    <meta
+      property="og:title"
+      content="Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)"
+    />
+    <meta
+      property="og:description"
+      content="Senior backend engineer (Go, PHP/Laravel). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, and production-ready delivery."
+    />
+    <meta property="og:url" content="https://saifutdinov.github.io/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+
+    <meta
+      property="og:image"
+      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)"
+    />
+    <meta
+      name="twitter:description"
+      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, SQL, Docker, CI/CD."
+    />
+    <meta
+      name="twitter:image"
+      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+    />
+
+    <!-- Optional: theme color for mobile previews -->
+    <meta name="theme-color" content="#0b0f17" />
+
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --paper: #0f1523;
+        --card: #121a2c;
+        --border: rgba(255, 255, 255, 0.1);
+        --text: #eaf0ff;
+        --muted: rgba(234, 240, 255, 0.72);
+        --muted2: rgba(234, 240, 255, 0.58);
+        --accent: #69a8ff;
+        --accent2: #6effc3;
+        --shadow: 0 16px 46px rgba(0, 0, 0, 0.45);
+        --mono:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        --sans:
+          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, "Noto Sans", Arial;
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        color: var(--text);
+        line-height: 1.55;
+        background:
+          radial-gradient(
+            900px 520px at 10% 0%,
+            rgba(105, 168, 255, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 90% 10%,
+            rgba(110, 255, 195, 0.1),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 520px at 50% 110%,
+            rgba(105, 168, 255, 0.12),
+            transparent 60%
+          ),
+          var(--bg);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 26px 16px 70px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-badge {
+        width: 12px;
+        height: 12px;
+        border-radius: 4px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 10px 25px rgba(105, 168, 255, 0.25);
+      }
+      .brand-title {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .top-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 999px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .pill strong {
+        color: var(--text);
+        font-weight: 750;
+      }
+      .pill .sep {
+        opacity: 0.45;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      @media (max-width: 960px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .panel {
+        border: 1px solid var(--border);
+        background: rgba(18, 26, 44, 0.76);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+      .panel:before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        opacity: 0.85;
+      }
+
+      .pad {
+        padding: 18px;
+      }
+      .divider {
+        border-top: 1px solid var(--border);
+      }
+
+      /* Left header */
+      .hero {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .avatar {
+        width: 92px;
+        height: 92px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        color: var(--muted2);
+        font-size: 12px;
+        text-align: center;
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: 0.2px;
+      }
+      .subtitle {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .chips {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chip {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(234, 240, 255, 0.92);
+        white-space: nowrap;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .mono {
+        font-family: var(--mono);
+      }
+
+      .kv {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        font-size: 13px;
+      }
+      .kv .k {
+        color: var(--muted2);
+      }
+      .kv .v {
+        overflow-wrap: anywhere;
+      }
+
+      .note {
+        margin-top: 12px;
+        padding: 12px 14px;
+        border: 1px solid rgba(105, 168, 255, 0.22);
+        background: rgba(105, 168, 255, 0.08);
+        border-radius: 14px;
+        font-size: 13px;
+        color: rgba(234, 240, 255, 0.92);
+      }
+
+      /* Right: sections */
+      .section {
+        padding: 18px;
+      }
+      .section + .section {
+        border-top: 1px solid var(--border);
+      }
+
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .job {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 14px;
+      }
+      .job-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px 12px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .job-title {
+        font-weight: 780;
+        letter-spacing: 0.2px;
+      }
+      .job-meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .when {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.18);
+        color: rgba(234, 240, 255, 0.78);
+        white-space: nowrap;
+      }
+      .stackline {
+        margin-top: 6px;
+        color: rgba(234, 240, 255, 0.7);
+        font-size: 12px;
+      }
+      ul {
+        margin: 10px 0 0 18px;
+        padding: 0;
+      }
+      li {
+        margin: 6px 0;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 960px) {
+        .cols {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer {
+        margin-top: 14px;
+        text-align: center;
+        color: rgba(234, 240, 255, 0.65);
+        font-size: 12px;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          color: #111;
+        }
+        .panel {
+          box-shadow: none;
+          background: #fff;
+          border: 1px solid #ddd;
+        }
+        .panel:before {
+          display: none;
+        }
+        .chip,
+        .when,
+        .pill {
+          border: 1px solid #ddd;
+          background: #fff;
+          color: #111;
+        }
+        .muted,
+        .small {
+          color: #444;
+        }
+        a {
+          color: #111;
+          text-decoration: none;
+        }
+        .note {
+          border: 1px solid #ddd;
+          background: #fff;
+          color: #111;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div class="brand-title">Resume</div>
+          <div class="pill" style="padding: 6px 10px">
+            <span class="mono">saifutdinov.github.io</span>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <div class="pill">
+            <span class="muted">Language:</span> <strong>EN</strong>
+            <span class="sep">|</span> <a href="ru.html">RU</a>
+          </div>
+          <div class="pill">
+            <span class="muted">PDF:</span> <strong>Ctrl/Cmd + P</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout">
+        <!-- LEFT -->
+        <aside class="panel">
+          <div class="pad">
+            <div class="hero">
+              <div class="avatar">
+                <img
+                  src="/assets/images/avatar.jpg"
+                  alt="Aidar Saifutdinov"
+                  onerror="
+                    this.remove();
+                    this.parentElement.textContent =
+                      'Avatar (assets/avatar.jpg)';
+                  "
+                />
+              </div>
+              <div>
+                <h1>Aidar Saifutdinov</h1>
+                <div class="subtitle">
+                  Senior Backend Engineer — Go & PHP (Laravel/Symfony)
+                </div>
+                <div class="chips">
+                  <span class="chip">Go (Echo / gRPC)</span>
+                  <span class="chip">PHP 8.x</span>
+                  <span class="chip">Laravel</span>
+                  <span class="chip">PostgreSQL / MySQL</span>
+                  <span class="chip">Docker • CI/CD</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="note">
+              Focus: API-first systems, clean architecture, predictable business
+              logic (transactions/idempotency), integrations, and
+              production-ready delivery (Docker, CI/CD, mail deliverability).
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="pad">
+            <h2>Contacts</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div class="kv">
+                <div class="k">Email</div>
+                <div class="v">
+                  <a href="mailto:sayfutdinov.aydar.web@gmail.com"
+                    >sayfutdinov.aydar.web@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">GitHub</div>
+                <div class="v">
+                  <a href="https://github.com/Saifutdinov"
+                    >github.com/Saifutdinov</a
+                  >
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">LinkedIn</div>
+                <div class="v">
+                  <a href="https://www.linkedin.com/in/sayfutdinov-aydar"
+                    >linkedin.com/in/sayfutdinov-aydar</a
+                  >
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">Telegram</div>
+                <div class="v">
+                  <a href="https://t.me/Saifutdinov_a">@Saifutdinov_a</a>
+                </div>
+              </div>
+              <div class="kv">
+                <div class="k">Location</div>
+                <div class="v">Spain • Remote / relocation possible</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="pad">
+            <h2>Core stack</h2>
+            <div class="chips">
+              <span class="chip">Go: Echo, gRPC, concurrency</span>
+              <span class="chip">PHP: Laravel, Symfony</span>
+              <span class="chip">SQL: PostgreSQL, MySQL</span>
+              <span class="chip">MongoDB (legacy)</span>
+              <span class="chip">Redis</span>
+              <span class="chip">Docker / Compose</span>
+              <span class="chip">Nginx</span>
+              <span class="chip">GitLab CI</span>
+              <span class="chip">SMTP / Exim</span>
+              <span class="chip">SPF/DKIM/DMARC</span>
+              <span class="chip">Let’s Encrypt</span>
+              <span class="chip">Elasticsearch</span>
+            </div>
+
+            <h2 style="margin-top: 14px">Languages</h2>
+            <div class="chips">
+              <span class="chip">Russian — native</span>
+              <span class="chip">English — working proficiency</span>
+              <span class="chip">Spanish — learning</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT -->
+        <main class="panel">
+          <section class="section">
+            <h2>Summary</h2>
+            <div class="muted">
+              Backend-focused engineer with production experience across Go and
+              PHP. Comfortable with legacy maintenance, modernization,
+              integrations, data-heavy reporting, and full-cycle delivery.
+              Prefer clean boundaries (Clean Architecture), explicit code, and
+              predictable systems in production.
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Experience</h2>
+
+            <div class="timeline">
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Senior Backend Engineer (Go) — Azimuth (Employee
+                      Assessment Platform)
+                    </div>
+                    <div class="job-meta">
+                      Corporate surveys & analytics: engagement polls,
+                      psychological tests, 360° feedback, business sociometry
+                    </div>
+                  </div>
+                  <div class="when">2022 — Present</div>
+                </div>
+                <div class="stackline">
+                  Go • Echo • Clean Architecture • PostgreSQL • Redis • Docker •
+                  Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • Let’s Encrypt •
+                  React (Player)
+                </div>
+                <ul>
+                  <li>
+                    Helped stabilize an inherited codebase; introduced
+                    systematic code review and aligned backend around Clean
+                    Architecture (Delivery/Usecase/Repository).
+                  </li>
+                  <li>
+                    Designed and built API modules and complex business logic
+                    for collecting, preparing, storing, and serving
+                    questionnaire data.
+                  </li>
+                  <li>
+                    Designed PostgreSQL schema and led the system through
+                    multiple major migrations; improved queries and data model
+                    over time.
+                  </li>
+                  <li>
+                    Maintained and improved a Go “processor” module responsible
+                    for heavy calculations and final result aggregation;
+                    delivered substantial fixes and reliability improvements.
+                  </li>
+                  <li>
+                    Contributed to React “Player” (lightweight survey runner):
+                    correct question flow per respondent, fast load, and
+                    responsive UX for mobile/desktop.
+                  </li>
+                  <li>
+                    Covered production concerns: Docker builds, GitLab
+                    pipelines/runners, Nginx configuration & logging, TLS
+                    automation, and email deliverability setup.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Senior PHP Engineer — Legacy Assessment System (BSSL)
+                    </div>
+                    <div class="job-meta">
+                      Long-lived singleton-style system (legacy PHP + MongoDB)
+                    </div>
+                  </div>
+                  <div class="when">2019 — Present</div>
+                </div>
+                <div class="stackline">
+                  PHP 5.x/8.x (legacy + extensions) • MongoDB • Reporting
+                  (Excel/PDF/HTML)
+                </div>
+                <ul>
+                  <li>
+                    Maintained and extended legacy architecture safely,
+                    delivering client-requested features without breaking
+                    existing flows.
+                  </li>
+                  <li>
+                    Worked with MongoDB data models and non-trivial reporting
+                    requirements for enterprise customers.
+                  </li>
+                  <li>
+                    Delivered a large number of Excel exports and PDF reports;
+                    improved templates and output stability.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Freelance — Backend / Full-Stack (Go + PHP)
+                    </div>
+                    <div class="job-meta">
+                      Client projects: fast delivery, predictable APIs,
+                      Dockerized setups, integrations
+                    </div>
+                  </div>
+                  <div class="when">2023 — Present</div>
+                </div>
+                <div class="stackline">
+                  Laravel • Go (Echo) • PostgreSQL/MySQL • Docker • CI/CD •
+                  Vue/React/TypeScript (as needed)
+                </div>
+                <ul>
+                  <li>
+                    Built API-first Laravel services (auth, validation,
+                    resources/DTOs, file uploads without heavy dependencies).
+                  </li>
+                  <li>
+                    Designed relational models for “dynamic fields” cases where
+                    JSON storage is not suitable for fast search/indexing.
+                  </li>
+                  <li>
+                    Dockerized projects (PHP/Nginx/PostgreSQL/Redis/Memcached),
+                    improved onboarding via Makefile-style commands.
+                  </li>
+                  <li>
+                    Integrated emails (SMTP), background jobs/queues and
+                    operational tooling for production readiness.
+                  </li>
+                  <li>
+                    Contributed to frontend when needed: Vue 3 + Vite / React +
+                    TypeScript, responsive UI, and stable contracts with
+                    backend.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <div class="job-head">
+                  <div>
+                    <div class="job-title">
+                      Early career — PHP Web Development
+                    </div>
+                    <div class="job-meta">
+                      From university/team projects to production work
+                    </div>
+                  </div>
+                  <div class="when">2014 — 2018</div>
+                </div>
+                <div class="stackline">
+                  PHP • MySQL • HTML/CSS/JS • Deployment & server basics
+                </div>
+                <ul>
+                  <li>
+                    Built web applications and APIs; worked with SQL schemas,
+                    integrations and deployments.
+                  </li>
+                  <li>
+                    Formed strong foundations in backend reasoning, data
+                    handling, and pragmatic delivery.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Highlights</h2>
+            <div class="cols">
+              <div class="job">
+                <div class="job-title">Architecture & Quality</div>
+                <ul>
+                  <li>
+                    Clean Architecture mindset: testable usecases, explicit
+                    boundaries.
+                  </li>
+                  <li>
+                    Code review and safe refactoring in legacy-heavy
+                    environments.
+                  </li>
+                  <li>
+                    Predictable error handling and production-safe changes.
+                  </li>
+                </ul>
+              </div>
+              <div class="job">
+                <div class="job-title">Operations & Integrations</div>
+                <ul>
+                  <li>
+                    Docker, CI/CD pipelines, Nginx configs, TLS automation.
+                  </li>
+                  <li>
+                    SMTP/Exim deliverability: SPF/DKIM/DMARC and anti-spam
+                    hygiene.
+                  </li>
+                  <li>
+                    Performance basics: indexes, query patterns, caching with
+                    Redis.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Selected projects</h2>
+            <div class="cols">
+              <div class="job">
+                <div class="job-title">
+                  Dota league platform — matchmaking & lobby system
+                </div>
+                <div class="small">
+                  Go backend • Steam integration • real-time notifications
+                </div>
+                <ul>
+                  <li>
+                    Designed rules for party sizes (1/2/3/5), lobby merging,
+                    rating balance constraints.
+                  </li>
+                  <li>
+                    Planned WebSocket notification flows and safe state
+                    transitions.
+                  </li>
+                </ul>
+              </div>
+              <div class="job">
+                <div class="job-title">
+                  Infrastructure templates & dev images
+                </div>
+                <div class="small">
+                  Debian-based images • utilities • consistent developer
+                  experience
+                </div>
+                <ul>
+                  <li>
+                    Built standardized Docker images and bootstrap scripts to
+                    reduce onboarding friction.
+                  </li>
+                  <li>Tooling for debugging, logs, and repeatable builds.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div class="footer">
+        Put avatar into <span class="mono">/assets/avatar.jpg</span>.
+        Print-friendly layout included.
+      </div>
+    </div>
+  </body>
+</html>
