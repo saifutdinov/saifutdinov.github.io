@@ -6,11 +6,13 @@
     <title>Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)</title>
     <meta
       name="description"
-      content="Senior backend engineer: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, freelance experience."
+      content="Senior backend engineer with Go (Echo/gRPC) and PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, and freelance experience."
     />
 
+    <!-- Canonical -->
     <link rel="canonical" href="https://saifutdinov.github.io/" />
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Aidar Saifutdinov — Resume" />
     <meta
@@ -19,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="Senior backend engineer (Go, PHP/Laravel). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, and production-ready delivery."
+      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, and case studies."
     />
     <meta property="og:url" content="https://saifutdinov.github.io/" />
     <meta property="og:locale" content="en_US" />
@@ -27,11 +29,11 @@
 
     <meta
       property="og:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
     <meta
       property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -49,35 +51,35 @@
     />
     <meta
       name="twitter:description"
-      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, SQL, Docker, CI/CD."
+      content="Backend: Go (Echo/gRPC) + PHP (Laravel/Symfony). Clean Architecture, SQL, Docker, CI/CD, integrations."
     />
     <meta
       name="twitter:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
 
-    <!-- Optional: theme color for mobile previews -->
-    <meta name="theme-color" content="#0b0f17" />
+    <meta name="theme-color" content="#ffffff" />
 
     <style>
       :root {
-        --bg: #0b0f17;
-        --paper: #0f1523;
-        --card: #121a2c;
-        --border: rgba(255, 255, 255, 0.1);
-        --text: #eaf0ff;
-        --muted: rgba(234, 240, 255, 0.72);
-        --muted2: rgba(234, 240, 255, 0.58);
-        --accent: #69a8ff;
-        --accent2: #6effc3;
-        --shadow: 0 16px 46px rgba(0, 0, 0, 0.45);
+        /* Light theme default */
+        --bg: #ffffff;
+        --paper: #ffffff;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: rgba(15, 23, 42, 0.72);
+        --muted2: rgba(15, 23, 42, 0.58);
+        --border: rgba(15, 23, 42, 0.12);
+        --accent: #2563eb; /* blue */
+        --accent2: #10b981; /* emerald */
+        --shadow: 0 10px 28px rgba(2, 6, 23, 0.1);
         --mono:
           ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
           "Liberation Mono", "Courier New", monospace;
         --sans:
           ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
           Cantarell, "Noto Sans", Arial;
-        --radius: 18px;
+        --radius: 16px;
       }
 
       * {
@@ -95,17 +97,17 @@
         background:
           radial-gradient(
             900px 520px at 10% 0%,
-            rgba(105, 168, 255, 0.18),
+            rgba(37, 99, 235, 0.1),
             transparent 60%
           ),
           radial-gradient(
             900px 520px at 90% 10%,
-            rgba(110, 255, 195, 0.1),
+            rgba(16, 185, 129, 0.08),
             transparent 55%
           ),
           radial-gradient(
             900px 520px at 50% 110%,
-            rgba(105, 168, 255, 0.12),
+            rgba(37, 99, 235, 0.06),
             transparent 60%
           ),
           var(--bg);
@@ -120,48 +122,55 @@
       }
 
       .wrap {
-        max-width: 1120px;
+        max-width: 1160px;
         margin: 0 auto;
-        padding: 26px 16px 70px;
+        padding: 24px 16px 56px;
       }
+
       .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
         margin-bottom: 14px;
+        flex-wrap: wrap;
       }
+
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
       }
-      .brand-badge {
+
+      .brand-mark {
         width: 12px;
         height: 12px;
         border-radius: 4px;
         background: linear-gradient(135deg, var(--accent), var(--accent2));
-        box-shadow: 0 10px 25px rgba(105, 168, 255, 0.25);
+        box-shadow: 0 10px 22px rgba(37, 99, 235, 0.15);
       }
+
       .brand-title {
-        font-weight: 800;
+        font-weight: 850;
         letter-spacing: 0.2px;
       }
-      .top-actions {
+
+      .actions {
         display: flex;
         gap: 10px;
         align-items: center;
         flex-wrap: wrap;
       }
+
       .pill {
         display: inline-flex;
         align-items: center;
         gap: 10px;
         padding: 8px 12px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.72);
         border-radius: 999px;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+        box-shadow: var(--shadow);
         font-size: 14px;
         color: var(--muted);
       }
@@ -179,7 +188,7 @@
         gap: 16px;
         align-items: start;
       }
-      @media (max-width: 960px) {
+      @media (max-width: 980px) {
         .layout {
           grid-template-columns: 1fr;
         }
@@ -187,7 +196,7 @@
 
       .panel {
         border: 1px solid var(--border);
-        background: rgba(18, 26, 44, 0.76);
+        background: rgba(255, 255, 255, 0.76);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         overflow: hidden;
@@ -199,7 +208,6 @@
         inset: 0 0 auto 0;
         height: 3px;
         background: linear-gradient(90deg, var(--accent), var(--accent2));
-        opacity: 0.85;
       }
 
       .pad {
@@ -209,7 +217,6 @@
         border-top: 1px solid var(--border);
       }
 
-      /* Left header */
       .hero {
         display: flex;
         gap: 14px;
@@ -218,9 +225,9 @@
       .avatar {
         width: 92px;
         height: 92px;
-        border-radius: 18px;
+        border-radius: 16px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(2, 6, 23, 0.03);
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -258,8 +265,8 @@
         padding: 6px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        color: rgba(234, 240, 255, 0.92);
+        background: rgba(255, 255, 255, 0.72);
+        color: rgba(15, 23, 42, 0.92);
         white-space: nowrap;
       }
 
@@ -286,7 +293,7 @@
         padding: 10px 12px;
         border: 1px solid var(--border);
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(2, 6, 23, 0.02);
         font-size: 13px;
       }
       .kv .k {
@@ -299,14 +306,13 @@
       .note {
         margin-top: 12px;
         padding: 12px 14px;
-        border: 1px solid rgba(105, 168, 255, 0.22);
-        background: rgba(105, 168, 255, 0.08);
+        border: 1px solid rgba(37, 99, 235, 0.22);
+        background: rgba(37, 99, 235, 0.06);
         border-radius: 14px;
         font-size: 13px;
-        color: rgba(234, 240, 255, 0.92);
+        color: rgba(15, 23, 42, 0.9);
       }
 
-      /* Right: sections */
       .section {
         padding: 18px;
       }
@@ -321,7 +327,7 @@
       }
       .job {
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(2, 6, 23, 0.02);
         border-radius: 16px;
         padding: 14px;
       }
@@ -334,7 +340,7 @@
         margin-bottom: 8px;
       }
       .job-title {
-        font-weight: 780;
+        font-weight: 820;
         letter-spacing: 0.2px;
       }
       .job-meta {
@@ -346,14 +352,64 @@
         padding: 5px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(0, 0, 0, 0.18);
-        color: rgba(234, 240, 255, 0.78);
+        background: rgba(255, 255, 255, 0.75);
+        color: rgba(15, 23, 42, 0.76);
         white-space: nowrap;
       }
       .stackline {
         margin-top: 6px;
-        color: rgba(234, 240, 255, 0.7);
+        color: rgba(15, 23, 42, 0.7);
         font-size: 12px;
+      }
+
+      .case {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.78);
+        border-radius: 16px;
+        padding: 14px;
+      }
+      .case h3 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+      .case-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .case-sub {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .case-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      @media (max-width: 980px) {
+        .case-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .case-box {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(2, 6, 23, 0.02);
+        padding: 10px 12px;
+      }
+      .case-box b {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: rgba(15, 23, 42, 0.78);
       }
       ul {
         margin: 10px 0 0 18px;
@@ -368,51 +424,25 @@
         grid-template-columns: 1fr 1fr;
         gap: 12px;
       }
-      @media (max-width: 960px) {
+      @media (max-width: 980px) {
         .cols {
           grid-template-columns: 1fr;
         }
       }
 
-      .footer {
-        margin-top: 14px;
-        text-align: center;
-        color: rgba(234, 240, 255, 0.65);
-        font-size: 12px;
-      }
-
       @media print {
         body {
           background: #fff;
-          color: #111;
         }
         .panel {
           box-shadow: none;
-          background: #fff;
-          border: 1px solid #ddd;
         }
-        .panel:before {
-          display: none;
-        }
-        .chip,
-        .when,
         .pill {
-          border: 1px solid #ddd;
-          background: #fff;
-          color: #111;
-        }
-        .muted,
-        .small {
-          color: #444;
+          box-shadow: none;
         }
         a {
-          color: #111;
+          color: #0f172a;
           text-decoration: none;
-        }
-        .note {
-          border: 1px solid #ddd;
-          background: #fff;
-          color: #111;
         }
       }
     </style>
@@ -422,20 +452,19 @@
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="brand-badge" aria-hidden="true"></div>
+          <div class="brand-mark" aria-hidden="true"></div>
           <div class="brand-title">Resume</div>
           <div class="pill" style="padding: 6px 10px">
             <span class="mono">saifutdinov.github.io</span>
           </div>
         </div>
-
-        <div class="top-actions">
+        <div class="actions">
           <div class="pill">
             <span class="muted">Language:</span> <strong>EN</strong>
             <span class="sep">|</span> <a href="ru.html">RU</a>
           </div>
           <div class="pill">
-            <span class="muted">PDF:</span> <strong>Ctrl/Cmd + P</strong>
+            <span class="muted">Print:</span> <strong>Ctrl/Cmd + P</strong>
           </div>
         </div>
       </div>
@@ -447,12 +476,11 @@
             <div class="hero">
               <div class="avatar">
                 <img
-                  src="/assets/images/avatar.jpg"
+                  src="assets/avatar.jpg"
                   alt="Aidar Saifutdinov"
                   onerror="
                     this.remove();
-                    this.parentElement.textContent =
-                      'Avatar (assets/avatar.jpg)';
+                    this.parentElement.textContent = 'Avatar';
                   "
                 />
               </div>
@@ -537,6 +565,7 @@
               <span class="chip">SPF/DKIM/DMARC</span>
               <span class="chip">Let’s Encrypt</span>
               <span class="chip">Elasticsearch</span>
+              <span class="chip">React/Vue + TypeScript</span>
             </div>
 
             <h2 style="margin-top: 14px">Languages</h2>
@@ -557,13 +586,12 @@
               PHP. Comfortable with legacy maintenance, modernization,
               integrations, data-heavy reporting, and full-cycle delivery.
               Prefer clean boundaries (Clean Architecture), explicit code, and
-              predictable systems in production.
+              predictable production systems.
             </div>
           </section>
 
           <section class="section">
             <h2>Experience</h2>
-
             <div class="timeline">
               <div class="job">
                 <div class="job-head">
@@ -573,8 +601,8 @@
                       Assessment Platform)
                     </div>
                     <div class="job-meta">
-                      Corporate surveys & analytics: engagement polls,
-                      psychological tests, 360° feedback, business sociometry
+                      Engagement surveys, psychological/ability tests, 360°
+                      feedback, business sociometry
                     </div>
                   </div>
                   <div class="when">2022 — Present</div>
@@ -586,34 +614,33 @@
                 </div>
                 <ul>
                   <li>
-                    Helped stabilize an inherited codebase; introduced
-                    systematic code review and aligned backend around Clean
-                    Architecture (Delivery/Usecase/Repository).
+                    Stabilized an inherited codebase (started by a junior team);
+                    introduced systematic code review and aligned backend around
+                    Clean Architecture (Delivery/Usecase/Repository).
                   </li>
                   <li>
-                    Designed and built API modules and complex business logic
-                    for collecting, preparing, storing, and serving
-                    questionnaire data.
+                    Built and evolved API modules and business logic for
+                    collecting, preparing, storing, and serving questionnaire
+                    data.
                   </li>
                   <li>
-                    Designed PostgreSQL schema and led the system through
-                    multiple major migrations; improved queries and data model
-                    over time.
+                    Designed PostgreSQL schema and led multiple large migration
+                    stages; improved queries and data model iteratively.
                   </li>
                   <li>
-                    Maintained and improved a Go “processor” module responsible
-                    for heavy calculations and final result aggregation;
-                    delivered substantial fixes and reliability improvements.
+                    Maintained and improved a Go “processor” module for heavy
+                    calculations and final result aggregation; delivered
+                    substantial fixes and reliability improvements.
                   </li>
                   <li>
-                    Contributed to React “Player” (lightweight survey runner):
-                    correct question flow per respondent, fast load, and
-                    responsive UX for mobile/desktop.
+                    Contributed to React “Player” (survey runner): correct
+                    question flow per respondent, fast load, responsive UX,
+                    reliable answer submission.
                   </li>
                   <li>
-                    Covered production concerns: Docker builds, GitLab
-                    pipelines/runners, Nginx configuration & logging, TLS
-                    automation, and email deliverability setup.
+                    Owned key production concerns: Docker builds, GitLab
+                    pipelines/runners, Nginx configuration/logging, TLS
+                    automation, and mail deliverability (SPF/DKIM/DMARC).
                   </li>
                 </ul>
               </div>
@@ -631,12 +658,11 @@
                   <div class="when">2019 — Present</div>
                 </div>
                 <div class="stackline">
-                  PHP 5.x/8.x (legacy + extensions) • MongoDB • Reporting
-                  (Excel/PDF/HTML)
+                  PHP 5.x (legacy) • MongoDB • Reporting (Excel/PDF/HTML)
                 </div>
                 <ul>
                   <li>
-                    Maintained and extended legacy architecture safely,
+                    Maintained and extended a legacy architecture safely,
                     delivering client-requested features without breaking
                     existing flows.
                   </li>
@@ -645,8 +671,8 @@
                     requirements for enterprise customers.
                   </li>
                   <li>
-                    Delivered a large number of Excel exports and PDF reports;
-                    improved templates and output stability.
+                    Delivered many Excel exports and PDF reports; improved
+                    templates and output stability.
                   </li>
                 </ul>
               </div>
@@ -670,136 +696,287 @@
                 </div>
                 <ul>
                   <li>
-                    Built API-first Laravel services (auth, validation,
-                    resources/DTOs, file uploads without heavy dependencies).
+                    Built API-first Laravel services: auth (cookies/tokens),
+                    validation, filtering, file uploads (without heavy
+                    libraries), email sending (SMTP).
                   </li>
                   <li>
-                    Designed relational models for “dynamic fields” cases where
-                    JSON storage is not suitable for fast search/indexing.
+                    Designed relational models for “dynamic fields” where JSON
+                    storage is not suitable for fast search and indexing.
                   </li>
                   <li>
-                    Dockerized projects (PHP/Nginx/PostgreSQL/Redis/Memcached),
-                    improved onboarding via Makefile-style commands.
+                    Dockerized full stacks
+                    (PHP/Nginx/PostgreSQL/Redis/Memcached), improved onboarding
+                    via Makefile-style commands and clear README workflows.
                   </li>
                   <li>
-                    Integrated emails (SMTP), background jobs/queues and
-                    operational tooling for production readiness.
+                    Implemented Go/Echo middleware patterns (recover, error
+                    mapping), and WebSocket notification flows when required.
                   </li>
                   <li>
-                    Contributed to frontend when needed: Vue 3 + Vite / React +
-                    TypeScript, responsive UI, and stable contracts with
-                    backend.
+                    Contributed to frontend refactors: Vue 3 + Vite / React +
+                    TypeScript, Tailwind component cleanup, routing and form
+                    validation.
                   </li>
                 </ul>
               </div>
+            </div>
+          </section>
 
-              <div class="job">
-                <div class="job-head">
-                  <div>
-                    <div class="job-title">
-                      Early career — PHP Web Development
-                    </div>
-                    <div class="job-meta">
-                      From university/team projects to production work
-                    </div>
+          <section class="section">
+            <h2>Case studies</h2>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Azimuth: Clean Architecture adoption & stabilizing inherited
+                    code
+                  </h3>
+                  <div class="case-sub">
+                    Go backend • Echo • Delivery/Usecase/Repository separation •
+                    code review culture
                   </div>
-                  <div class="when">2014 — 2018</div>
                 </div>
-                <div class="stackline">
-                  PHP • MySQL • HTML/CSS/JS • Deployment & server basics
+                <div class="when">Product platform</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Problem</b>
+                  The project grew from previous iterations with inconsistent
+                  structure; changes became risky and slow.
                 </div>
-                <ul>
-                  <li>
-                    Built web applications and APIs; worked with SQL schemas,
-                    integrations and deployments.
-                  </li>
-                  <li>
-                    Formed strong foundations in backend reasoning, data
-                    handling, and pragmatic delivery.
-                  </li>
-                </ul>
+                <div class="case-box">
+                  <b>Constraints</b>
+                  No “rewrite”; production must keep moving; team had mixed
+                  seniority levels.
+                </div>
+                <div class="case-box">
+                  <b>Solution</b>
+                  Introduced code review, aligned backend with Clean
+                  Architecture boundaries, moved business logic into usecases.
+                </div>
+                <div class="case-box">
+                  <b>My work</b>
+                  Designed base service structure, implemented key business
+                  flows, improved error handling and maintainability.
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Azimuth: PostgreSQL schema evolution & safe migrations
+                  </h3>
+                  <div class="case-sub">
+                    Data modeling • migrations • indexing • performance
+                    iterations
+                  </div>
+                </div>
+                <div class="when">Database</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Problem</b>
+                  Domain growth required changing schema without breaking
+                  reporting and questionnaire flows.
+                </div>
+                <div class="case-box">
+                  <b>Constraints</b>
+                  Live data, ongoing releases, and high risk of regressions in
+                  reports.
+                </div>
+                <div class="case-box">
+                  <b>Solution</b>
+                  Incremental migrations (add → backfill → switch → cleanup),
+                  query review, indexes for hot paths.
+                </div>
+                <div class="case-box">
+                  <b>My work</b>
+                  Designed schema, led multiple major migration stages, improved
+                  query patterns and structure.
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Azimuth: Processor module — heavy calculations & reliability
+                    fixes
+                  </h3>
+                  <div class="case-sub">
+                    Go module • math/aggregations • inherited complex code
+                  </div>
+                </div>
+                <div class="when">Backend module</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Problem</b>
+                  Complex inherited code could produce subtle result errors and
+                  was hard to change safely.
+                </div>
+                <div class="case-box">
+                  <b>Constraints</b>
+                  Hard-to-reproduce edge cases; correctness mattered more than
+                  “quick changes”.
+                </div>
+                <div class="case-box">
+                  <b>Solution</b>
+                  Careful fixes, better validations, safer error paths,
+                  incremental refactors where possible.
+                </div>
+                <div class="case-box">
+                  <b>My work</b>
+                  Delivered substantial fixes and stabilizations, improved
+                  edge-case handling and reliability.
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Freelance: Laravel API-first templates (auth, filters,
+                    uploads) + Dockerized delivery
+                  </h3>
+                  <div class="case-sub">
+                    Laravel • PostgreSQL/MySQL • Docker Compose • clean project
+                    bootstrap
+                  </div>
+                </div>
+                <div class="when">Client work</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Problem</b>
+                  Clients needed fast delivery without sacrificing
+                  maintainability and future search performance.
+                </div>
+                <div class="case-box">
+                  <b>Constraints</b>
+                  Limited time; prefer “no extra libraries”; must be
+                  reproducible on any machine.
+                </div>
+                <div class="case-box">
+                  <b>Solution</b>
+                  API-first design, explicit validation, relational modeling for
+                  dynamic fields, Docker + Makefile workflows.
+                </div>
+                <div class="case-box">
+                  <b>My work</b>
+                  Implemented auth via cookies/tokens, filters, uploads without
+                  extra libs, SMTP, and dockerized stacks.
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Perfex PDF module: block-based PDF editing + preview-driven
+                    workflow
+                  </h3>
+                  <div class="case-sub">
+                    Front-end module architecture • block types • preview →
+                    generate pipeline
+                  </div>
+                </div>
+                <div class="when">Freelance case</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Problem</b>
+                  Need to place many notes/blocks like a PDF editor while
+                  ensuring generator can parse and render reliably.
+                </div>
+                <div class="case-box">
+                  <b>Constraints</b>
+                  Many annotations; generator constraints; maintainable module
+                  structure.
+                </div>
+                <div class="case-box">
+                  <b>Solution</b>
+                  Split UI into block components, keep a JSON schema of block
+                  types, ensure styles are generator-friendly.
+                </div>
+                <div class="case-box">
+                  <b>My work</b>
+                  Designed front module structure, planned real-data preview
+                  fill (project/customer), and fix list integration.
+                </div>
+              </div>
+            </div>
+
+            <div class="case">
+              <div class="case-top">
+                <div>
+                  <h3>OCR docx → docx: preserving pages 1:1 for printing</h3>
+                  <div class="case-sub">
+                    Automation pipeline • page order • per-page artifacts •
+                    final merge
+                  </div>
+                </div>
+                <div class="when">Utility</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Problem</b>
+                  Large 90+ page document with images per page; needed text
+                  extraction while keeping strict page order.
+                </div>
+                <div class="case-box">
+                  <b>Constraints</b>
+                  Must match page count 1:1; performance and editor usability;
+                  separate debug artifacts.
+                </div>
+                <div class="case-box">
+                  <b>Solution</b>
+                  Split into per-page outputs (docx/txt), clean workspace each
+                  run, then merge preserving exact ordering.
+                </div>
+                <div class="case-box">
+                  <b>My work</b>
+                  Designed the pipeline requirements: ordering, clearing
+                  outputs, and consistent Times New Roman formatting.
+                </div>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2>Highlights</h2>
-            <div class="cols">
-              <div class="job">
-                <div class="job-title">Architecture & Quality</div>
-                <ul>
-                  <li>
-                    Clean Architecture mindset: testable usecases, explicit
-                    boundaries.
-                  </li>
-                  <li>
-                    Code review and safe refactoring in legacy-heavy
-                    environments.
-                  </li>
-                  <li>
-                    Predictable error handling and production-safe changes.
-                  </li>
-                </ul>
-              </div>
-              <div class="job">
-                <div class="job-title">Operations & Integrations</div>
-                <ul>
-                  <li>
-                    Docker, CI/CD pipelines, Nginx configs, TLS automation.
-                  </li>
-                  <li>
-                    SMTP/Exim deliverability: SPF/DKIM/DMARC and anti-spam
-                    hygiene.
-                  </li>
-                  <li>
-                    Performance basics: indexes, query patterns, caching with
-                    Redis.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section class="section">
-            <h2>Selected projects</h2>
-            <div class="cols">
-              <div class="job">
-                <div class="job-title">
-                  Dota league platform — matchmaking & lobby system
+            <h2>Education</h2>
+            <div class="job">
+              <div class="job-head">
+                <div>
+                  <div class="job-title">
+                    Moscow Polytechnic University (Mospolytech)
+                  </div>
+                  <div class="job-meta">
+                    Information Systems and Technologies • Web Development
+                  </div>
                 </div>
-                <div class="small">
-                  Go backend • Steam integration • real-time notifications
-                </div>
-                <ul>
-                  <li>
-                    Designed rules for party sizes (1/2/3/5), lobby merging,
-                    rating balance constraints.
-                  </li>
-                  <li>
-                    Planned WebSocket notification flows and safe state
-                    transitions.
-                  </li>
-                </ul>
+                <div class="when">2015 — 2019</div>
               </div>
-              <div class="job">
-                <div class="job-title">
-                  Infrastructure templates & dev images
-                </div>
-                <div class="small">
-                  Debian-based images • utilities • consistent developer
-                  experience
-                </div>
-                <ul>
-                  <li>
-                    Built standardized Docker images and bootstrap scripts to
-                    reduce onboarding friction.
-                  </li>
-                  <li>Tooling for debugging, logs, and repeatable builds.</li>
-                </ul>
-              </div>
+              <ul>
+                <li>
+                  Team projects from idea to MVP, documentation, and
+                  presentations.
+                </li>
+                <li>
+                  Completed an SEO/promotion course as part of the program.
+                </li>
+              </ul>
             </div>
           </section>
         </main>
       </div>
+    </div>
   </body>
 </html>

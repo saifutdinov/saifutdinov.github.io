@@ -6,11 +6,13 @@
     <title>Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)</title>
     <meta
       name="description"
-      content="Senior backend разработчик: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции, фриланс."
+      content="Senior backend разработчик: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции и фриланс."
     />
 
+    <!-- Canonical -->
     <link rel="canonical" href="https://saifutdinov.github.io/ru.html" />
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Айдар Сайфутдинов — Резюме" />
     <meta
@@ -19,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="Backend-инженер: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции и продакшн-доставка."
+      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции и разбор кейсов."
     />
     <meta property="og:url" content="https://saifutdinov.github.io/ru.html" />
     <meta property="og:locale" content="ru_RU" />
@@ -27,18 +29,18 @@
 
     <meta
       property="og:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-ru.png"
     />
     <meta
       property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-ru.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Айдар Сайфутдинов — Backend Engineer (Go & PHP)"
+      content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)"
     />
 
     <!-- Twitter / X -->
@@ -49,34 +51,34 @@
     />
     <meta
       name="twitter:description"
-      content="Go, PHP/Laravel, Clean Architecture, SQL, Docker, CI/CD, интеграции."
+      content="Backend: Go + PHP/Laravel. Clean Architecture, SQL, Docker, CI/CD, интеграции."
     />
     <meta
       name="twitter:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-ru.png"
     />
 
-    <meta name="theme-color" content="#0b0f17" />
+    <meta name="theme-color" content="#ffffff" />
 
     <style>
       :root {
-        --bg: #0b0f17;
-        --paper: #0f1523;
-        --card: #121a2c;
-        --border: rgba(255, 255, 255, 0.1);
-        --text: #eaf0ff;
-        --muted: rgba(234, 240, 255, 0.72);
-        --muted2: rgba(234, 240, 255, 0.58);
-        --accent: #69a8ff;
-        --accent2: #6effc3;
-        --shadow: 0 16px 46px rgba(0, 0, 0, 0.45);
+        --bg: #ffffff;
+        --paper: #ffffff;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: rgba(15, 23, 42, 0.72);
+        --muted2: rgba(15, 23, 42, 0.58);
+        --border: rgba(15, 23, 42, 0.12);
+        --accent: #2563eb;
+        --accent2: #10b981;
+        --shadow: 0 10px 28px rgba(2, 6, 23, 0.1);
         --mono:
           ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
           "Liberation Mono", "Courier New", monospace;
         --sans:
           ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
           Cantarell, "Noto Sans", Arial;
-        --radius: 18px;
+        --radius: 16px;
       }
 
       * {
@@ -94,17 +96,17 @@
         background:
           radial-gradient(
             900px 520px at 10% 0%,
-            rgba(105, 168, 255, 0.18),
+            rgba(37, 99, 235, 0.1),
             transparent 60%
           ),
           radial-gradient(
             900px 520px at 90% 10%,
-            rgba(110, 255, 195, 0.1),
+            rgba(16, 185, 129, 0.08),
             transparent 55%
           ),
           radial-gradient(
             900px 520px at 50% 110%,
-            rgba(105, 168, 255, 0.12),
+            rgba(37, 99, 235, 0.06),
             transparent 60%
           ),
           var(--bg);
@@ -119,48 +121,55 @@
       }
 
       .wrap {
-        max-width: 1120px;
+        max-width: 1160px;
         margin: 0 auto;
-        padding: 26px 16px 70px;
+        padding: 24px 16px 56px;
       }
+
       .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
         margin-bottom: 14px;
+        flex-wrap: wrap;
       }
+
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
       }
-      .brand-badge {
+
+      .brand-mark {
         width: 12px;
         height: 12px;
         border-radius: 4px;
         background: linear-gradient(135deg, var(--accent), var(--accent2));
-        box-shadow: 0 10px 25px rgba(105, 168, 255, 0.25);
+        box-shadow: 0 10px 22px rgba(37, 99, 235, 0.15);
       }
+
       .brand-title {
-        font-weight: 800;
+        font-weight: 850;
         letter-spacing: 0.2px;
       }
-      .top-actions {
+
+      .actions {
         display: flex;
         gap: 10px;
         align-items: center;
         flex-wrap: wrap;
       }
+
       .pill {
         display: inline-flex;
         align-items: center;
         gap: 10px;
         padding: 8px 12px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.72);
         border-radius: 999px;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+        box-shadow: var(--shadow);
         font-size: 14px;
         color: var(--muted);
       }
@@ -178,7 +187,7 @@
         gap: 16px;
         align-items: start;
       }
-      @media (max-width: 960px) {
+      @media (max-width: 980px) {
         .layout {
           grid-template-columns: 1fr;
         }
@@ -186,7 +195,7 @@
 
       .panel {
         border: 1px solid var(--border);
-        background: rgba(18, 26, 44, 0.76);
+        background: rgba(255, 255, 255, 0.76);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         overflow: hidden;
@@ -198,7 +207,6 @@
         inset: 0 0 auto 0;
         height: 3px;
         background: linear-gradient(90deg, var(--accent), var(--accent2));
-        opacity: 0.85;
       }
 
       .pad {
@@ -216,9 +224,9 @@
       .avatar {
         width: 92px;
         height: 92px;
-        border-radius: 18px;
+        border-radius: 16px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(2, 6, 23, 0.03);
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -256,8 +264,8 @@
         padding: 6px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        color: rgba(234, 240, 255, 0.92);
+        background: rgba(255, 255, 255, 0.72);
+        color: rgba(15, 23, 42, 0.92);
         white-space: nowrap;
       }
 
@@ -284,7 +292,7 @@
         padding: 10px 12px;
         border: 1px solid var(--border);
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(2, 6, 23, 0.02);
         font-size: 13px;
       }
       .kv .k {
@@ -297,11 +305,11 @@
       .note {
         margin-top: 12px;
         padding: 12px 14px;
-        border: 1px solid rgba(105, 168, 255, 0.22);
-        background: rgba(105, 168, 255, 0.08);
+        border: 1px solid rgba(37, 99, 235, 0.22);
+        background: rgba(37, 99, 235, 0.06);
         border-radius: 14px;
         font-size: 13px;
-        color: rgba(234, 240, 255, 0.92);
+        color: rgba(15, 23, 42, 0.9);
       }
 
       .section {
@@ -318,7 +326,7 @@
       }
       .job {
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(2, 6, 23, 0.02);
         border-radius: 16px;
         padding: 14px;
       }
@@ -331,7 +339,7 @@
         margin-bottom: 8px;
       }
       .job-title {
-        font-weight: 780;
+        font-weight: 820;
         letter-spacing: 0.2px;
       }
       .job-meta {
@@ -343,14 +351,64 @@
         padding: 5px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(0, 0, 0, 0.18);
-        color: rgba(234, 240, 255, 0.78);
+        background: rgba(255, 255, 255, 0.75);
+        color: rgba(15, 23, 42, 0.76);
         white-space: nowrap;
       }
       .stackline {
         margin-top: 6px;
-        color: rgba(234, 240, 255, 0.7);
+        color: rgba(15, 23, 42, 0.7);
         font-size: 12px;
+      }
+
+      .case {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.78);
+        border-radius: 16px;
+        padding: 14px;
+      }
+      .case h3 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+      .case-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .case-sub {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .case-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      @media (max-width: 980px) {
+        .case-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .case-box {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(2, 6, 23, 0.02);
+        padding: 10px 12px;
+      }
+      .case-box b {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: rgba(15, 23, 42, 0.78);
       }
       ul {
         margin: 10px 0 0 18px;
@@ -365,51 +423,25 @@
         grid-template-columns: 1fr 1fr;
         gap: 12px;
       }
-      @media (max-width: 960px) {
+      @media (max-width: 980px) {
         .cols {
           grid-template-columns: 1fr;
         }
       }
 
-      .footer {
-        margin-top: 14px;
-        text-align: center;
-        color: rgba(234, 240, 255, 0.65);
-        font-size: 12px;
-      }
-
       @media print {
         body {
           background: #fff;
-          color: #111;
         }
         .panel {
           box-shadow: none;
-          background: #fff;
-          border: 1px solid #ddd;
         }
-        .panel:before {
-          display: none;
-        }
-        .chip,
-        .when,
         .pill {
-          border: 1px solid #ddd;
-          background: #fff;
-          color: #111;
-        }
-        .muted,
-        .small {
-          color: #444;
+          box-shadow: none;
         }
         a {
-          color: #111;
+          color: #0f172a;
           text-decoration: none;
-        }
-        .note {
-          border: 1px solid #ddd;
-          background: #fff;
-          color: #111;
         }
       }
     </style>
@@ -419,20 +451,19 @@
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="brand-badge" aria-hidden="true"></div>
+          <div class="brand-mark" aria-hidden="true"></div>
           <div class="brand-title">Резюме</div>
           <div class="pill" style="padding: 6px 10px">
             <span class="mono">saifutdinov.github.io</span>
           </div>
         </div>
-
-        <div class="top-actions">
+        <div class="actions">
           <div class="pill">
             <span class="muted">Язык:</span> <a href="index.html">EN</a>
             <span class="sep">|</span> <strong>RU</strong>
           </div>
           <div class="pill">
-            <span class="muted">PDF:</span> <strong>Ctrl/Cmd + P</strong>
+            <span class="muted">Печать:</span> <strong>Ctrl/Cmd + P</strong>
           </div>
         </div>
       </div>
@@ -444,12 +475,11 @@
             <div class="hero">
               <div class="avatar">
                 <img
-                  src="/assets/images/avatar.jpg"
+                  src="assets/avatar.jpg"
                   alt="Айдар Сайфутдинов"
                   onerror="
                     this.remove();
-                    this.parentElement.textContent =
-                      'Аватар (assets/avatar.jpg)';
+                    this.parentElement.textContent = 'Аватар';
                   "
                 />
               </div>
@@ -534,6 +564,7 @@
               <span class="chip">SPF/DKIM/DMARC</span>
               <span class="chip">Let’s Encrypt</span>
               <span class="chip">Elasticsearch</span>
+              <span class="chip">React/Vue + TypeScript</span>
             </div>
 
             <h2 style="margin-top: 14px">Языки</h2>
@@ -551,7 +582,7 @@
             <h2>О себе</h2>
             <div class="muted">
               Backend-инженер с продакшн-опытом в Go и PHP. Умею поддерживать
-              легаси и модернизировать систему, делать интеграции, отчёты, и
+              легаси и модернизировать систему, делать интеграции, отчёты и
               доводить решения до продакшна. Предпочитаю Clean Architecture,
               явный код и предсказуемое поведение в проде.
             </div>
@@ -559,7 +590,6 @@
 
           <section class="section">
             <h2>Опыт</h2>
-
             <div class="timeline">
               <div class="job">
                 <div class="job-head">
@@ -581,9 +611,9 @@
                 </div>
                 <ul>
                   <li>
-                    Стабилизировал унаследованную кодовую базу: внедрили code
-                    review и выровняли бэк под Clean Architecture
-                    (Delivery/Usecase/Repository).
+                    Стабилизировал унаследованную кодовую базу (проект стартовал
+                    с “зелёной” командой): внедрили code review и выровняли бэк
+                    под Clean Architecture (Delivery/Usecase/Repository).
                   </li>
                   <li>
                     Развивал API и сложную бизнес-логику: сбор, подготовка,
@@ -592,7 +622,7 @@
                   <li>
                     Проектировал схему PostgreSQL и провёл систему через
                     несколько крупных этапов миграций; улучшал запросы и модель
-                    данных.
+                    данных итеративно.
                   </li>
                   <li>
                     Поддерживал и улучшал Go-“processor” (тяжелые вычисления и
@@ -607,7 +637,7 @@
                   <li>
                     Закрывал эксплуатацию: Docker-сборки,
                     GitLab-пайплайны/раннеры, Nginx-конфиги и логи,
-                    TLS-автоматизация, настройка доставляемости почты.
+                    TLS-автоматизация, доставляемость почты (SPF/DKIM/DMARC).
                   </li>
                 </ul>
               </div>
@@ -625,8 +655,7 @@
                   <div class="when">2019 — н.в.</div>
                 </div>
                 <div class="stackline">
-                  PHP 5.x/8.x (легаси + расширения) • MongoDB • Отчёты
-                  (Excel/PDF/HTML)
+                  PHP 5.x (легаси) • MongoDB • Отчёты (Excel/PDF/HTML)
                 </div>
                 <ul>
                   <li>
@@ -664,8 +693,9 @@
                 </div>
                 <ul>
                   <li>
-                    API-first сервисы на Laravel: auth, валидация, ресурсы/DTO,
-                    загрузка файлов без тяжёлых зависимостей.
+                    API-first сервисы на Laravel: auth (cookies/tokens),
+                    валидация, фильтры, загрузка файлов без тяжёлых
+                    зависимостей, SMTP-рассылки.
                   </li>
                   <li>
                     Реляционные модели под “динамические поля”, когда JSON не
@@ -676,102 +706,207 @@
                     удобные команды запуска и онбординг.
                   </li>
                   <li>
-                    Интеграции: SMTP-почта, фоновые задачи/очереди и инструменты
-                    под прод.
+                    Go/Echo паттерны: recover/panic→error, маппинг ошибок в
+                    HTTP, WebSocket-уведомления при необходимости.
                   </li>
                   <li>
                     Фронт при необходимости: Vue 3 + Vite / React + TypeScript,
-                    адаптивная верстка и стабильные контракты.
+                    Tailwind-рефакторинг, роутинг и валидация форм.
                   </li>
                 </ul>
               </div>
+            </div>
+          </section>
 
-              <div class="job">
-                <div class="job-head">
-                  <div>
-                    <div class="job-title">
-                      Начало карьеры — PHP web development
-                    </div>
-                    <div class="job-meta">
-                      От учебных/командных проектов до продакшн-задач
-                    </div>
+          <section class="section">
+            <h2>Кейсы</h2>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Azimuth: внедрение Clean Architecture и стабилизация
+                    наследия
+                  </h3>
+                  <div class="case-sub">
+                    Go backend • Echo • разделение Delivery/Usecase/Repository •
+                    культура code review
                   </div>
-                  <div class="when">2014 — 2018</div>
                 </div>
-                <div class="stackline">
-                  PHP • MySQL • HTML/CSS/JS • База деплоя и серверов
+                <div class="when">Продукт</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Проблема</b> Рост продукта на базе старых наработок →
+                  сложно менять, много регрессий.
                 </div>
-                <ul>
-                  <li>
-                    Разработка веб-приложений и API; работа со схемами SQL,
-                    интеграциями и деплоем.
-                  </li>
-                  <li>
-                    Сформировал прочную базу в backend-мышлении, данных и
-                    прагматичной поставке задач.
-                  </li>
-                </ul>
+                <div class="case-box">
+                  <b>Ограничения</b> Нельзя переписать; продакшн должен
+                  работать; команда разного уровня.
+                </div>
+                <div class="case-box">
+                  <b>Решение</b> Code review + выравнивание архитектуры под
+                  Clean Architecture, перенос логики в usecase.
+                </div>
+                <div class="case-box">
+                  <b>Мой вклад</b> Каркас сервиса, ключевые бизнес-потоки,
+                  предсказуемая обработка ошибок.
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Azimuth: PostgreSQL миграции и эволюция схемы без “падения
+                    прода”
+                  </h3>
+                  <div class="case-sub">
+                    Модель данных • миграции • индексация • итеративная
+                    оптимизация запросов
+                  </div>
+                </div>
+                <div class="when">База</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Проблема</b> Домен растёт → нужно менять структуру данных,
+                  не ломая отчёты и флоу.
+                </div>
+                <div class="case-box">
+                  <b>Ограничения</b> Живые данные, регулярные релизы, высокая
+                  цена ошибок.
+                </div>
+                <div class="case-box">
+                  <b>Решение</b> Миграции по шагам: add→backfill→switch→cleanup;
+                  индексы для горячих путей.
+                </div>
+                <div class="case-box">
+                  <b>Мой вклад</b> Проектирование схемы, крупные этапы миграций,
+                  улучшение запросов и структуры.
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>Perfex PDF: модуль блоков и превью перед генерацией</h3>
+                  <div class="case-sub">
+                    UI-архитектура • типы блоков • JSON схема • превью →
+                    генерация
+                  </div>
+                </div>
+                <div class="when">Фриланс</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Проблема</b> Много заметок/блоков как в PDF-редакторе, но
+                  генератор должен распознавать всё стабильно.
+                </div>
+                <div class="case-box">
+                  <b>Ограничения</b> Ограничения генератора PDF; нужен удобный
+                  dev-процесс и расширяемость.
+                </div>
+                <div class="case-box">
+                  <b>Решение</b> Разделение на компоненты блоков, JSON с типами,
+                  стили “дружелюбные” к генератору.
+                </div>
+                <div class="case-box">
+                  <b>Мой вклад</b> Ревью узких мест, план модульности,
+                  подготовка реального превью (project/customer).
+                </div>
+              </div>
+            </div>
+
+            <div class="case" style="margin-bottom: 12px">
+              <div class="case-top">
+                <div>
+                  <h3>OCR docx → docx: строгая страничность 1:1 для печати</h3>
+                  <div class="case-sub">
+                    Пайплайн • порядок страниц • debug-артефакты • финальная
+                    сборка
+                  </div>
+                </div>
+                <div class="when">Утилита</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Проблема</b> 90+ страниц, на каждой картинка; нужен текст с
+                  сохранением порядка и числа страниц.
+                </div>
+                <div class="case-box">
+                  <b>Ограничения</b> Нельзя “склеить как получится”; важна
+                  печать и просмотр; скорость.
+                </div>
+                <div class="case-box">
+                  <b>Решение</b> По странице: docx+txt, очистка результатов
+                  перед запуском, затем merge в 1 документ 1:1.
+                </div>
+                <div class="case-box">
+                  <b>Мой вклад</b> Требования к строгому порядку, clean run,
+                  единый стиль (Times New Roman 12).
+                </div>
+              </div>
+            </div>
+
+            <div class="case">
+              <div class="case-top">
+                <div>
+                  <h3>
+                    Trading bot skeleton: Docker + SQLite + reload-friendly
+                    development
+                  </h3>
+                  <div class="case-sub">
+                    Python service • API integration • containerization •
+                    minimal launch plan
+                  </div>
+                </div>
+                <div class="when">Проект</div>
+              </div>
+              <div class="case-grid">
+                <div class="case-box">
+                  <b>Проблема</b> Нужен быстрый старт проекта для
+                  алгоритмической торговли, но с нормальной структурой и
+                  деплоем.
+                </div>
+                <div class="case-box">
+                  <b>Ограничения</b> Минимум зависимостей, простота запуска,
+                  база SQLite, hot reload в dev.
+                </div>
+                <div class="case-box">
+                  <b>Решение</b> Каркас сервиса + docker-compose, конфиги, база
+                  SQLite, команды для запуска/разработки.
+                </div>
+                <div class="case-box">
+                  <b>Мой вклад</b> План проекта, структура, dockerization,
+                  подготовка к запуску и дальнейшему расширению.
+                </div>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2>Сильные стороны</h2>
-            <div class="cols">
-              <div class="job">
-                <div class="job-title">Архитектура и качество</div>
-                <ul>
-                  <li>
-                    Clean Architecture: тестируемые usecases, понятные границы.
-                  </li>
-                  <li>Code review, безопасный рефакторинг в легаси-среде.</li>
-                  <li>
-                    Предсказуемая обработка ошибок и “production-safe”
-                    изменения.
-                  </li>
-                </ul>
-              </div>
-              <div class="job">
-                <div class="job-title">Интеграции и эксплуатация</div>
-                <ul>
-                  <li>Docker, CI/CD, Nginx, автоматизация TLS.</li>
-                  <li>Почта: SPF/DKIM/DMARC, доставляемость и антиспам.</li>
-                  <li>Производительность: индексы, запросы, кеш Redis.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section class="section">
-            <h2>Проекты</h2>
-            <div class="cols">
-              <div class="job">
-                <div class="job-title">
-                  Dota league platform — матчмейкинг и лобби
+            <h2>Образование</h2>
+            <div class="job">
+              <div class="job-head">
+                <div>
+                  <div class="job-title">
+                    Московский политехнический университет (Мосполитех)
+                  </div>
+                  <div class="job-meta">
+                    Информационные системы и технологии • Веб-разработка
+                  </div>
                 </div>
-                <div class="small">
-                  Go backend • Steam интеграция • real-time уведомления
-                </div>
-                <ul>
-                  <li>
-                    Правила пати (1/2/3/5), слияние лобби, баланс по рейтингу.
-                  </li>
-                  <li>
-                    Планирование WebSocket-уведомлений и безопасных переходов
-                    состояний.
-                  </li>
-                </ul>
+                <div class="when">2015 — 2019</div>
               </div>
-              <div class="job">
-                <div class="job-title">
-                  Инфраструктурные шаблоны и dev-образы
-                </div>
-                <div class="small">Debian-образы • утилиты • единый DX</div>
-                <ul>
-                  <li>Стандартизация Docker-образов и bootstrap-скриптов.</li>
-                  <li>Инструменты для дебага, логов и повторяемых сборок.</li>
-                </ul>
-              </div>
+              <ul>
+                <li>
+                  Командные проекты от идеи до MVP, документация и презентации.
+                </li>
+                <li>Курс по продвижению/SEO в рамках программы.</li>
+              </ul>
             </div>
           </section>
         </main>
