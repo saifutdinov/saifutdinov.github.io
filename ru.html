@@ -6,7 +6,7 @@
     <title>Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)</title>
     <meta
       name="description"
-      content="Senior backend разработчик: Go (Echo/gRPC), PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции и фриланс."
+      content="Senior backend разработчик (Go, PHP/Laravel). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции. Кейсы с результатами и поставкой."
     />
 
     <!-- Canonical -->
@@ -21,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, интеграции и разбор кейсов."
+      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, SQL, Docker, CI/CD. Структура + кейсы + результаты."
     />
     <meta property="og:url" content="https://saifutdinov.github.io/ru.html" />
     <meta property="og:locale" content="ru_RU" />
@@ -29,11 +29,11 @@
 
     <meta
       property="og:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-ru.png"
     />
     <meta
       property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-ru.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -51,11 +51,11 @@
     />
     <meta
       name="twitter:description"
-      content="Backend: Go + PHP/Laravel. Clean Architecture, SQL, Docker, CI/CD, интеграции."
+      content="Backend: Go + PHP/Laravel. Clean Architecture, SQL, Docker, CI/CD, интеграции и продакшн-доставка."
     />
     <meta
       name="twitter:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-ru.png"
     />
 
     <meta name="theme-color" content="#ffffff" />
@@ -63,11 +63,9 @@
     <style>
       :root {
         --bg: #ffffff;
-        --paper: #ffffff;
-        --card: #ffffff;
         --text: #0f172a;
-        --muted: rgba(15, 23, 42, 0.72);
-        --muted2: rgba(15, 23, 42, 0.58);
+        --muted: rgba(15, 23, 42, 0.74);
+        --muted2: rgba(15, 23, 42, 0.6);
         --border: rgba(15, 23, 42, 0.12);
         --accent: #2563eb;
         --accent2: #10b981;
@@ -80,7 +78,6 @@
           Cantarell, "Noto Sans", Arial;
         --radius: 16px;
       }
-
       * {
         box-sizing: border-box;
       }
@@ -111,7 +108,6 @@
           ),
           var(--bg);
       }
-
       a {
         color: var(--accent);
         text-decoration: none;
@@ -119,13 +115,11 @@
       a:hover {
         text-decoration: underline;
       }
-
       .wrap {
-        max-width: 1160px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 24px 16px 56px;
       }
-
       .topbar {
         display: flex;
         align-items: center;
@@ -134,13 +128,11 @@
         margin-bottom: 14px;
         flex-wrap: wrap;
       }
-
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
       }
-
       .brand-mark {
         width: 12px;
         height: 12px;
@@ -148,19 +140,16 @@
         background: linear-gradient(135deg, var(--accent), var(--accent2));
         box-shadow: 0 10px 22px rgba(37, 99, 235, 0.15);
       }
-
       .brand-title {
         font-weight: 850;
         letter-spacing: 0.2px;
       }
-
       .actions {
         display: flex;
         gap: 10px;
         align-items: center;
         flex-wrap: wrap;
       }
-
       .pill {
         display: inline-flex;
         align-items: center;
@@ -195,7 +184,7 @@
 
       .panel {
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.76);
+        background: rgba(255, 255, 255, 0.78);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         overflow: hidden;
@@ -208,7 +197,6 @@
         height: 3px;
         background: linear-gradient(90deg, var(--accent), var(--accent2));
       }
-
       .pad {
         padding: 18px;
       }
@@ -264,11 +252,10 @@
         padding: 6px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.76);
         color: rgba(15, 23, 42, 0.92);
         white-space: nowrap;
       }
-
       h2 {
         margin: 0 0 10px;
         font-size: 15px;
@@ -309,7 +296,7 @@
         background: rgba(37, 99, 235, 0.06);
         border-radius: 14px;
         font-size: 13px;
-        color: rgba(15, 23, 42, 0.9);
+        color: rgba(15, 23, 42, 0.92);
       }
 
       .section {
@@ -324,13 +311,13 @@
         flex-direction: column;
         gap: 12px;
       }
-      .job {
+      .card {
         border: 1px solid var(--border);
         background: rgba(2, 6, 23, 0.02);
         border-radius: 16px;
         padding: 14px;
       }
-      .job-head {
+      .head {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -338,11 +325,11 @@
         flex-wrap: wrap;
         margin-bottom: 8px;
       }
-      .job-title {
+      .title {
         font-weight: 820;
         letter-spacing: 0.2px;
       }
-      .job-meta {
+      .meta {
         color: var(--muted);
         font-size: 13px;
       }
@@ -361,30 +348,37 @@
         font-size: 12px;
       }
 
-      .case {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.78);
-        border-radius: 16px;
-        padding: 14px;
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
       }
-      .case h3 {
-        margin: 0;
-        font-size: 14px;
-        letter-spacing: 0.2px;
+      @media (max-width: 980px) {
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
       }
-      .case-top {
+
+      .skill {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 10px 12px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.75);
       }
-      .case-sub {
-        margin-top: 6px;
-        color: var(--muted);
-        font-size: 13px;
+      .lvl {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(2, 6, 23, 0.02);
+        color: rgba(15, 23, 42, 0.78);
+        white-space: nowrap;
       }
+
       .case-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -396,13 +390,13 @@
           grid-template-columns: 1fr;
         }
       }
-      .case-box {
+      .box {
         border: 1px solid var(--border);
         border-radius: 14px;
         background: rgba(2, 6, 23, 0.02);
         padding: 10px 12px;
       }
-      .case-box b {
+      .box b {
         display: block;
         margin-bottom: 6px;
         font-size: 12px;
@@ -418,15 +412,20 @@
         margin: 6px 0;
       }
 
-      .cols {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
+      .outcomes {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border: 1px solid rgba(16, 185, 129, 0.22);
+        background: rgba(16, 185, 129, 0.06);
+        border-radius: 14px;
       }
-      @media (max-width: 980px) {
-        .cols {
-          grid-template-columns: 1fr;
-        }
+      .outcomes b {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: rgba(15, 23, 42, 0.78);
+        margin-bottom: 6px;
       }
 
       @media print {
@@ -475,7 +474,7 @@
             <div class="hero">
               <div class="avatar">
                 <img
-                  src="assets/images/avatar.jpg"
+                  src="/assets/images/avatar.jpg"
                   alt="Айдар Сайфутдинов"
                   onerror="
                     this.remove();
@@ -489,19 +488,18 @@
                   Senior Backend Engineer — Go & PHP (Laravel/Symfony)
                 </div>
                 <div class="chips">
-                  <span class="chip">Go (Echo / gRPC)</span>
-                  <span class="chip">PHP 8.x</span>
-                  <span class="chip">Laravel</span>
-                  <span class="chip">PostgreSQL / MySQL</span>
+                  <span class="chip">API-first</span>
+                  <span class="chip">Clean Architecture</span>
+                  <span class="chip">SQL-first мышление</span>
                   <span class="chip">Docker • CI/CD</span>
                 </div>
               </div>
             </div>
 
             <div class="note">
-              Фокус: API-first системы, чистая архитектура, предсказуемая
-              бизнес-логика (транзакции/идемпотентность), интеграции и
-              продакшн-доставка (Docker, CI/CD, доставляемость почты).
+              Делаю и сопровождаю продакшн-бэкенды: предсказуемая бизнес-логика
+              (транзакции/идемпотентность), интеграции, отчёты и “доставка в
+              прод” (CI/CD, Docker, Nginx, доставляемость почты).
             </div>
           </div>
 
@@ -550,21 +548,66 @@
           <div class="divider"></div>
 
           <div class="pad">
-            <h2>Ключевой стек</h2>
+            <h2>Skills summary</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div class="skill">
+                <div>
+                  <div class="title">Backend</div>
+                  <div class="small">
+                    Go (Echo/gRPC), PHP (Laravel/Symfony), API-дизайн, ошибки,
+                    конкуррентность
+                  </div>
+                </div>
+                <div class="lvl">Advanced</div>
+              </div>
+              <div class="skill">
+                <div>
+                  <div class="title">Базы данных</div>
+                  <div class="small">
+                    PostgreSQL/MySQL (схема, индексы, миграции), MongoDB
+                    (legacy)
+                  </div>
+                </div>
+                <div class="lvl">Advanced</div>
+              </div>
+              <div class="skill">
+                <div>
+                  <div class="title">Delivery & Ops</div>
+                  <div class="small">
+                    Docker/Compose, GitLab CI/CD, Nginx, TLS (Let’s Encrypt),
+                    SMTP/Exim, SPF/DKIM/DMARC
+                  </div>
+                </div>
+                <div class="lvl">Strong</div>
+              </div>
+              <div class="skill">
+                <div>
+                  <div class="title">Frontend (поддержка)</div>
+                  <div class="small">
+                    React/Vue + TypeScript, Tailwind, Vite — когда нужно
+                    “додавить” end-to-end
+                  </div>
+                </div>
+                <div class="lvl">Working</div>
+              </div>
+            </div>
+
+            <h2 style="margin-top: 14px">Ключевой стек</h2>
             <div class="chips">
-              <span class="chip">Go: Echo, gRPC, concurrency</span>
-              <span class="chip">PHP: Laravel, Symfony</span>
-              <span class="chip">SQL: PostgreSQL, MySQL</span>
-              <span class="chip">MongoDB (legacy)</span>
+              <span class="chip">Go</span>
+              <span class="chip">Echo</span>
+              <span class="chip">gRPC</span>
+              <span class="chip">PHP 8.x</span>
+              <span class="chip">Laravel</span>
+              <span class="chip">Symfony</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">MySQL</span>
               <span class="chip">Redis</span>
-              <span class="chip">Docker / Compose</span>
+              <span class="chip">Docker</span>
               <span class="chip">Nginx</span>
               <span class="chip">GitLab CI</span>
-              <span class="chip">SMTP / Exim</span>
-              <span class="chip">SPF/DKIM/DMARC</span>
-              <span class="chip">Let’s Encrypt</span>
+              <span class="chip">SMTP/Exim</span>
               <span class="chip">Elasticsearch</span>
-              <span class="chip">React/Vue + TypeScript</span>
             </div>
 
             <h2 style="margin-top: 14px">Языки</h2>
@@ -579,25 +622,43 @@
         <!-- RIGHT -->
         <main class="panel">
           <section class="section">
-            <h2>О себе</h2>
+            <h2>Executive summary</h2>
             <div class="muted">
-              Backend-инженер с продакшн-опытом в Go и PHP. Умею поддерживать
-              легаси и модернизировать систему, делать интеграции, отчёты и
-              доводить решения до продакшна. Предпочитаю Clean Architecture,
-              явный код и предсказуемое поведение в проде.
+              Senior backend инженер с продакшн-опытом в Go и PHP. Силен в
+              “легаси-среде”: стабилизировать, структурировать, и поставлять
+              фичи без поломок текущих сценариев. Хорошо работаю с моделью
+              данных, безопасными миграциями, интеграциями и “доставкой в прод”
+              (CI/CD, Docker, Nginx, deliverability).
+            </div>
+            <div class="outcomes">
+              <b>Что я привношу в команду</b>
+              <ul>
+                <li>
+                  Предсказуемость: границы архитектуры, более безопасные
+                  изменения, меньше регрессий.
+                </li>
+                <li>
+                  Data-first подход: схема, индексы, миграции и стабильность
+                  отчётности.
+                </li>
+                <li>
+                  Ownership доставки: повторяемые сборки, CI/CD,
+                  эксплуатационная гигиена.
+                </li>
+              </ul>
             </div>
           </section>
 
           <section class="section">
             <h2>Опыт</h2>
             <div class="timeline">
-              <div class="job">
-                <div class="job-head">
+              <div class="card">
+                <div class="head">
                   <div>
-                    <div class="job-title">
+                    <div class="title">
                       Senior Backend Engineer (Go) — Azimuth (оценка персонала)
                     </div>
-                    <div class="job-meta">
+                    <div class="meta">
                       Опросы вовлеченности, психологические тесты, тесты
                       способностей, «360°», бизнес-социометрия
                     </div>
@@ -609,47 +670,71 @@
                   Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • Let’s Encrypt •
                   React (Player)
                 </div>
+
+                <div class="outcomes">
+                  <b>Ключевые результаты</b>
+                  <ul>
+                    <li>
+                      Снизил риски изменений за счёт code review и выравнивания
+                      границ архитектуры.
+                    </li>
+                    <li>
+                      Провёл несколько этапов эволюции схемы БД через безопасные
+                      миграции без “сюрпризов” в проде.
+                    </li>
+                    <li>
+                      Увеличил стабильность “processor” (тяжелые вычисления)
+                      фиксом унаследованной логики.
+                    </li>
+                    <li>
+                      <span class="muted"
+                        >[Хочешь — добавь цифры: “мигрировал N таблиц”, “снизил
+                        инциденты на X%”, “ускорил p95 с A до B”]</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
                 <ul>
                   <li>
-                    Стабилизировал унаследованную кодовую базу (проект стартовал
-                    с “зелёной” командой): внедрили code review и выровняли бэк
-                    под Clean Architecture (Delivery/Usecase/Repository).
+                    <b>Архитектура:</b> выровнял подход по Clean Architecture
+                    (Delivery/Usecase/Repository); доменная логика — в usecase,
+                    инфраструктура — отдельно.
                   </li>
                   <li>
-                    Развивал API и сложную бизнес-логику: сбор, подготовка,
-                    хранение и выдача данных опросников.
+                    <b>API и бизнес-логика:</b> флоу опросников: сбор,
+                    подготовка, хранение, выдача; предсказуемые ошибки и
+                    контракты.
                   </li>
                   <li>
-                    Проектировал схему PostgreSQL и провёл систему через
-                    несколько крупных этапов миграций; улучшал запросы и модель
-                    данных итеративно.
+                    <b>PostgreSQL:</b> проектирование и развитие схемы; миграции
+                    add→backfill→switch→cleanup; оптимизация запросов/индексов.
                   </li>
                   <li>
-                    Поддерживал и улучшал Go-“processor” (тяжелые вычисления и
-                    финальная агрегация результатов); сделал заметный объём
-                    фиксов и стабилизаций.
+                    <b>Processor (Go):</b> поддержка тяжёлой математики и
+                    финальной агрегации результатов; стабилизация наследия.
                   </li>
                   <li>
-                    Подключался к React “Player” (проигрыватель опросника):
-                    корректный сценарий вопросов и надёжная отправка ответов;
-                    ускорили загрузку и сделали полноценную адаптивность.
+                    <b>Frontend support:</b> подключался к React “Player” ради
+                    end-to-end поставки (корректный флоу, адаптивность, быстрый
+                    старт).
                   </li>
                   <li>
-                    Закрывал эксплуатацию: Docker-сборки,
-                    GitLab-пайплайны/раннеры, Nginx-конфиги и логи,
-                    TLS-автоматизация, доставляемость почты (SPF/DKIM/DMARC).
+                    <b>Ops:</b> Docker, GitLab pipelines/runners, Nginx, TLS
+                    автоматизация, доставляемость почты (SPF/DKIM/DMARC).
                   </li>
                 </ul>
               </div>
 
-              <div class="job">
-                <div class="job-head">
+              <div class="card">
+                <div class="head">
                   <div>
-                    <div class="job-title">
+                    <div class="title">
                       Senior PHP Engineer — Legacy система оценки (BSSL)
                     </div>
-                    <div class="job-meta">
-                      Долгоживущий singleton-легаси проект (PHP + MongoDB)
+                    <div class="meta">
+                      Ongoing maintenance & фичи (part-time параллельно основной
+                      роли)
                     </div>
                   </div>
                   <div class="when">2019 — н.в.</div>
@@ -657,231 +742,245 @@
                 <div class="stackline">
                   PHP 5.x (легаси) • MongoDB • Отчёты (Excel/PDF/HTML)
                 </div>
+
+                <div class="outcomes">
+                  <b>Ключевые результаты</b>
+                  <ul>
+                    <li>
+                      Фичи по запросам клиентов без поломок текущих сценариев
+                      (risk-aware changes).
+                    </li>
+                    <li>
+                      Стабилизация отчётности: Excel/PDF/HTML, шаблоны,
+                      форматирование, предсказуемость результата.
+                    </li>
+                    <li>
+                      <span class="muted"
+                        >[Опционально: “N вариантов отчётов”, “сократил ручную
+                        работу на X часов/нед”]</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
                 <ul>
                   <li>
-                    Поддержка и развитие легаси-архитектуры с минимальными
-                    рисками: новые фичи по запросам клиентов без ломки текущих
-                    сценариев.
+                    Поддержка долгоживущей singleton-архитектуры: изменения
+                    аккуратно и по шагам.
                   </li>
                   <li>
-                    Работа с моделями данных MongoDB и нестандартными отчётными
-                    требованиями корпоративных клиентов.
+                    MongoDB модели и нестандартные требования корпоративных
+                    клиентов.
                   </li>
                   <li>
-                    Большое количество Excel-выгрузок и PDF-отчётов; улучшение
-                    шаблонов и стабильности результата.
+                    Много выгрузок и документов: Excel экспорты, генерация PDF,
+                    HTML верстка отчётных шаблонов.
                   </li>
                 </ul>
               </div>
 
-              <div class="job">
-                <div class="job-head">
+              <div class="card">
+                <div class="head">
                   <div>
-                    <div class="job-title">
+                    <div class="title">
                       Фриланс — Backend / Full-Stack (Go + PHP)
                     </div>
-                    <div class="job-meta">
-                      Клиентские проекты: быстрый запуск, предсказуемые API,
-                      докеризация, интеграции
+                    <div class="meta">
+                      3 витринных кейса (shipped): API-first, докеризация,
+                      минимум зависимостей
                     </div>
                   </div>
                   <div class="when">2023 — н.в.</div>
                 </div>
                 <div class="stackline">
                   Laravel • Go (Echo) • PostgreSQL/MySQL • Docker • CI/CD •
-                  Vue/React/TypeScript (по необходимости)
+                  Vue/React/TypeScript
                 </div>
-                <ul>
-                  <li>
-                    API-first сервисы на Laravel: auth (cookies/tokens),
-                    валидация, фильтры, загрузка файлов без тяжёлых
-                    зависимостей, SMTP-рассылки.
-                  </li>
-                  <li>
-                    Реляционные модели под “динамические поля”, когда JSON не
-                    подходит из-за поиска/индексов и скорости.
-                  </li>
-                  <li>
-                    Докеризация проектов (PHP/Nginx/PostgreSQL/Redis/Memcached),
-                    удобные команды запуска и онбординг.
-                  </li>
-                  <li>
-                    Go/Echo паттерны: recover/panic→error, маппинг ошибок в
-                    HTTP, WebSocket-уведомления при необходимости.
-                  </li>
-                  <li>
-                    Фронт при необходимости: Vue 3 + Vite / React + TypeScript,
-                    Tailwind-рефакторинг, роутинг и валидация форм.
-                  </li>
-                </ul>
+
+                <div class="outcomes">
+                  <b>Как поставляю проекты</b>
+                  <ul>
+                    <li>
+                      Быстрый релиз без “технического долга в первый день”:
+                      понятная структура и модель данных.
+                    </li>
+                    <li>
+                      Минимум внешних пакетов: использую возможности
+                      фреймворка/стандарта.
+                    </li>
+                    <li>Воспроизводимый запуск: Docker + команды + README.</li>
+                  </ul>
+                </div>
+
+                <div class="grid2" style="margin-top: 12px">
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Case 1: Laravel API template — auth, filters, uploads (без
+                      лишних библиотек)
+                    </div>
+                    <div class="small">
+                      Cookies/tokens • фильтры запросов • загрузка файлов через
+                      trait/enums • SMTP
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Задача:</b> сделать API расширяемым и пригодным для
+                        поиска/индексов (без JSON-хака).
+                      </li>
+                      <li>
+                        <b>Поставлено:</b> auth, валидация, фильтры, соглашения
+                        по файлам, endpoint выдачи изображений.
+                      </li>
+                      <li>
+                        <b>Эффект:</b> контракт стал стабильным для фронта,
+                        проще добавлять новые фичи.
+                        <span class="muted">[добавь цифру при желании]</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Case 2: Perfex PDF — блоковый редактор + реальное превью
+                    </div>
+                    <div class="small">
+                      JSON типы блоков • модульность JS • стили под генератор •
+                      preview→generate
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Задача:</b> много заметок/блоков “как в
+                        PDF-редакторе”, но генератор должен рисовать стабильно.
+                      </li>
+                      <li>
+                        <b>Поставлено:</b> структура типов, схема блоков,
+                        удобная разбивка по модулям, превью на данных
+                        project/customer.
+                      </li>
+                      <li>
+                        <b>Эффект:</b> добавление новых типов блоков стало
+                        безопаснее и дешевле.
+                        <span class="muted">[добавь цифру при желании]</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Case 3: OCR docx → docx — строгая страничность под печать
+                    </div>
+                    <div class="small">
+                      90+ страниц • per-page артефакты • очистка запусков •
+                      merge 1:1
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Задача:</b> извлечь текст с изображений в Word,
+                        сохранив порядок и количество страниц 1:1.
+                      </li>
+                      <li>
+                        <b>Поставлено:</b> per-page docx/txt, очистка
+                        результатов, итоговый документ, единый стиль.
+                      </li>
+                      <li>
+                        <b>Эффект:</b> предсказуемый артефакт для печати и
+                        проверки.
+                        <span class="muted">[добавь цифру при желании]</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Дополнительно: Go WebSocket паттерны + доменные правила
+                      (Dota/Steam)
+                    </div>
+                    <div class="small">
+                      Глобальный notifier • интеграция в Usecase • баланс,
+                      слияние лобби, уведомления
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Фокус:</b> проектирование событий WS и переходов
+                        состояний без гонок и “залипаний”.
+                      </li>
+                      <li>
+                        <b>Эффект:</b> ясная архитектура real-time слоя и
+                        доменных ограничений.
+                        <span class="muted">[опционально]</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2>Кейсы</h2>
+            <h2>Кейсы (короткий формат)</h2>
 
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Azimuth: внедрение Clean Architecture и стабилизация
-                    наследия
-                  </h3>
-                  <div class="case-sub">
-                    Go backend • Echo • разделение Delivery/Usecase/Repository •
-                    культура code review
+            <div class="timeline">
+              <div class="card">
+                <div class="head">
+                  <div>
+                    <div class="title">
+                      Azimuth: стабилизация архитектуры под живым продуктом
+                    </div>
+                    <div class="meta">
+                      Clean Architecture • code review • безопасный рефакторинг
+                    </div>
+                  </div>
+                  <div class="when">Delivered</div>
+                </div>
+                <div class="case-grid">
+                  <div class="box">
+                    <b>Проблема</b> Рост продукта на наследии: изменения стали
+                    дорогими и рискованными.
+                  </div>
+                  <div class="box">
+                    <b>Ограничения</b> Без переписывания; релизы идут; команда
+                    разного уровня.
+                  </div>
+                  <div class="box">
+                    <b>Решение</b> Code review, разделение слоев, доменная
+                    логика в usecase, единый подход к ошибкам.
+                  </div>
+                  <div class="box">
+                    <b>Результат</b> Более безопасные релизы и яснее
+                    ответственность. <span class="muted">[добавь метрику]</span>
                   </div>
                 </div>
-                <div class="when">Продукт</div>
               </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Проблема</b> Рост продукта на базе старых наработок →
-                  сложно менять, много регрессий.
-                </div>
-                <div class="case-box">
-                  <b>Ограничения</b> Нельзя переписать; продакшн должен
-                  работать; команда разного уровня.
-                </div>
-                <div class="case-box">
-                  <b>Решение</b> Code review + выравнивание архитектуры под
-                  Clean Architecture, перенос логики в usecase.
-                </div>
-                <div class="case-box">
-                  <b>Мой вклад</b> Каркас сервиса, ключевые бизнес-потоки,
-                  предсказуемая обработка ошибок.
-                </div>
-              </div>
-            </div>
 
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Azimuth: PostgreSQL миграции и эволюция схемы без “падения
-                    прода”
-                  </h3>
-                  <div class="case-sub">
-                    Модель данных • миграции • индексация • итеративная
-                    оптимизация запросов
+              <div class="card">
+                <div class="head">
+                  <div>
+                    <div class="title">
+                      Delivery: CI/CD, Docker, Nginx, TLS и доставляемость почты
+                    </div>
+                    <div class="meta">
+                      GitLab runners • repeatable builds • SPF/DKIM/DMARC
+                    </div>
                   </div>
+                  <div class="when">Operational</div>
                 </div>
-                <div class="when">База</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Проблема</b> Домен растёт → нужно менять структуру данных,
-                  не ломая отчёты и флоу.
-                </div>
-                <div class="case-box">
-                  <b>Ограничения</b> Живые данные, регулярные релизы, высокая
-                  цена ошибок.
-                </div>
-                <div class="case-box">
-                  <b>Решение</b> Миграции по шагам: add→backfill→switch→cleanup;
-                  индексы для горячих путей.
-                </div>
-                <div class="case-box">
-                  <b>Мой вклад</b> Проектирование схемы, крупные этапы миграций,
-                  улучшение запросов и структуры.
-                </div>
-              </div>
-            </div>
-
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>Perfex PDF: модуль блоков и превью перед генерацией</h3>
-                  <div class="case-sub">
-                    UI-архитектура • типы блоков • JSON схема • превью →
-                    генерация
+                <div class="case-grid">
+                  <div class="box">
+                    <b>Проблема</b> “Работает у меня” не равно “работает в
+                    проде”: деплой и почта ломают бизнес.
                   </div>
-                </div>
-                <div class="when">Фриланс</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Проблема</b> Много заметок/блоков как в PDF-редакторе, но
-                  генератор должен распознавать всё стабильно.
-                </div>
-                <div class="case-box">
-                  <b>Ограничения</b> Ограничения генератора PDF; нужен удобный
-                  dev-процесс и расширяемость.
-                </div>
-                <div class="case-box">
-                  <b>Решение</b> Разделение на компоненты блоков, JSON с типами,
-                  стили “дружелюбные” к генератору.
-                </div>
-                <div class="case-box">
-                  <b>Мой вклад</b> Ревью узких мест, план модульности,
-                  подготовка реального превью (project/customer).
-                </div>
-              </div>
-            </div>
-
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>OCR docx → docx: строгая страничность 1:1 для печати</h3>
-                  <div class="case-sub">
-                    Пайплайн • порядок страниц • debug-артефакты • финальная
-                    сборка
+                  <div class="box">
+                    <b>Ограничения</b> Много сервисов, окружений и требований по
+                    надежности.
                   </div>
-                </div>
-                <div class="when">Утилита</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Проблема</b> 90+ страниц, на каждой картинка; нужен текст с
-                  сохранением порядка и числа страниц.
-                </div>
-                <div class="case-box">
-                  <b>Ограничения</b> Нельзя “склеить как получится”; важна
-                  печать и просмотр; скорость.
-                </div>
-                <div class="case-box">
-                  <b>Решение</b> По странице: docx+txt, очистка результатов
-                  перед запуском, затем merge в 1 документ 1:1.
-                </div>
-                <div class="case-box">
-                  <b>Мой вклад</b> Требования к строгому порядку, clean run,
-                  единый стиль (Times New Roman 12).
-                </div>
-              </div>
-            </div>
-
-            <div class="case">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Trading bot skeleton: Docker + SQLite + reload-friendly
-                    development
-                  </h3>
-                  <div class="case-sub">
-                    Python service • API integration • containerization •
-                    minimal launch plan
+                  <div class="box">
+                    <b>Решение</b> Docker, пайплайны, Nginx, Let’s Encrypt
+                    автоматизация, deliverability настройка.
                   </div>
-                </div>
-                <div class="when">Проект</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Проблема</b> Нужен быстрый старт проекта для
-                  алгоритмической торговли, но с нормальной структурой и
-                  деплоем.
-                </div>
-                <div class="case-box">
-                  <b>Ограничения</b> Минимум зависимостей, простота запуска,
-                  база SQLite, hot reload в dev.
-                </div>
-                <div class="case-box">
-                  <b>Решение</b> Каркас сервиса + docker-compose, конфиги, база
-                  SQLite, команды для запуска/разработки.
-                </div>
-                <div class="case-box">
-                  <b>Мой вклад</b> План проекта, структура, dockerization,
-                  подготовка к запуску и дальнейшему расширению.
+                  <div class="box">
+                    <b>Результат</b> Предсказуемее релизы и меньше инцидентов.
+                    <span class="muted">[добавь метрику]</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -889,13 +988,13 @@
 
           <section class="section">
             <h2>Образование</h2>
-            <div class="job">
-              <div class="job-head">
+            <div class="card">
+              <div class="head">
                 <div>
-                  <div class="job-title">
+                  <div class="title">
                     Московский политехнический университет (Мосполитех)
                   </div>
-                  <div class="job-meta">
+                  <div class="meta">
                     Информационные системы и технологии • Веб-разработка
                   </div>
                 </div>
@@ -903,7 +1002,7 @@
               </div>
               <ul>
                 <li>
-                  Командные проекты от идеи до MVP, документация и презентации.
+                  Командные проекты: от идеи до MVP, документация и презентации.
                 </li>
                 <li>Курс по продвижению/SEO в рамках программы.</li>
               </ul>

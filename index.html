@@ -6,7 +6,7 @@
     <title>Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)</title>
     <meta
       name="description"
-      content="Senior backend engineer with Go (Echo/gRPC) and PHP (Laravel/Symfony). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, and freelance experience."
+      content="Senior backend engineer (Go, PHP/Laravel). Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations. Case studies with outcomes and deliverables."
     />
 
     <!-- Canonical -->
@@ -21,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, PostgreSQL/MySQL, Docker, CI/CD, integrations, and case studies."
+      content="Go (Echo/gRPC), PHP (Laravel/Symfony), Clean Architecture, SQL, Docker, CI/CD. Clear experience + case studies."
     />
     <meta property="og:url" content="https://saifutdinov.github.io/" />
     <meta property="og:locale" content="en_US" />
@@ -29,11 +29,11 @@
 
     <meta
       property="og:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
     <meta
       property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -51,27 +51,24 @@
     />
     <meta
       name="twitter:description"
-      content="Backend: Go (Echo/gRPC) + PHP (Laravel/Symfony). Clean Architecture, SQL, Docker, CI/CD, integrations."
+      content="Backend: Go + PHP/Laravel. Clean Architecture, SQL, Docker, CI/CD, integrations and production delivery."
     />
     <meta
       name="twitter:image"
-      content="https://saifutdinov.github.io/assets/images/avatar.jpg"
+      content="https://saifutdinov.github.io/assets/og/og-en.png"
     />
 
     <meta name="theme-color" content="#ffffff" />
 
     <style>
       :root {
-        /* Light theme default */
         --bg: #ffffff;
-        --paper: #ffffff;
-        --card: #ffffff;
         --text: #0f172a;
-        --muted: rgba(15, 23, 42, 0.72);
-        --muted2: rgba(15, 23, 42, 0.58);
+        --muted: rgba(15, 23, 42, 0.74);
+        --muted2: rgba(15, 23, 42, 0.6);
         --border: rgba(15, 23, 42, 0.12);
-        --accent: #2563eb; /* blue */
-        --accent2: #10b981; /* emerald */
+        --accent: #2563eb;
+        --accent2: #10b981;
         --shadow: 0 10px 28px rgba(2, 6, 23, 0.1);
         --mono:
           ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -81,7 +78,6 @@
           Cantarell, "Noto Sans", Arial;
         --radius: 16px;
       }
-
       * {
         box-sizing: border-box;
       }
@@ -112,7 +108,6 @@
           ),
           var(--bg);
       }
-
       a {
         color: var(--accent);
         text-decoration: none;
@@ -120,13 +115,11 @@
       a:hover {
         text-decoration: underline;
       }
-
       .wrap {
-        max-width: 1160px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 24px 16px 56px;
       }
-
       .topbar {
         display: flex;
         align-items: center;
@@ -135,13 +128,11 @@
         margin-bottom: 14px;
         flex-wrap: wrap;
       }
-
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
       }
-
       .brand-mark {
         width: 12px;
         height: 12px;
@@ -149,19 +140,16 @@
         background: linear-gradient(135deg, var(--accent), var(--accent2));
         box-shadow: 0 10px 22px rgba(37, 99, 235, 0.15);
       }
-
       .brand-title {
         font-weight: 850;
         letter-spacing: 0.2px;
       }
-
       .actions {
         display: flex;
         gap: 10px;
         align-items: center;
         flex-wrap: wrap;
       }
-
       .pill {
         display: inline-flex;
         align-items: center;
@@ -196,7 +184,7 @@
 
       .panel {
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.76);
+        background: rgba(255, 255, 255, 0.78);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         overflow: hidden;
@@ -209,7 +197,6 @@
         height: 3px;
         background: linear-gradient(90deg, var(--accent), var(--accent2));
       }
-
       .pad {
         padding: 18px;
       }
@@ -265,11 +252,10 @@
         padding: 6px 10px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.76);
         color: rgba(15, 23, 42, 0.92);
         white-space: nowrap;
       }
-
       h2 {
         margin: 0 0 10px;
         font-size: 15px;
@@ -310,7 +296,7 @@
         background: rgba(37, 99, 235, 0.06);
         border-radius: 14px;
         font-size: 13px;
-        color: rgba(15, 23, 42, 0.9);
+        color: rgba(15, 23, 42, 0.92);
       }
 
       .section {
@@ -325,13 +311,13 @@
         flex-direction: column;
         gap: 12px;
       }
-      .job {
+      .card {
         border: 1px solid var(--border);
         background: rgba(2, 6, 23, 0.02);
         border-radius: 16px;
         padding: 14px;
       }
-      .job-head {
+      .head {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -339,11 +325,11 @@
         flex-wrap: wrap;
         margin-bottom: 8px;
       }
-      .job-title {
+      .title {
         font-weight: 820;
         letter-spacing: 0.2px;
       }
-      .job-meta {
+      .meta {
         color: var(--muted);
         font-size: 13px;
       }
@@ -362,30 +348,37 @@
         font-size: 12px;
       }
 
-      .case {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.78);
-        border-radius: 16px;
-        padding: 14px;
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
       }
-      .case h3 {
-        margin: 0;
-        font-size: 14px;
-        letter-spacing: 0.2px;
+      @media (max-width: 980px) {
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
       }
-      .case-top {
+
+      .skill {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 10px 12px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.75);
       }
-      .case-sub {
-        margin-top: 6px;
-        color: var(--muted);
-        font-size: 13px;
+      .lvl {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(2, 6, 23, 0.02);
+        color: rgba(15, 23, 42, 0.78);
+        white-space: nowrap;
       }
+
       .case-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -397,13 +390,13 @@
           grid-template-columns: 1fr;
         }
       }
-      .case-box {
+      .box {
         border: 1px solid var(--border);
         border-radius: 14px;
         background: rgba(2, 6, 23, 0.02);
         padding: 10px 12px;
       }
-      .case-box b {
+      .box b {
         display: block;
         margin-bottom: 6px;
         font-size: 12px;
@@ -419,15 +412,20 @@
         margin: 6px 0;
       }
 
-      .cols {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
+      .outcomes {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border: 1px solid rgba(16, 185, 129, 0.22);
+        background: rgba(16, 185, 129, 0.06);
+        border-radius: 14px;
       }
-      @media (max-width: 980px) {
-        .cols {
-          grid-template-columns: 1fr;
-        }
+      .outcomes b {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: rgba(15, 23, 42, 0.78);
+        margin-bottom: 6px;
       }
 
       @media print {
@@ -490,19 +488,19 @@
                   Senior Backend Engineer — Go & PHP (Laravel/Symfony)
                 </div>
                 <div class="chips">
-                  <span class="chip">Go (Echo / gRPC)</span>
-                  <span class="chip">PHP 8.x</span>
-                  <span class="chip">Laravel</span>
-                  <span class="chip">PostgreSQL / MySQL</span>
+                  <span class="chip">API-first</span>
+                  <span class="chip">Clean Architecture</span>
+                  <span class="chip">SQL-first thinking</span>
                   <span class="chip">Docker • CI/CD</span>
                 </div>
               </div>
             </div>
 
             <div class="note">
-              Focus: API-first systems, clean architecture, predictable business
-              logic (transactions/idempotency), integrations, and
-              production-ready delivery (Docker, CI/CD, mail deliverability).
+              I build and support production backend systems: predictable
+              business logic (transactions/idempotency), integrations,
+              reporting, and full-cycle delivery (CI/CD, Docker, Nginx, mail
+              deliverability).
             </div>
           </div>
 
@@ -551,21 +549,66 @@
           <div class="divider"></div>
 
           <div class="pad">
-            <h2>Core stack</h2>
+            <h2>Skills summary</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div class="skill">
+                <div>
+                  <div class="title">Backend</div>
+                  <div class="small">
+                    Go (Echo/gRPC), PHP (Laravel/Symfony), API design, error
+                    handling, concurrency
+                  </div>
+                </div>
+                <div class="lvl">Advanced</div>
+              </div>
+              <div class="skill">
+                <div>
+                  <div class="title">Databases</div>
+                  <div class="small">
+                    PostgreSQL/MySQL (schema, indexes, migrations), MongoDB
+                    (legacy)
+                  </div>
+                </div>
+                <div class="lvl">Advanced</div>
+              </div>
+              <div class="skill">
+                <div>
+                  <div class="title">Delivery & Ops</div>
+                  <div class="small">
+                    Docker/Compose, GitLab CI/CD, Nginx, TLS (Let’s Encrypt),
+                    SMTP/Exim, SPF/DKIM/DMARC
+                  </div>
+                </div>
+                <div class="lvl">Strong</div>
+              </div>
+              <div class="skill">
+                <div>
+                  <div class="title">Frontend (support)</div>
+                  <div class="small">
+                    React/Vue + TypeScript, Tailwind, Vite; only when needed to
+                    ship end-to-end
+                  </div>
+                </div>
+                <div class="lvl">Working</div>
+              </div>
+            </div>
+
+            <h2 style="margin-top: 14px">Core stack</h2>
             <div class="chips">
-              <span class="chip">Go: Echo, gRPC, concurrency</span>
-              <span class="chip">PHP: Laravel, Symfony</span>
-              <span class="chip">SQL: PostgreSQL, MySQL</span>
-              <span class="chip">MongoDB (legacy)</span>
+              <span class="chip">Go</span>
+              <span class="chip">Echo</span>
+              <span class="chip">gRPC</span>
+              <span class="chip">PHP 8.x</span>
+              <span class="chip">Laravel</span>
+              <span class="chip">Symfony</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">MySQL</span>
               <span class="chip">Redis</span>
-              <span class="chip">Docker / Compose</span>
+              <span class="chip">Docker</span>
               <span class="chip">Nginx</span>
               <span class="chip">GitLab CI</span>
-              <span class="chip">SMTP / Exim</span>
-              <span class="chip">SPF/DKIM/DMARC</span>
-              <span class="chip">Let’s Encrypt</span>
+              <span class="chip">SMTP/Exim</span>
               <span class="chip">Elasticsearch</span>
-              <span class="chip">React/Vue + TypeScript</span>
             </div>
 
             <h2 style="margin-top: 14px">Languages</h2>
@@ -580,27 +623,45 @@
         <!-- RIGHT -->
         <main class="panel">
           <section class="section">
-            <h2>Summary</h2>
+            <h2>Executive summary</h2>
             <div class="muted">
-              Backend-focused engineer with production experience across Go and
-              PHP. Comfortable with legacy maintenance, modernization,
-              integrations, data-heavy reporting, and full-cycle delivery.
-              Prefer clean boundaries (Clean Architecture), explicit code, and
-              predictable production systems.
+              Senior backend engineer with production experience in Go and PHP.
+              I’m effective in legacy-heavy environments: stabilize, structure,
+              and deliver features without breaking existing flows. Strong at
+              data modeling, safe migrations, integrations, and “production
+              delivery” work (CI/CD, Docker, Nginx, deliverability).
+            </div>
+            <div class="outcomes">
+              <b>Value I bring</b>
+              <ul>
+                <li>
+                  Predictable systems: clear architecture boundaries, safer
+                  changes, fewer regressions.
+                </li>
+                <li>
+                  Data-first thinking: schema design, indexes, migrations, and
+                  reporting stability.
+                </li>
+                <li>
+                  Delivery ownership: repeatable builds, CI/CD pipelines,
+                  operational hygiene.
+                </li>
+              </ul>
             </div>
           </section>
 
           <section class="section">
             <h2>Experience</h2>
             <div class="timeline">
-              <div class="job">
-                <div class="job-head">
+              <!-- Azimuth -->
+              <div class="card">
+                <div class="head">
                   <div>
-                    <div class="job-title">
+                    <div class="title">
                       Senior Backend Engineer (Go) — Azimuth (Employee
                       Assessment Platform)
                     </div>
-                    <div class="job-meta">
+                    <div class="meta">
                       Engagement surveys, psychological/ability tests, 360°
                       feedback, business sociometry
                     </div>
@@ -612,47 +673,78 @@
                   Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • Let’s Encrypt •
                   React (Player)
                 </div>
+
+                <div class="outcomes">
+                  <b>Key outcomes</b>
+                  <ul>
+                    <li>
+                      Stabilized inherited code and reduced change risk by
+                      enforcing code review and architecture boundaries.
+                    </li>
+                    <li>
+                      Delivered multiple schema evolution stages with safe
+                      migrations and fewer production surprises.
+                    </li>
+                    <li>
+                      Improved reliability of heavy calculation pipelines
+                      (processor) by fixing inherited complex logic.
+                    </li>
+                    <li>
+                      <span class="muted"
+                        >[Add metrics if you want: e.g., “reduced incident rate
+                        by X%”, “migrated N tables”, “p95 latency improved from
+                        A to B”]</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
                 <ul>
                   <li>
-                    Stabilized an inherited codebase (started by a junior team);
-                    introduced systematic code review and aligned backend around
-                    Clean Architecture (Delivery/Usecase/Repository).
+                    <b>Architecture:</b> aligned backend around Clean
+                    Architecture (Delivery/Usecase/Repository); moved business
+                    logic into usecases and kept transport/storage concerns
+                    isolated.
                   </li>
                   <li>
-                    Built and evolved API modules and business logic for
-                    collecting, preparing, storing, and serving questionnaire
-                    data.
+                    <b>API & domain logic:</b> implemented flows for collecting,
+                    preparing, storing, and serving questionnaire data; designed
+                    predictable error paths.
                   </li>
                   <li>
-                    Designed PostgreSQL schema and led multiple large migration
-                    stages; improved queries and data model iteratively.
+                    <b>PostgreSQL:</b> designed and evolved schema; led multiple
+                    major migration stages using incremental patterns (add →
+                    backfill → switch → cleanup), and improved query/index
+                    strategy.
                   </li>
                   <li>
-                    Maintained and improved a Go “processor” module for heavy
-                    calculations and final result aggregation; delivered
-                    substantial fixes and reliability improvements.
+                    <b>Processor (Go):</b> maintained heavy computations / final
+                    result aggregation; delivered substantial fixes & stability
+                    improvements in inherited modules.
                   </li>
                   <li>
-                    Contributed to React “Player” (survey runner): correct
-                    question flow per respondent, fast load, responsive UX,
-                    reliable answer submission.
+                    <b>Frontend support:</b> contributed to React “Player” to
+                    ship end-to-end (question flow correctness, responsive UX,
+                    stable contracts with backend).
                   </li>
                   <li>
-                    Owned key production concerns: Docker builds, GitLab
-                    pipelines/runners, Nginx configuration/logging, TLS
-                    automation, and mail deliverability (SPF/DKIM/DMARC).
+                    <b>Ops:</b> Docker builds, GitLab pipelines/runners, Nginx
+                    configuration/logging, TLS automation, email deliverability
+                    setup (SPF/DKIM/DMARC).
                   </li>
                 </ul>
               </div>
 
-              <div class="job">
-                <div class="job-head">
+              <!-- BSSL legacy -->
+              <div class="card">
+                <div class="head">
                   <div>
-                    <div class="job-title">
+                    <div class="title">
                       Senior PHP Engineer — Legacy Assessment System (BSSL)
                     </div>
-                    <div class="job-meta">
-                      Long-lived singleton-style system (legacy PHP + MongoDB)
+                    <div class="meta">
+                      Ongoing maintenance & feature delivery (part-time
+                      alongside main role)
                     </div>
                   </div>
                   <div class="when">2019 — Present</div>
@@ -660,291 +752,264 @@
                 <div class="stackline">
                   PHP 5.x (legacy) • MongoDB • Reporting (Excel/PDF/HTML)
                 </div>
+
+                <div class="outcomes">
+                  <b>Key outcomes</b>
+                  <ul>
+                    <li>
+                      Delivered client-requested features without breaking
+                      legacy flows (risk-aware development).
+                    </li>
+                    <li>
+                      Improved reporting stability: Excel exports, PDF
+                      generation, HTML templates.
+                    </li>
+                    <li>
+                      <span class="muted"
+                        >[Optional metric: “generated N report variants”,
+                        “reduced manual report work by X hours/week”]</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
                 <ul>
                   <li>
-                    Maintained and extended a legacy architecture safely,
-                    delivering client-requested features without breaking
-                    existing flows.
+                    Maintained a long-lived singleton-style system; implemented
+                    changes carefully to avoid regressions.
                   </li>
                   <li>
-                    Worked with MongoDB data models and non-trivial reporting
-                    requirements for enterprise customers.
+                    Worked with MongoDB data models and enterprise reporting
+                    requirements.
                   </li>
                   <li>
-                    Delivered many Excel exports and PDF reports; improved
-                    templates and output stability.
+                    Produced many exports (Excel) and documents (PDF), refined
+                    templates and formatting consistency.
                   </li>
                 </ul>
               </div>
 
-              <div class="job">
-                <div class="job-head">
+              <!-- Freelance -->
+              <div class="card">
+                <div class="head">
                   <div>
-                    <div class="job-title">
+                    <div class="title">
                       Freelance — Backend / Full-Stack (Go + PHP)
                     </div>
-                    <div class="job-meta">
-                      Client projects: fast delivery, predictable APIs,
-                      Dockerized setups, integrations
+                    <div class="meta">
+                      Selected shipped cases (API-first, Dockerized delivery,
+                      minimal dependencies)
                     </div>
                   </div>
                   <div class="when">2023 — Present</div>
                 </div>
                 <div class="stackline">
                   Laravel • Go (Echo) • PostgreSQL/MySQL • Docker • CI/CD •
-                  Vue/React/TypeScript (as needed)
+                  Vue/React/TypeScript
                 </div>
-                <ul>
-                  <li>
-                    Built API-first Laravel services: auth (cookies/tokens),
-                    validation, filtering, file uploads (without heavy
-                    libraries), email sending (SMTP).
-                  </li>
-                  <li>
-                    Designed relational models for “dynamic fields” where JSON
-                    storage is not suitable for fast search and indexing.
-                  </li>
-                  <li>
-                    Dockerized full stacks
-                    (PHP/Nginx/PostgreSQL/Redis/Memcached), improved onboarding
-                    via Makefile-style commands and clear README workflows.
-                  </li>
-                  <li>
-                    Implemented Go/Echo middleware patterns (recover, error
-                    mapping), and WebSocket notification flows when required.
-                  </li>
-                  <li>
-                    Contributed to frontend refactors: Vue 3 + Vite / React +
-                    TypeScript, Tailwind component cleanup, routing and form
-                    validation.
-                  </li>
-                </ul>
+
+                <div class="outcomes">
+                  <b>How I work in freelance</b>
+                  <ul>
+                    <li>
+                      Ship fast, but keep architecture and data model
+                      predictable for future growth.
+                    </li>
+                    <li>
+                      Prefer “standard library / framework built-ins” instead of
+                      heavy dependencies.
+                    </li>
+                    <li>
+                      Deliver reproducible setup: Docker + clear run commands +
+                      README.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="grid2" style="margin-top: 12px">
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Case 1: Laravel API template — auth, filters, uploads (no
+                      extra libs)
+                    </div>
+                    <div class="small">
+                      Auth via cookies/tokens • Eloquent query filters • file
+                      uploads via trait/enums • SMTP sending
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Problem:</b> build an API that is easy to extend and
+                        search, without JSON hacks or heavy packages.
+                      </li>
+                      <li>
+                        <b>Shipped:</b> auth flow, validation, filter layer for
+                        queries, file storage conventions, image serving
+                        endpoint.
+                      </li>
+                      <li>
+                        <b>Outcome:</b> API became predictable for frontend;
+                        faster onboarding for new features.
+                        <span class="muted"
+                          >[Add metric: “delivered in N days”, “reduced
+                          endpoints duplication by X%”]</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Case 2: Perfex PDF module — block-based editing + real
+                      preview
+                    </div>
+                    <div class="small">
+                      Many notes/blocks • JSON block schema • generator-friendly
+                      styles • maintainable JS structure
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Problem:</b> support many annotations like a PDF
+                        editor and still render reliably in a generator.
+                      </li>
+                      <li>
+                        <b>Shipped:</b> structured block types + config schema,
+                        modular JS organization, preview filled with real
+                        project/customer data.
+                      </li>
+                      <li>
+                        <b>Outcome:</b> scalable UI architecture: adding new
+                        block types doesn’t break existing ones.
+                        <span class="muted"
+                          >[Add metric: “supported N block types”, “handled N
+                          notes per page”]</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Case 3: OCR docx → docx — strict page ordering for
+                      printing
+                    </div>
+                    <div class="small">
+                      90+ pages • per-page artifacts • clean runs • final merge
+                      1:1
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Problem:</b> extract text from images inside Word
+                        pages while preserving exact page count and order.
+                      </li>
+                      <li>
+                        <b>Shipped:</b> per-page outputs (docx/txt), cleaned
+                        workspace each run, final merged document, consistent
+                        formatting.
+                      </li>
+                      <li>
+                        <b>Outcome:</b> predictable deliverable for printing and
+                        review.
+                        <span class="muted"
+                          >[Add metric: “processed N pages”, “time saved vs
+                          manual copy”]</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="margin: 0">
+                    <div class="title">
+                      Additional: Go WebSocket patterns + Steam/Dota
+                      integrations planning
+                    </div>
+                    <div class="small">
+                      Global WS notifier pattern • usecase integration •
+                      lobby/matchmaking constraints
+                    </div>
+                    <ul>
+                      <li>
+                        <b>Focus:</b> designing reliable notification flow and
+                        state transitions for real-time products.
+                      </li>
+                      <li>
+                        <b>Outcome:</b> clear architecture for WS events and
+                        domain rules.
+                        <span class="muted">[Add metric if applicable]</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
           <section class="section">
-            <h2>Case studies</h2>
+            <h2>Case studies (short format)</h2>
 
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Azimuth: Clean Architecture adoption & stabilizing inherited
-                    code
-                  </h3>
-                  <div class="case-sub">
-                    Go backend • Echo • Delivery/Usecase/Repository separation •
-                    code review culture
+            <div class="timeline">
+              <div class="card">
+                <div class="head">
+                  <div>
+                    <div class="title">
+                      Azimuth: Architecture stabilization under live product
+                      constraints
+                    </div>
+                    <div class="meta">
+                      Clean Architecture • code review • safe refactors
+                    </div>
+                  </div>
+                  <div class="when">Delivered</div>
+                </div>
+                <div class="case-grid">
+                  <div class="box">
+                    <b>Problem</b> Fast-growing product on inherited code:
+                    changes became risky and hard to review.
+                  </div>
+                  <div class="box">
+                    <b>Constraints</b> No rewrite; production releases continue;
+                    mixed team seniority.
+                  </div>
+                  <div class="box">
+                    <b>Solution</b> Enforced code review, split layers, moved
+                    domain logic into usecases, standardized error handling.
+                  </div>
+                  <div class="box">
+                    <b>Result</b> Safer releases, clearer ownership of code,
+                    easier onboarding. <span class="muted">[Add metric]</span>
                   </div>
                 </div>
-                <div class="when">Product platform</div>
               </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Problem</b>
-                  The project grew from previous iterations with inconsistent
-                  structure; changes became risky and slow.
-                </div>
-                <div class="case-box">
-                  <b>Constraints</b>
-                  No “rewrite”; production must keep moving; team had mixed
-                  seniority levels.
-                </div>
-                <div class="case-box">
-                  <b>Solution</b>
-                  Introduced code review, aligned backend with Clean
-                  Architecture boundaries, moved business logic into usecases.
-                </div>
-                <div class="case-box">
-                  <b>My work</b>
-                  Designed base service structure, implemented key business
-                  flows, improved error handling and maintainability.
-                </div>
-              </div>
-            </div>
 
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Azimuth: PostgreSQL schema evolution & safe migrations
-                  </h3>
-                  <div class="case-sub">
-                    Data modeling • migrations • indexing • performance
-                    iterations
+              <div class="card">
+                <div class="head">
+                  <div>
+                    <div class="title">
+                      Delivery: CI/CD, Docker, Nginx, TLS & email deliverability
+                    </div>
+                    <div class="meta">
+                      GitLab runners • repeatable builds • SPF/DKIM/DMARC
+                    </div>
                   </div>
+                  <div class="when">Operational</div>
                 </div>
-                <div class="when">Database</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Problem</b>
-                  Domain growth required changing schema without breaking
-                  reporting and questionnaire flows.
-                </div>
-                <div class="case-box">
-                  <b>Constraints</b>
-                  Live data, ongoing releases, and high risk of regressions in
-                  reports.
-                </div>
-                <div class="case-box">
-                  <b>Solution</b>
-                  Incremental migrations (add → backfill → switch → cleanup),
-                  query review, indexes for hot paths.
-                </div>
-                <div class="case-box">
-                  <b>My work</b>
-                  Designed schema, led multiple major migration stages, improved
-                  query patterns and structure.
-                </div>
-              </div>
-            </div>
-
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Azimuth: Processor module — heavy calculations & reliability
-                    fixes
-                  </h3>
-                  <div class="case-sub">
-                    Go module • math/aggregations • inherited complex code
+                <div class="case-grid">
+                  <div class="box">
+                    <b>Problem</b> “It works locally” is not enough: deployment
+                    and mail delivery issues can kill a product.
                   </div>
-                </div>
-                <div class="when">Backend module</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Problem</b>
-                  Complex inherited code could produce subtle result errors and
-                  was hard to change safely.
-                </div>
-                <div class="case-box">
-                  <b>Constraints</b>
-                  Hard-to-reproduce edge cases; correctness mattered more than
-                  “quick changes”.
-                </div>
-                <div class="case-box">
-                  <b>Solution</b>
-                  Careful fixes, better validations, safer error paths,
-                  incremental refactors where possible.
-                </div>
-                <div class="case-box">
-                  <b>My work</b>
-                  Delivered substantial fixes and stabilizations, improved
-                  edge-case handling and reliability.
-                </div>
-              </div>
-            </div>
-
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Freelance: Laravel API-first templates (auth, filters,
-                    uploads) + Dockerized delivery
-                  </h3>
-                  <div class="case-sub">
-                    Laravel • PostgreSQL/MySQL • Docker Compose • clean project
-                    bootstrap
+                  <div class="box">
+                    <b>Constraints</b> Multiple services, environments, and
+                    reliability expectations.
                   </div>
-                </div>
-                <div class="when">Client work</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Problem</b>
-                  Clients needed fast delivery without sacrificing
-                  maintainability and future search performance.
-                </div>
-                <div class="case-box">
-                  <b>Constraints</b>
-                  Limited time; prefer “no extra libraries”; must be
-                  reproducible on any machine.
-                </div>
-                <div class="case-box">
-                  <b>Solution</b>
-                  API-first design, explicit validation, relational modeling for
-                  dynamic fields, Docker + Makefile workflows.
-                </div>
-                <div class="case-box">
-                  <b>My work</b>
-                  Implemented auth via cookies/tokens, filters, uploads without
-                  extra libs, SMTP, and dockerized stacks.
-                </div>
-              </div>
-            </div>
-
-            <div class="case" style="margin-bottom: 12px">
-              <div class="case-top">
-                <div>
-                  <h3>
-                    Perfex PDF module: block-based PDF editing + preview-driven
-                    workflow
-                  </h3>
-                  <div class="case-sub">
-                    Front-end module architecture • block types • preview →
-                    generate pipeline
+                  <div class="box">
+                    <b>Solution</b> Dockerized builds, pipeline hygiene, Nginx
+                    configs/logging, Let’s Encrypt automation, deliverability
+                    setup.
                   </div>
-                </div>
-                <div class="when">Freelance case</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Problem</b>
-                  Need to place many notes/blocks like a PDF editor while
-                  ensuring generator can parse and render reliably.
-                </div>
-                <div class="case-box">
-                  <b>Constraints</b>
-                  Many annotations; generator constraints; maintainable module
-                  structure.
-                </div>
-                <div class="case-box">
-                  <b>Solution</b>
-                  Split UI into block components, keep a JSON schema of block
-                  types, ensure styles are generator-friendly.
-                </div>
-                <div class="case-box">
-                  <b>My work</b>
-                  Designed front module structure, planned real-data preview
-                  fill (project/customer), and fix list integration.
-                </div>
-              </div>
-            </div>
-
-            <div class="case">
-              <div class="case-top">
-                <div>
-                  <h3>OCR docx → docx: preserving pages 1:1 for printing</h3>
-                  <div class="case-sub">
-                    Automation pipeline • page order • per-page artifacts •
-                    final merge
+                  <div class="box">
+                    <b>Result</b> More predictable releases and fewer delivery
+                    incidents. <span class="muted">[Add metric]</span>
                   </div>
-                </div>
-                <div class="when">Utility</div>
-              </div>
-              <div class="case-grid">
-                <div class="case-box">
-                  <b>Problem</b>
-                  Large 90+ page document with images per page; needed text
-                  extraction while keeping strict page order.
-                </div>
-                <div class="case-box">
-                  <b>Constraints</b>
-                  Must match page count 1:1; performance and editor usability;
-                  separate debug artifacts.
-                </div>
-                <div class="case-box">
-                  <b>Solution</b>
-                  Split into per-page outputs (docx/txt), clean workspace each
-                  run, then merge preserving exact ordering.
-                </div>
-                <div class="case-box">
-                  <b>My work</b>
-                  Designed the pipeline requirements: ordering, clearing
-                  outputs, and consistent Times New Roman formatting.
                 </div>
               </div>
             </div>
@@ -952,13 +1017,13 @@
 
           <section class="section">
             <h2>Education</h2>
-            <div class="job">
-              <div class="job-head">
+            <div class="card">
+              <div class="head">
                 <div>
-                  <div class="job-title">
+                  <div class="title">
                     Moscow Polytechnic University (Mospolytech)
                   </div>
-                  <div class="job-meta">
+                  <div class="meta">
                     Information Systems and Technologies • Web Development
                   </div>
                 </div>
@@ -966,12 +1031,10 @@
               </div>
               <ul>
                 <li>
-                  Team projects from idea to MVP, documentation, and
+                  Team projects: from idea to MVP, documentation, and
                   presentations.
                 </li>
-                <li>
-                  Completed an SEO/promotion course as part of the program.
-                </li>
+                <li>SEO / promotion course within the program.</li>
               </ul>
             </div>
           </section>
