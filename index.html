@@ -27,11 +27,11 @@
     <meta property="og:locale:alternate" content="ru_RU" />
     <meta
       property="og:image"
-      content="https://saifutdinov.github.io/assets/og/og-en.png"
+      content="https://saifutdinov.github.io/assets/og/og-en.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta
       property="og:image:alt"
       content="Aidar Saifutdinov — Senior Backend Engineer (Go & PHP)"
@@ -49,7 +49,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://saifutdinov.github.io/assets/og/og-en.png"
+      content="https://saifutdinov.github.io/assets/og/og-en.jpg"
     />
 
     <meta name="theme-color" content="#ffffff" />
@@ -91,23 +91,7 @@
         font-family: var(--sans);
         color: var(--text);
         line-height: 1.55;
-        background:
-          radial-gradient(
-            900px 520px at 10% 0%,
-            rgba(37, 99, 235, 0.08),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 520px at 92% 8%,
-            rgba(16, 185, 129, 0.07),
-            transparent 58%
-          ),
-          radial-gradient(
-            700px 360px at 50% 100%,
-            rgba(124, 58, 237, 0.05),
-            transparent 60%
-          ),
-          var(--bg);
+        background: var(--soft);
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -195,22 +179,10 @@
       .panel {
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
-        background: rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow);
+        background: #ffffff;
+        box-shadow: var(--shadow-sm);
         overflow: hidden;
         position: relative;
-      }
-      .panel::before {
-        content: "";
-        position: absolute;
-        inset: 0 0 auto 0;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          var(--accent),
-          var(--accent2),
-          var(--accent3)
-        );
       }
 
       .pad {
@@ -290,8 +262,8 @@
 
       .note {
         margin-top: 12px;
-        border: 1px solid rgba(37, 99, 235, 0.2);
-        background: rgba(37, 99, 235, 0.055);
+        border: 1px solid var(--border);
+        background: var(--soft);
         color: rgba(15, 23, 42, 0.92);
         border-radius: 14px;
         padding: 12px 13px;
@@ -376,8 +348,8 @@
 
       .outcomes {
         margin-top: 10px;
-        border: 1px solid rgba(16, 185, 129, 0.22);
-        background: rgba(16, 185, 129, 0.055);
+        border: 1px solid var(--border);
+        background: var(--soft);
         border-radius: 14px;
         padding: 10px 12px;
       }
@@ -2012,6 +1984,113 @@
                       <li>Backend design thinking beyond basic CRUD.</li>
                       <li>
                         Reusability and engineering communication through code.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">AI Support CRM</div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <div class="repo-badge">Go · multi-tenant SaaS</div>
+                    <div class="repo-badge">Private repo</div>
+                  </div>
+                </div>
+                <div class="small">
+                  Multi-tenant support-bot platform (Telegram → WhatsApp)
+                  with a RAG knowledge base, human escalation, and a CRM
+                  layer on top. White-label core built to serve several
+                  client businesses from one codebase.
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Go backend architecture: row-level-security
+                        multi-tenancy, RAG pipeline, background jobs.
+                      </li>
+                      <li>
+                        Provider-agnostic billing (Stripe + ЮKassa) with
+                        idempotent webhook handling.
+                      </li>
+                      <li>
+                        Security-conscious design: CORS allowlists, rate
+                        limiting, SSRF guarding on outbound webhooks.
+                      </li>
+                      <li>
+                        Prometheus/Grafana observability and a documented,
+                        phased architecture evolution.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">PSN Deals</div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <div class="repo-badge">PHP · parser & API</div>
+                    <div class="repo-badge">Private repo</div>
+                  </div>
+                </div>
+                <div class="small">
+                  Turnkey product: a public site listing the cheapest PS
+                  Store games and PS Plus pricing by region, plus a paid API
+                  for resellers. Fully self-service through an admin panel —
+                  regions, API keys, branding — no code changes needed.
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Scheduled multi-region data collection (cron) with
+                        manual admin triggers.
+                      </li>
+                      <li>
+                        Public API with free per-IP limits and metered
+                        API keys for B2B clients.
+                      </li>
+                      <li>
+                        End-to-end product delivery: parser, API, and admin
+                        panel as one Docker stack.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Dimond</div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <div class="repo-badge">React + FastAPI</div>
+                    <div class="repo-badge">Private repo</div>
+                  </div>
+                </div>
+                <div class="small">
+                  Photo-to-mosaic generator for diamond painting. Upload a
+                  photo, pick a style, get a preview and a print-ready PDF
+                  assembly scheme.
+                </div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        React SPA (Nginx) talking to a FastAPI backend,
+                        containerized with Docker.
+                      </li>
+                      <li>
+                        An image-processing pipeline shipped as a usable
+                        consumer tool, not just a script.
+                      </li>
+                      <li>
+                        Full product delivery outside typical backend work.
                       </li>
                     </ul>
                   </div>

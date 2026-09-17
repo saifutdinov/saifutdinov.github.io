@@ -27,13 +27,13 @@
     <meta property="og:locale:alternate" content="en_US" />
     <meta
       property="og:image"
-      content="https://saifutdinov.github.io/assets/og/og-ru.png"
+      content="https://saifutdinov.github.io/assets/og/og-ru.jpg"
     />
     <meta
       property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/og/og-ru.png"
+      content="https://saifutdinov.github.io/assets/og/og-ru.jpg"
     />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -53,7 +53,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://saifutdinov.github.io/assets/og/og-ru.png"
+      content="https://saifutdinov.github.io/assets/og/og-ru.jpg"
     />
 
     <meta name="theme-color" content="#ffffff" />
@@ -95,23 +95,7 @@
         font-family: var(--sans);
         color: var(--text);
         line-height: 1.55;
-        background:
-          radial-gradient(
-            900px 520px at 10% 0%,
-            rgba(37, 99, 235, 0.08),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 520px at 92% 8%,
-            rgba(16, 185, 129, 0.07),
-            transparent 58%
-          ),
-          radial-gradient(
-            700px 360px at 50% 100%,
-            rgba(124, 58, 237, 0.05),
-            transparent 60%
-          ),
-          var(--bg);
+        background: var(--soft);
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -199,22 +183,10 @@
       .panel {
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
-        background: rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow);
+        background: #ffffff;
+        box-shadow: var(--shadow-sm);
         overflow: hidden;
         position: relative;
-      }
-      .panel::before {
-        content: "";
-        position: absolute;
-        inset: 0 0 auto 0;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          var(--accent),
-          var(--accent2),
-          var(--accent3)
-        );
       }
 
       .pad {
@@ -294,8 +266,8 @@
 
       .note {
         margin-top: 12px;
-        border: 1px solid rgba(37, 99, 235, 0.2);
-        background: rgba(37, 99, 235, 0.055);
+        border: 1px solid var(--border);
+        background: var(--soft);
         color: rgba(15, 23, 42, 0.92);
         border-radius: 14px;
         padding: 12px 13px;
@@ -380,8 +352,8 @@
 
       .outcomes {
         margin-top: 10px;
-        border: 1px solid rgba(16, 185, 129, 0.22);
-        background: rgba(16, 185, 129, 0.055);
+        border: 1px solid var(--border);
+        background: var(--soft);
         border-radius: 14px;
         padding: 10px 12px;
       }
@@ -2013,6 +1985,115 @@
                       <li>Архитектурное мышление beyond CRUD.</li>
                       <li>
                         Переиспользуемость и инженерная коммуникация через код.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">AI Support CRM</div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <div class="repo-badge">Go · мультитенантный SaaS</div>
+                    <div class="repo-badge">Приватный репозиторий</div>
+                  </div>
+                </div>
+                <div class="small">
+                  Мультитенантная платформа бота поддержки (Telegram →
+                  WhatsApp) с базой знаний на RAG, эскалацией на менеджера и
+                  CRM-слоем поверх. White-label ядро, рассчитанное на
+                  нескольких клиентов-бизнесов из одной кодовой базы.
+                </div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Архитектура бэкенда на Go: мультитенантность через
+                        row-level security, RAG-пайплайн, фоновые задачи.
+                      </li>
+                      <li>
+                        Провайдер-агностичный биллинг (Stripe + ЮKassa) с
+                        идемпотентной обработкой вебхуков.
+                      </li>
+                      <li>
+                        Безопасность: CORS-allowlist, rate limiting, защита
+                        от SSRF на исходящих вебхуках.
+                      </li>
+                      <li>
+                        Наблюдаемость через Prometheus/Grafana и
+                        документированная поэтапная эволюция архитектуры.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">PSN Deals</div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <div class="repo-badge">PHP · парсер и API</div>
+                    <div class="repo-badge">Приватный репозиторий</div>
+                  </div>
+                </div>
+                <div class="small">
+                  Готовый продукт "под ключ": публичный сайт с самыми
+                  дешёвыми играми PS Store и тарифами PS Plus по регионам +
+                  платный API для перепродавцов. Полностью управляется через
+                  встроенную админку — регионы, API-ключи, брендинг — без
+                  правки кода.
+                </div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        Сбор данных по расписанию (cron) по нескольким
+                        регионам с ручным запуском из админки.
+                      </li>
+                      <li>
+                        Публичный API с бесплатным лимитом на IP и платными
+                        API-ключами для B2B-клиентов.
+                      </li>
+                      <li>
+                        Сквозная поставка продукта: парсер, API и админка в
+                        одном Docker-стеке.
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Dimond</div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <div class="repo-badge">React + FastAPI</div>
+                    <div class="repo-badge">Приватный репозиторий</div>
+                  </div>
+                </div>
+                <div class="small">
+                  Генератор мозаики и схем из фото для алмазной живописи.
+                  Загрузите фото, выберите стиль — получите превью и
+                  печатную PDF-схему для сборки.
+                </div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body">
+                    <ul>
+                      <li>
+                        React SPA (за Nginx), работающий с бэкендом на
+                        FastAPI, всё в Docker.
+                      </li>
+                      <li>
+                        Пайплайн обработки изображений, доведённый до
+                        готового потребительского инструмента, а не скрипта.
+                      </li>
+                      <li>
+                        Полная поставка продукта за пределами типичной
+                        backend-работы.
                       </li>
                     </ul>
                   </div>
