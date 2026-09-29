@@ -3,2368 +3,321 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)</title>
-    <meta
-      name="description"
-      content="Senior Backend Engineer (Go, PHP/Laravel) с 10+ лет опыта. Архитектура, API, PostgreSQL, Docker, CI/CD, DevOps, модернизация legacy, интеграции, отчеты и продакшн-поддержка."
-    />
-
+    <title>Айдар Сайфутдинов — Software Engineer, Портфолио (Go & PHP)</title>
+    <meta name="description" content="Senior Backend Engineer (Go, PHP/Laravel), 10+ лет. Общий обзор + полное портфолио проектов. Есть версии резюме под Team Lead, Senior Go, Senior PHP, DevOps, Python и Freelance." />
     <link rel="canonical" href="https://saifutdinov.github.io/ru/" />
+    <link rel="alternate" hreflang="en" href="https://saifutdinov.github.io/" />
+    <link rel="alternate" hreflang="ru" href="https://saifutdinov.github.io/ru/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Айдар Сайфутдинов — Резюме" />
-    <meta
-      property="og:title"
-      content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)"
-    />
-    <meta
-      property="og:description"
-      content="10+ лет. Go, PHP/Laravel, PostgreSQL, Docker, CI/CD, DevOps, legacy modernization, интеграции, ownership продакшна."
-    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Aidar Saifutdinov — Resume" />
+    <meta property="og:title" content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)" />
+    <meta property="og:description" content="10+ лет. Go, PHP/Laravel, PostgreSQL, Docker, CI/CD, DevOps, модернизация legacy, продакшн-ownership. Есть версии резюме под конкретные роли." />
     <meta property="og:url" content="https://saifutdinov.github.io/ru/" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:locale:alternate" content="en_US" />
-    <meta
-      property="og:image"
-      content="https://saifutdinov.github.io/assets/og/og-ru.jpg"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://saifutdinov.github.io/assets/og/og-ru.jpg"
-    />
-    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="https://saifutdinov.github.io/assets/og/og-ru.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)"
-    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)" />
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)"
-    />
-    <meta
-      name="twitter:description"
-      content="Backend: Go + PHP/Laravel, PostgreSQL, CI/CD, Docker, DevOps, интеграции, ownership продакшна."
-    />
-    <meta
-      name="twitter:image"
-      content="https://saifutdinov.github.io/assets/og/og-ru.jpg"
-    />
+    <meta name="twitter:title" content="Айдар Сайфутдинов — Senior Backend Engineer (Go & PHP)" />
+    <meta name="twitter:description" content="10+ лет. Go, PHP/Laravel, PostgreSQL, Docker, CI/CD, DevOps, модернизация legacy, продакшн-ownership. Есть версии резюме под конкретные роли." />
+    <meta name="twitter:image" content="https://saifutdinov.github.io/assets/og/og-ru.jpg" />
 
     <meta name="theme-color" content="#ffffff" />
-
-    <style>
-      :root {
-        --bg: #ffffff;
-        --text: #0f172a;
-        --muted: rgba(15, 23, 42, 0.74);
-        --muted2: rgba(15, 23, 42, 0.6);
-        --border: rgba(15, 23, 42, 0.12);
-        --border-strong: rgba(15, 23, 42, 0.18);
-        --accent: #2563eb;
-        --accent2: #10b981;
-        --accent3: #7c3aed;
-        --soft: #f8fafc;
-        --soft2: #f1f5f9;
-        --shadow: 0 10px 28px rgba(2, 6, 23, 0.08);
-        --shadow-sm: 0 6px 16px rgba(2, 6, 23, 0.05);
-        --radius: 16px;
-        --radius-lg: 20px;
-        --mono:
-          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace;
-        --sans:
-          Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-          Ubuntu, Cantarell, "Noto Sans", Arial;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: fit-content;
-      }
-      body {
-        margin: 0;
-        font-family: var(--sans);
-        color: var(--text);
-        line-height: 1.55;
-        background: var(--soft);
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .wrap {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 24px 16px 52px;
-      }
-
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 14px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .brand-mark {
-        width: 12px;
-        height: 12px;
-        border-radius: 4px;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
-        flex: 0 0 auto;
-      }
-      .brand-title {
-        font-weight: 850;
-        letter-spacing: 0.2px;
-      }
-      .mono {
-        font-family: var(--mono);
-      }
-      .actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow-sm);
-        color: var(--muted);
-        font-size: 13px;
-      }
-      .pill strong {
-        color: var(--text);
-      }
-      .sep {
-        opacity: 0.45;
-      }
-
-      .layout {
-        display: grid;
-        grid-template-columns: 380px 1fr;
-        gap: 16px;
-        align-items: start;
-      }
-      @media (max-width: 1080px) {
-        .layout {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .panel {
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        background: #ffffff;
-        box-shadow: var(--shadow-sm);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .pad {
-        padding: 18px;
-      }
-      .divider {
-        border-top: 1px solid var(--border);
-      }
-
-      .hero {
-        display: flex;
-        gap: 14px;
-        align-items: center;
-      }
-      .avatar {
-        width: 96px;
-        height: 96px;
-        border-radius: 18px;
-        border: 1px solid var(--border);
-        overflow: hidden;
-        background: linear-gradient(180deg, #f8fafc, #eef2f7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-        color: var(--muted2);
-        font-size: 12px;
-        text-align: center;
-      }
-      .avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: 22px;
-        line-height: 1.12;
-        letter-spacing: 0.15px;
-      }
-      .subtitle {
-        margin-top: 6px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-      .sub2 {
-        margin-top: 6px;
-        color: var(--muted2);
-        font-size: 12px;
-      }
-
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 12px;
-      }
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.86);
-        border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 12px;
-        white-space: nowrap;
-      }
-      .chip svg {
-        width: 13px;
-        height: 13px;
-        opacity: 0.85;
-        flex: 0 0 auto;
-      }
-
-      .note {
-        margin-top: 12px;
-        border: 1px solid var(--border);
-        background: var(--soft);
-        color: rgba(15, 23, 42, 0.92);
-        border-radius: 14px;
-        padding: 12px 13px;
-        font-size: 13px;
-      }
-
-      h2 {
-        margin: 0 0 10px;
-        font-size: 15px;
-        letter-spacing: 0.2px;
-      }
-      .small {
-        font-size: 13px;
-        color: var(--muted);
-      }
-      .muted {
-        color: var(--muted);
-      }
-      .muted2 {
-        color: var(--muted2);
-      }
-
-      .kv-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .kv {
-        display: grid;
-        grid-template-columns: 30px 1fr;
-        gap: 10px;
-        align-items: start;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(2, 6, 23, 0.018);
-        padding: 10px 12px;
-        font-size: 13px;
-      }
-      .kv .icon {
-        width: 18px;
-        height: 18px;
-        color: var(--muted2);
-        margin-top: 1px;
-      }
-      .kv .v {
-        overflow-wrap: anywhere;
-      }
-      .kv .label {
-        display: block;
-        color: var(--muted2);
-        font-size: 11px;
-        margin-bottom: 2px;
-      }
-
-      .section {
-        padding: 18px;
-      }
-      .section + .section {
-        border-top: 1px solid var(--border);
-      }
-
-      .headline {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 8px 12px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-      }
-      .headline h2 {
-        margin: 0;
-      }
-      .tagline {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 999px;
-        padding: 5px 10px;
-        font-size: 12px;
-        color: var(--muted);
-        white-space: nowrap;
-      }
-
-      .outcomes {
-        margin-top: 10px;
-        border: 1px solid var(--border);
-        background: var(--soft);
-        border-radius: 14px;
-        padding: 10px 12px;
-      }
-      .outcomes b {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.35px;
-        color: rgba(15, 23, 42, 0.82);
-      }
-
-      .timeline {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .card {
-        border: 1px solid var(--border);
-        background: rgba(2, 6, 23, 0.018);
-        border-radius: 16px;
-        padding: 14px;
-      }
-
-      .head {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 10px 12px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-      }
-      .title {
-        font-weight: 820;
-        letter-spacing: 0.2px;
-      }
-      .meta {
-        color: var(--muted);
-        font-size: 13px;
-      }
-      .when {
-        font-size: 12px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.82);
-        padding: 5px 10px;
-        color: rgba(15, 23, 42, 0.78);
-        white-space: nowrap;
-      }
-      .stackline {
-        margin-top: 6px;
-        color: rgba(15, 23, 42, 0.7);
-        font-size: 12px;
-      }
-
-      ul {
-        margin: 10px 0 0 18px;
-        padding: 0;
-      }
-      li {
-        margin: 6px 0;
-      }
-
-      .grid2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-      .grid3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 12px;
-      }
-      @media (max-width: 980px) {
-        .grid2,
-        .grid3 {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .skill-card {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.82);
-        border-radius: 14px;
-        padding: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .lvl {
-        font-size: 11px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        padding: 4px 9px;
-        color: var(--muted);
-        white-space: nowrap;
-        background: rgba(2, 6, 23, 0.02);
-      }
-
-      .case {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.72);
-        border-radius: 15px;
-        padding: 12px;
-      }
-      .case h3 {
-        margin: 0 0 8px;
-        font-size: 14px;
-        line-height: 1.25;
-      }
-      .case .case-meta {
-        font-size: 12px;
-        color: var(--muted);
-        margin-bottom: 8px;
-      }
-      .kv4 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-top: 8px;
-      }
-      @media (max-width: 700px) {
-        .kv4 {
-          grid-template-columns: 1fr;
-        }
-      }
-      .mini {
-        border: 1px solid var(--border);
-        background: rgba(2, 6, 23, 0.015);
-        border-radius: 12px;
-        padding: 8px 9px;
-        font-size: 12px;
-      }
-      .mini b {
-        display: block;
-        margin-bottom: 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
-        font-size: 10px;
-        color: var(--muted2);
-      }
-
-      /* Collapsible blocks */
-      .fold {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.72);
-        border-radius: 14px;
-        overflow: hidden;
-        margin-top: 10px;
-      }
-      .fold > summary {
-        list-style: none;
-        cursor: pointer;
-        padding: 10px 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.78);
-      }
-      .fold > summary::-webkit-details-marker {
-        display: none;
-      }
-      .fold > summary::after {
-        content: "+";
-        font-weight: 800;
-        color: var(--muted);
-        flex: 0 0 auto;
-      }
-      .fold[open] > summary {
-        border-bottom: 1px solid var(--border);
-        background: rgba(2, 6, 23, 0.012);
-      }
-      .fold[open] > summary::after {
-        content: "–";
-      }
-      .fold-body {
-        padding: 10px 12px;
-      }
-      .fold-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      @media (max-width: 800px) {
-        .fold-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .project {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 14px;
-        padding: 12px;
-      }
-      .project-title {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-bottom: 6px;
-      }
-      .project-title .name {
-        font-weight: 800;
-        font-size: 14px;
-      }
-      .repo-badge {
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        padding: 4px 8px;
-        font-size: 11px;
-        color: var(--muted);
-        background: rgba(2, 6, 23, 0.02);
-        white-space: nowrap;
-      }
-
-      .footer {
-        padding: 16px 18px 20px;
-        color: var(--muted2);
-        font-size: 12px;
-        border-top: 1px solid var(--border);
-      }
-
-      .i {
-        width: 16px;
-        height: 16px;
-        display: inline-block;
-        vertical-align: -3px;
-        color: currentColor;
-      }
-
-      @media print {
-        body {
-          background: #fff;
-        }
-        .wrap {
-          max-width: none;
-          padding: 0;
-        }
-        .panel {
-          box-shadow: none;
-          background: #fff;
-        }
-        .pill {
-          box-shadow: none;
-          background: #fff;
-        }
-        a {
-          color: #0f172a;
-          text-decoration: none;
-        }
-        .topbar {
-          margin-bottom: 8px;
-        }
-        .section {
-          padding: 14px;
-        }
-        .card,
-        .case,
-        .project {
-          break-inside: avoid;
-        }
-        details.fold {
-          break-inside: avoid;
-        }
-        details.fold[open] > summary::after {
-          content: "";
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/resume.css" />
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Айдар Сайфутдинов", "url": "https://saifutdinov.github.io/ru/", "image": "https://saifutdinov.github.io/assets/images/avatar.jpg", "jobTitle": "Senior Backend Engineer (Go & PHP)", "description": "10+ лет. Go, PHP/Laravel, PostgreSQL, Docker, CI/CD, DevOps, модернизация legacy, продакшн-ownership. Есть версии резюме под конкретные роли.", "email": "mailto:sayfutdinov.aydar.web@gmail.com", "address": {"@type": "PostalAddress", "addressCountry": "ES"}, "sameAs": ["https://github.com/saifutdinov", "https://www.linkedin.com/in/sayfutdinov-aydar/", "https://t.me/Saifutdinov_a"], "alumniOf": {"@type": "CollegeOrUniversity", "name": "Moscow Polytechnic University"}, "knowsLanguage": ["ru", "ba", "en", "es"]}</script>
+    <script src="/assets/js/resume.js" defer></script>
   </head>
   <body>
-    <!-- SVG sprite -->
-    <svg
-      aria-hidden="true"
-      style="position: absolute; width: 0; height: 0; overflow: hidden"
-    >
-      <symbol id="ic-mail" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2-8 5-8-5V6l8 5 8-5Z"
-        />
-      </symbol>
-      <symbol id="ic-gh" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M12 2A10 10 0 0 0 8.84 21.5c.5.09.68-.22.68-.48v-1.72c-2.78.6-3.37-1.18-3.37-1.18-.46-1.14-1.11-1.44-1.11-1.44-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.1-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.9-1.3 2.75-1.02 2.75-1.02.55 1.39.2 2.42.1 2.67.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
-        />
-      </symbol>
-      <symbol id="ic-linkedin" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56a1.96 1.96 0 1 0-3.92 0a1.96 1.96 0 0 0 3.92 0ZM20.44 13.28c0-3.24-1.73-4.75-4.03-4.75c-1.86 0-2.69 1.02-3.16 1.74V8.5H9.87V20h3.38v-6.28c0-1.66.31-3.28 2.36-3.28c2.02 0 2.05 1.88 2.05 3.39V20h3.38v-6.72Z"
-        />
-      </symbol>
-      <symbol id="ic-telegram" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M9.78 15.54 9.4 20.9c.54 0 .78-.23 1.06-.5l2.53-2.42 5.24 3.84c.96.53 1.64.25 1.9-.89l3.44-16.1.01-.01c.3-1.4-.5-1.95-1.43-1.6L1.94 11c-1.38.53-1.36 1.3-.24 1.65l5.17 1.61L18.9 6.7c.57-.35 1.09-.16.66.2"
-        />
-      </symbol>
-      <symbol id="ic-pin" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M12 2a7 7 0 0 0-7 7c0 4.98 7 13 7 13s7-8.02 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
-        />
-      </symbol>
-      <symbol id="ic-brief" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M10 4h4a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v3H3V9a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2Zm4 3V6h-4v1h4Zm7 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5h8v1h2v-1h8Z"
-        />
-      </symbol>
-      <symbol id="ic-db" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M12 2C7.58 2 4 3.79 4 6v12c0 2.21 3.58 4 8 4s8-1.79 8-4V6c0-2.21-3.58-4-8-4Zm0 2c3.87 0 6 .99 6 2s-2.13 2-6 2-6-.99-6-2 2.13-2 6-2Zm0 16c-3.87 0-6-.99-6-2v-2c1.45 1.02 3.93 1.5 6 1.5s4.55-.48 6-1.5v2c0 1.01-2.13 2-6 2Zm0-5c-3.87 0-6-.99-6-2v-2c1.45 1.02 3.93 1.5 6 1.5s4.55-.48 6-1.5v2c0 1.01-2.13 2-6 2Z"
-        />
-      </symbol>
-      <symbol id="ic-server" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M4 3h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 2v4h12V5H6Zm-2 8h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Zm2 2v4h12v-4H6Zm1 1h2v2H7v-2Zm0-10h2v2H7V6Z"
-        />
-      </symbol>
-      <symbol id="ic-code" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="m8.7 16.6-4.3-4.3L8.7 8l1.4 1.4-2.9 2.9 2.9 2.9-1.4 1.4Zm6.6 0-1.4-1.4 2.9-2.9-2.9-2.9L15.3 8l4.3 4.3-4.3 4.3ZM10.4 20l2.8-16h1.8l-2.8 16h-1.8Z"
-        />
-      </symbol>
-      <symbol id="ic-ai" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M12 2 9.8 7.3 4 9.5l5.8 2.2L12 17l2.2-5.3L20 9.5l-5.8-2.2L12 2Zm-6 14 1.2 2.8L10 20l-2.8 1.2L6 24l-1.2-2.8L2 20l2.8-1.2L6 16Zm12 0 1.2 2.8L22 20l-2.8 1.2L18 24l-1.2-2.8L14 20l2.8-1.2L18 16Z"
-        />
-      </symbol>
-      <symbol id="ic-linux" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M12 2c-2.2 0-4 1.8-4 4v2c0 .6.1 1.2.4 1.7-.9.8-1.4 2-1.4 3.3v1c0 1.7.9 3.3 2.3 4.1l-1 2.9H10l.7-2h2.6l.7 2h1.7l-1-2.9A4.98 4.98 0 0 0 17 14v-1c0-1.3-.5-2.5-1.4-3.3.3-.5.4-1.1.4-1.7V6c0-2.2-1.8-4-4-4Zm-1.5 5a.75.75 0 1 1 0-1.5A.75.75 0 0 1 10.5 7Zm3 0a.75.75 0 1 1 0-1.5A.75.75 0 0 1 13.5 7Z"
-        />
-      </symbol>
-    </svg>
-
+    <!-- print / save-as-PDF: native browser function, no library -->
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
           <div class="brand-mark" aria-hidden="true"></div>
-          <div class="brand-title">Резюме</div>
-          <div class="pill">
-            <span class="mono">saifutdinov.github.io</span>
-          </div>
+          <div class="brand-title">Resume</div>
+          <div class="pill"><span class="mono">saifutdinov.github.io</span></div>
         </div>
         <div class="actions">
-          <div class="pill">
-            Язык: <a href="/">EN</a> <span class="sep">|</span>
-            <strong>RU</strong>
-          </div>
-          <div class="pill">Печать: <strong>Ctrl/Cmd + P</strong></div>
+          <div class="pill">Язык: <strong>RU</strong> <span class="sep">|</span> <a href="/">EN</a></div>
+          <button class="pill" type="button" onclick="window.print()"><svg class="i"><use href="/assets/svg/icons.svg#ic-print"/></svg>Печать / Сохранить PDF</button>
         </div>
       </div>
 
+      <nav class="rolenav" aria-label="Resume versions">
+        <a class="rolelink" href="/ru/" aria-current="page">Портфолио</a>
+        <a class="rolelink" href="/ru/roles/team-lead/">Team Lead</a>
+        <a class="rolelink" href="/ru/roles/senior-go/">Senior Go</a>
+        <a class="rolelink" href="/ru/roles/senior-php/">Senior PHP</a>
+        <a class="rolelink" href="/ru/roles/devops/">DevOps</a>
+        <a class="rolelink" href="/ru/roles/python/">Python</a>
+        <a class="rolelink" href="/ru/roles/freelance/">Фриланс</a>
+      </nav>
+
       <div class="layout">
-        <!-- LEFT SIDEBAR -->
         <aside class="panel">
           <div class="pad">
             <div class="hero">
               <div class="avatar">
-                <img
-                  src="/assets/images/avatar.jpg"
-                  alt="Айдар Сайфутдинов"
-                  onerror="
-                    this.remove();
-                    this.parentElement.textContent = 'Аватар';
-                  "
-                />
+                <img src="/assets/images/avatar.jpg" alt="Айдар Сайфутдинов" onerror="this.remove();this.parentElement.textContent='Avatar';" />
               </div>
               <div>
                 <h1>Айдар Сайфутдинов</h1>
-                <div class="subtitle">
-                  Senior Backend Engineer — Go & PHP (Laravel/Symfony)
-                </div>
-                <div class="sub2">
-                  10+ лет в разработке • ownership backend • продакшн-мышление
-                </div>
-                <div class="chips">
-                  <span class="chip"
-                    ><svg><use href="#ic-code" /></svg>API-first</span
-                  >
-                  <span class="chip"
-                    ><svg><use href="#ic-brief" /></svg>Clean Architecture</span
-                  >
-                  <span class="chip"
-                    ><svg><use href="#ic-db" /></svg>Data-first</span
-                  >
-                  <span class="chip"
-                    ><svg><use href="#ic-server" /></svg>CI/CD • DevOps</span
-                  >
-                </div>
+                <div class="subtitle">Senior Backend Engineer — Go & PHP (Laravel/Symfony)</div>
+                <div class="sub2">10+ лет в разработке · backend ownership · продакшн-мышление</div>
               </div>
             </div>
-
-            <div class="note">
-              Беру backend под ключ:
-              <b
-                >архитектура → бизнес-логика → БД → API → релиз → поддержка на
-                проде</b
-              >. Силен в модернизации legacy без остановки бизнеса, безопасных
-              изменениях, интеграциях и решении “стыковых” технических задач
-              (infra, email, отчёты, документы).
+            <div class="chips">
+              <span class="chip"><svg class="i"><use href="/assets/svg/icons.svg#ic-code"/></svg>API-first</span>
+              <span class="chip"><svg class="i"><use href="/assets/svg/icons.svg#ic-code"/></svg>Clean Architecture</span>
+              <span class="chip"><svg class="i"><use href="/assets/svg/icons.svg#ic-code"/></svg>Data-first</span>
+              <span class="chip"><svg class="i"><use href="/assets/svg/icons.svg#ic-code"/></svg>CI/CD · DevOps</span>
             </div>
           </div>
-
           <div class="divider"></div>
-
           <div class="pad">
             <h2>Контакты</h2>
             <div class="kv-list">
-              <div class="kv">
-                <svg class="icon"><use href="#ic-mail" /></svg>
-                <div class="v">
-                  <span class="label">Email</span
-                  ><a href="mailto:sayfutdinov.aydar.web@gmail.com"
-                    >sayfutdinov.aydar.web@gmail.com</a
-                  >
-                </div>
-              </div>
-              <div class="kv">
-                <svg class="icon"><use href="#ic-gh" /></svg>
-                <div class="v">
-                  <span class="label">GitHub</span
-                  ><a
-                    href="https://github.com/saifutdinov"
-                    target="_blank"
-                    rel="noopener"
-                    >github.com/saifutdinov</a
-                  >
-                </div>
-              </div>
-              <div class="kv">
-                <svg class="icon"><use href="#ic-linkedin" /></svg>
-                <div class="v">
-                  <span class="label">LinkedIn</span
-                  ><a
-                    href="https://www.linkedin.com/in/sayfutdinov-aydar"
-                    target="_blank"
-                    rel="noopener"
-                    >linkedin.com/in/sayfutdinov-aydar</a
-                  >
-                </div>
-              </div>
-              <div class="kv">
-                <svg class="icon"><use href="#ic-telegram" /></svg>
-                <div class="v">
-                  <span class="label">Telegram</span
-                  ><a
-                    href="https://t.me/Saifutdinov_a"
-                    target="_blank"
-                    rel="noopener"
-                    >@Saifutdinov_a</a
-                  >
-                </div>
-              </div>
-              <div class="kv">
-                <svg class="icon"><use href="#ic-pin" /></svg>
-                <div class="v">
-                  <span class="label">Локация</span>Испания • Remote / релокация
-                  возможна
-                </div>
-              </div>
+              <div class="kv"><span class="icon"><svg class="i"><use href="/assets/svg/icons.svg#ic-mail"/></svg></span><div class="v"><span class="label">Email</span><a href="mailto:sayfutdinov.aydar.web@gmail.com">sayfutdinov.aydar.web@gmail.com</a></div></div>
+              <div class="kv"><span class="icon"><svg class="i"><use href="/assets/svg/icons.svg#ic-gh"/></svg></span><div class="v"><span class="label">GitHub</span><a href="https://github.com/saifutdinov" target="_blank" rel="noopener">github.com/saifutdinov</a></div></div>
+              <div class="kv"><span class="icon"><svg class="i"><use href="/assets/svg/icons.svg#ic-linkedin"/></svg></span><div class="v"><span class="label">LinkedIn</span><a href="https://linkedin.com/in/sayfutdinov-aydar/" target="_blank" rel="noopener">linkedin.com/in/sayfutdinov-aydar</a></div></div>
+              <div class="kv"><span class="icon"><svg class="i"><use href="/assets/svg/icons.svg#ic-telegram"/></svg></span><div class="v"><span class="label">Telegram</span><a href="https://t.me/Saifutdinov_a" target="_blank" rel="noopener">@Saifutdinov_a</a></div></div>
+              <div class="kv"><span class="icon"><svg class="i"><use href="/assets/svg/icons.svg#ic-pin"/></svg></span><div class="v"><span class="label">Локация</span>Испания (Ла-Уньон) · часовой пояс ЕС · remote / обсуждаем переезд</div></div>
+              <div class="kv"><span class="icon"><svg class="i"><use href="/assets/svg/icons.svg#ic-ai"/></svg></span><div class="v"><span class="label">Языки</span>русский и башкирский (родные) · английский B2 · испанский (учу)</div></div>
             </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="pad">
-            <h2>Ключевые сильные стороны</h2>
-            <div style="display: flex; flex-direction: column; gap: 10px">
-              <div class="skill-card">
-                <div>
-                  <div class="title">Backend & Архитектура</div>
-                  <div class="small">
-                    Go (Echo/gRPC), PHP (Laravel/Symfony), REST API, Clean
-                    Architecture, доменная логика
-                  </div>
-                </div>
-                <div class="lvl">Advanced</div>
-              </div>
-              <div class="skill-card">
-                <div>
-                  <div class="title">Базы данных & Данные</div>
-                  <div class="small">
-                    PostgreSQL/MySQL/MongoDB, эволюция схемы, индексы, сложный
-                    SQL, отчеты/выгрузки
-                  </div>
-                </div>
-                <div class="lvl">Advanced</div>
-              </div>
-              <div class="skill-card">
-                <div>
-                  <div class="title">Надежность & Эксплуатация</div>
-                  <div class="small">
-                    Продакшн-диагностика, узкие места, память,
-                    highload-мышление, observability mindset
-                  </div>
-                </div>
-                <div class="lvl">Strong</div>
-              </div>
-              <div class="skill-card">
-                <div>
-                  <div class="title">DevOps & Delivery</div>
-                  <div class="small">
-                    Docker, GitLab CI/CD, Nginx, Exim, TLS, SPF/DKIM/DMARC,
-                    Linux-консоль
-                  </div>
-                </div>
-                <div class="lvl">Strong</div>
-              </div>
-              <div class="skill-card">
-                <div>
-                  <div class="title">Команда & Менторство</div>
-                  <div class="small">
-                    Code review, обмен знаниями, обсуждение архитектуры,
-                    онбординг, документация
-                  </div>
-                </div>
-                <div class="lvl">Strong</div>
-              </div>
-            </div>
-
-            <h2 style="margin-top: 14px">Основной стек</h2>
-            <div class="chips">
-              <span class="chip">Go</span>
-              <span class="chip">Echo</span>
-              <span class="chip">gRPC</span>
-              <span class="chip">PHP 8.x</span>
-              <span class="chip">Laravel</span>
-              <span class="chip">Symfony</span>
-              <span class="chip">PostgreSQL</span>
-              <span class="chip">MySQL</span>
-              <span class="chip">MongoDB</span>
-              <span class="chip">Redis</span>
-              <span class="chip">Docker</span>
-              <span class="chip">Nginx</span>
-              <span class="chip">GitLab CI/CD</span>
-              <span class="chip">Exim</span>
-              <span class="chip">Prometheus</span>
-              <span class="chip">Grafana</span>
-              <span class="chip">ELK</span>
-              <span class="chip">React</span>
-              <span class="chip">Vue</span>
-              <span class="chip">TypeScript</span>
-              <span class="chip">Python</span>
-            </div>
-
-            <h2 style="margin-top: 14px">Инженерная ширина</h2>
-            <div class="chips">
-              <span class="chip"
-                ><svg><use href="#ic-linux" /></svg>Linux-консоль
-                (уверенно)</span
-              >
-              <span class="chip"
-                ><svg><use href="#ic-ai" /></svg>AI-инструменты и промпты</span
-              >
-              <span class="chip">Telegram-боты</span>
-              <span class="chip">Интеграции сторонних API</span>
-              <span class="chip">PDF / OCR автоматизация</span>
-              <span class="chip">Обработка изображений</span>
-              <span class="chip">Browser extensions (эксперименты)</span>
-            </div>
-
-            <h2 style="margin-top: 14px">Языки</h2>
-            <div class="chips">
-              <span class="chip">Русский — родной</span>
-              <span class="chip">English — рабочий</span>
-              <span class="chip">Испанский — изучаю</span>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="pad">
-            <h2>Что привношу в компанию</h2>
-            <ul>
-              <li>
-                Снижаю риск регрессий через границы архитектуры и культуру code
-                review.
-              </li>
-              <li>
-                Ускоряю поставку фич за счет ownership: код + CI/CD + infra +
-                поддержка на проде.
-              </li>
-              <li>
-                Закрываю “серые зоны” между ролями: legacy, миграции, почта,
-                отчеты, интеграции.
-              </li>
-              <li>
-                Помогаю команде расти через менторство, документацию и
-                инженерную дисциплину.
-              </li>
-              <li>Думаю про долгую поддержку, а не только “сделать по ТЗ”.</li>
-            </ul>
           </div>
         </aside>
 
-        <!-- MAIN CONTENT -->
         <main class="panel">
           <section class="section">
             <div class="headline">
-              <h2>О себе</h2>
-              <div class="tagline">
-                Backend ownership • Product + Ops mindset
-              </div>
+              <h2>Профессиональное summary</h2>
+              <div class="tagline">Backend ownership · Product + Ops mindset</div>
             </div>
-
-            <div class="muted">
-              Senior backend инженер с <b>10+ годами опыта в разработке ПО</b>,
-              специализация — <b>Golang и PHP (Laravel/Symfony)</b>. Беру на
-              себя backend end-to-end: архитектура, доменная логика, модель
-              данных, API, пайплайны доставки и поддержка в продакшне.
+            <p>Senior backend-инженер с 10+ годами опыта, специализация — Golang и PHP (Laravel/Symfony). Беру на себя backend end-to-end: архитектура, доменная логика, модель данных, API, пайплайны доставки и поддержка в продакшне. Силён в модернизации legacy без простоя, безопасных изменениях БД, CI/CD + Docker + Nginx, доставляемости email, интеграциях и отчётности.</p>
+            <div class="outcomes">
+              <b>Почему это подходит</b>
+              <ul style="margin-top:0">
+                <li>Не просто исполнитель задач — инженер, который доводит изменения до продакшна.
+                <li>Меньше скрытых проблем на стыке backend / infra / интеграций / отчётов.
+                <li>Выше предсказуемость релизов и ниже стоимость поддержки в долгую.</li>
+              </ul>
             </div>
-            <div class="muted" style="margin-top: 8px">
-              Силен в <b>модернизации legacy без остановки бизнеса</b>,
-              безопасных изменениях БД, CI/CD + Docker + Nginx, доставляемости
-              email, интеграциях со сторонними API, отчетных/документных потоках
-              и инженерных практиках внутри команды.
-            </div>
-
-            <details class="fold" open>
-              <summary>Почему это важно работодателю</summary>
-              <div class="fold-body">
-                <ul>
-                  <li>
-                    Вы получаете не только исполнителя задач, а инженера,
-                    который доводит изменения до продакшна.
-                  </li>
-                  <li>
-                    Меньше скрытых проблем на стыке backend / infra / интеграций
-                    / отчетов.
-                  </li>
-                  <li>
-                    Выше предсказуемость релизов и ниже стоимость поддержки в
-                    долгую.
-                  </li>
-                </ul>
-              </div>
-            </details>
           </section>
-
+          <section class="section">
+            <div class="headline">
+              <h2>Ищете конкретную роль?</h2>
+              <div class="tagline">Один и тот же человек, разный акцент — выберите версию под конкретную вакансию.</div>
+            </div>
+            <div class="grid3">
+              <a class="role-card" href="/ru/roles/team-lead/">
+                <div class="name">Team Lead</div>
+                <div class="desc">Лидерство, менторство, культура код-ревью, работа с клиентами.</div>
+              </a>
+              <a class="role-card" href="/ru/roles/senior-go/">
+                <div class="name">Senior Go</div>
+                <div class="desc">Архитектура backend на Go/Echo и продакшн-ownership.</div>
+              </a>
+              <a class="role-card" href="/ru/roles/senior-php/">
+                <div class="name">Senior PHP</div>
+                <div class="desc">Laravel/Symfony + модернизация legacy PHP.</div>
+              </a>
+              <a class="role-card" href="/ru/roles/devops/">
+                <div class="name">DevOps</div>
+                <div class="desc">CI/CD, Docker, Nginx/TLS, Linux-инфраструктура.</div>
+              </a>
+              <a class="role-card" href="/ru/roles/python/">
+                <div class="name">Python</div>
+                <div class="desc">Автоматизация, сервисы на FastAPI, утилиты.</div>
+              </a>
+              <a class="role-card" href="/ru/roles/freelance/">
+                <div class="name">Фриланс</div>
+                <div class="desc">Проекты для клиентов + свои продукты, соло.</div>
+              </a>
+            </div>
+          </section>
           <section class="section">
             <div class="headline">
               <h2>Опыт</h2>
-              <div class="tagline">Что делал → к чему это привело</div>
+              <div class="tagline">Сжатая хронология — детали в версиях резюме под роли</div>
             </div>
-
             <div class="timeline">
-              <!-- Azimuth -->
               <div class="card">
-                <div class="head">
-                  <div>
-                    <div class="title">
-                      Senior Backend Engineer (Go) — Azimuth (HR Tech / оценка
-                      персонала)
-                    </div>
-                    <div class="meta">
-                      Опросы вовлеченности, психометрические тесты, тесты
-                      способностей, «360», бизнес-социометрия
-                    </div>
-                  </div>
-                  <div class="when">2022 — н.в.</div>
+              <div class="head">
+                <div>
+                  <div class="title">Senior Backend Engineer (Go) — Azimuth</div>
+                  <div class="meta">HR Tech / платформа оценки персонала</div>
                 </div>
-                <div class="stackline">
-                  Go • Echo • Clean Architecture • PostgreSQL • Redis • Docker •
-                  Nginx • GitLab CI/CD • Exim • SPF/DKIM/DMARC • React •
-                  Linux-консоль
-                </div>
-
-                <div class="outcomes">
-                  <b>Результат и вклад</b>
-                  <ul>
-                    <li>
-                      <b
-                        >Повысил стабильность backend и безопасность
-                        изменений</b
-                      >
-                      через code review и выравнивание архитектуры → меньше
-                      рискованных изменений, понятнее инженерные решения в
-                      команде.
-                    </li>
-                    <li>
-                      <b
-                        >Провел несколько крупных этапов эволюции
-                        PostgreSQL-схемы</b
-                      >
-                      → продукт продолжал расти без поломки отчетности и
-                      ключевых сценариев.
-                    </li>
-                    <li>
-                      <b>Стабилизировал критичный Go processor</b> (тяжелая
-                      математика + финальная обработка результатов) → повысилась
-                      надежность бизнес-критичного вычислительного блока.
-                    </li>
-                    <li>
-                      <b>Подключался к React “Player”</b> по необходимости →
-                      улучшил end-to-end поставку, адаптивность и скорость
-                      работы пользовательского потока.
-                    </li>
-                    <li>
-                      <b>Закрывал существенную часть DevOps/infra задач</b>
-                      (CI/CD, Docker, Nginx, TLS, почта) → более предсказуемые
-                      релизы и меньше операционных сюрпризов.
-                    </li>
-                  </ul>
-                </div>
-
-                <details class="fold">
-                  <summary>
-                    Развернуть детали (архитектура, backend, БД, processor,
-                    infra, внутренние инструменты)
-                  </summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        <b>Backend (Go / Echo):</b> проектирование и поддержка
-                        бизнес-логики по сбору, подготовке, хранению и выдаче
-                        данных опросов/тестов.
-                      </li>
-                      <li>
-                        <b>Архитектура:</b> усилил и поддержал границы Clean
-                        Architecture (Delivery / Usecase / Repository), чтобы
-                        доменная логика оставалась в usecase.
-                      </li>
-                      <li>
-                        <b>PostgreSQL:</b> проектирование/эволюция схемы,
-                        миграции, индексы, стабильность потоков данных для
-                        отчетности.
-                      </li>
-                      <li>
-                        <b>Processor service:</b> исправлял и стабилизировал
-                        крупный унаследованный Go-блок вычислений (математика +
-                        финальная агрегация), включая edge cases.
-                      </li>
-                      <li>
-                        <b>Frontend support:</b> вносил правки в React “Player”
-                        и легковесные SSR-страницы результатов для end-to-end
-                        доставки сценариев.
-                      </li>
-                      <li>
-                        <b>Ops/Delivery:</b> GitLab CE / runners / pipelines,
-                        Docker, Nginx, Let’s Encrypt, Exim, DNS, SPF/DKIM/DMARC,
-                        Redis.
-                      </li>
-                      <li>
-                        <b>Внутренние инструменты:</b> Telegram-боты для
-                        уведомлений о деплоях/ошибках и отдельные служебные боты
-                        для командных сценариев.
-                      </li>
-                      <li>
-                        <b>Go package engineering:</b> создавал внутренние
-                        Go-утилиты/пакеты (в т.ч. <b>rarutils</b>) под реальные
-                        задачи проекта с минимальной зависимостью от внешних
-                        пакетов.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
+                <div class="when">2022 — н.в.</div>
               </div>
-
-              <!-- BSSL -->
-              <div class="card">
-                <div class="head">
-                  <div>
-                    <div class="title">
-                      Senior PHP Engineer — BSSL (legacy платформа оценки
-                      персонала)
-                    </div>
-                    <div class="meta">
-                      Full-time • Самописный PHP-движок (PHP 5.x) + MongoDB •
-                      корпоративные клиенты • кастомная отчетность
-                    </div>
-                  </div>
-                  <div class="when">2019 — 2022</div>
+              <div class="stackline">Go · Echo · Clean Architecture · PostgreSQL · Redis · Docker · Nginx · GitLab CI/CD · React</div>
+              <ul><li>Владею архитектурой backend, API, эволюцией схемы PostgreSQL и CI/CD + инфраструктурой</li><li>Стабилизировал бизнес-критичный Go processor и подключался к React-фронтенду по необходимости</li><li>Построил on-prem путь поставки и прокси анонимизации для корпоративных клиентов</li></ul>
+            </div>
+            <div class="card">
+              <div class="head">
+                <div>
+                  <div class="title">Senior PHP Engineer — BSSL</div>
+                  <div class="meta">Legacy-платформа оценки персонала</div>
                 </div>
-                <div class="stackline">
-                  PHP 5.x • MongoDB • Excel/PDF/HTML отчетность • поддержка
-                  legacy
-                </div>
-
-                <div class="outcomes">
-                  <b>Результат и вклад</b>
-                  <ul>
-                    <li>
-                      <b
-                        >Поддерживал и развивал legacy-систему без остановки
-                        бизнеса</b
-                      >
-                      → клиентские фичи продолжали выходить без дорогостоящего
-                      срочного переписывания.
-                    </li>
-                    <li>
-                      <b>Получил сильную экспертизу в отчетности/документах</b>
-                      (Excel/PDF/HTML) → более предсказуемые выгрузки и меньше
-                      ручных исправлений.
-                    </li>
-                    <li>
-                      <b
-                        >Сформировал практику “безопасных изменений в legacy”</b
-                      >
-                      → изменения вносились аккуратно, с учетом рисков и влияния
-                      на существующие сценарии.
-                    </li>
-                  </ul>
-                </div>
-
-                <details class="fold">
-                  <summary>
-                    Развернуть детали (ограничения legacy, MongoDB, отчеты,
-                    запросы клиентов)
-                  </summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        Реализовывал новые фичи по запросам корпоративных
-                        клиентов внутри старой самописной PHP-системы.
-                      </li>
-                      <li>
-                        Работал с моделями на MongoDB и нестандартными
-                        клиентскими требованиями к сбору и отображению данных.
-                      </li>
-                      <li>
-                        Закрывал большой объем задач по документам/отчетности:
-                        Excel-выгрузки, PDF-генерация, HTML-шаблоны отчетов.
-                      </li>
-                      <li>
-                        Прошел путь от разработчика до системно мыслящего
-                        инженера: код + данные + бизнес-требования + управление
-                        риском изменений.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
+                <div class="when">2019 — 2022</div>
               </div>
-
-              <!-- University / early practical experience -->
-              <div class="card">
-                <div class="head">
-                  <div>
-                    <div class="title">
-                      Ранний инженерный опыт (университет + практическая
-                      разработка)
-                    </div>
-                    <div class="meta">
-                      Самостоятельная разработка, командные проекты,
-                      MVP-мышление, документация и защита проектов
-                    </div>
-                  </div>
-                  <div class="when">2015 — 2019</div>
+              <div class="stackline">PHP 5.x · MongoDB · Excel/PDF/HTML отчётность</div>
+              <ul><li>Поддерживал и развивал legacy PHP + MongoDB платформу без переписывания</li><li>Построил обширную Excel/PDF/HTML отчётность для корпоративных клиентов</li></ul>
+            </div>
+            <div class="card">
+              <div class="head">
+                <div>
+                  <div class="title">Фриланс</div>
+                  <div class="meta">PHP/Laravel/Symfony · Vue/React</div>
                 </div>
-                <div class="stackline">
-                  PHP 5.6 • MVC • SQL/NoSQL • frontend layout • документация •
-                  SEO basics
-                </div>
-
-                <div class="outcomes">
-                  <b>Результат и вклад</b>
-                  <ul>
-                    <li>
-                      <b>Разработал собственный PHP MVC-движок</b> → ранний
-                      практический опыт проектирования систем, а не только
-                      учебных задач.
-                    </li>
-                    <li>
-                      <b>Участвовал в командных годовых проектах</b> → получил
-                      реальный опыт декомпозиции, технической реализации,
-                      документации и защиты результатов.
-                    </li>
-                    <li>
-                      <b
-                        >Сформировал мышление “идея → MVP →
-                        защита/презентация”</b
-                      >
-                      → ранний продуктовый взгляд на разработку.
-                    </li>
-                  </ul>
-                </div>
-
-                <details class="fold">
-                  <summary>
-                    Развернуть детали (свой движок, командные проекты, SEO,
-                    практика)
-                  </summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        Самостоятельно разработал движок на PHP 5.6 в
-                        MVC-подходе и использовал разные типы баз/хранилищ под
-                        разные задачи.
-                      </li>
-                      <li>
-                        Верстал frontend для дипломного проекта и курсовых
-                        работ.
-                      </li>
-                      <li>
-                        Участвовал в ежегодных командных проектах (backend /
-                        frontend / mobile + документация + финальная защита).
-                      </li>
-                      <li>
-                        Прошел курс по продвижению проектов / SEO в рамках
-                        учебной программы.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
+                <div class="when">2023 — н.в.</div>
               </div>
+              <div class="stackline">Laravel · Vue · Go (собственные продукты)</div>
+              <ul><li>Поставка клиентам на Laravel/Vue, плюс три собственных продукта, построенных и задеплоенных соло</li></ul>
+            </div>
             </div>
           </section>
-
           <section class="section">
             <div class="headline">
-              <h2>Кейсы и решенные задачи</h2>
-              <div class="tagline">
-                Контекст → Действие → Результат → Польза бизнесу
-              </div>
+              <h2>Технологический снимок</h2>
+              <div class="tagline">Сгруппировано по пользе, а не по buzzwords</div>
             </div>
-
-            <details class="fold" open>
-              <summary>
-                Продуктовые и архитектурные кейсы (Azimuth / BSSL)
-              </summary>
-              <div class="fold-body">
-                <div class="grid2">
-                  <article class="case">
-                    <h3>
-                      1) Стабилизация архитектуры backend в живом продукте
-                      (Azimuth)
-                    </h3>
-                    <div class="case-meta">
-                      Go • Echo • Clean Architecture • code review
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Растущая кодовая база с неоднородными
-                        подходами и ростом риска регрессий.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Усилил code review и выровнял
-                        архитектурные паттерны (границы CA).
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Изменения стали безопаснее, инженерные
-                        обсуждения — понятнее.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Ниже стоимость поддержки и меньше
-                        технического хаоса.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>2) Эволюция PostgreSQL-схемы через крупные миграции</h3>
-                    <div class="case-meta">
-                      PostgreSQL • миграции • индексы • data-first
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Рост продукта потребовал крупных
-                        изменений модели данных в работающей системе.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Проектировал/развивал схему и
-                        контролировал влияние миграций на API/отчеты.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Модель данных лучше стала
-                        соответствовать продукту без поломки ключевых сценариев.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Продукт может расти без страха “трогать
-                        базу”.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      3) Стабилизация тяжелого вычислительного processor-сервиса
-                      (Go)
-                    </h3>
-                    <div class="case-meta">
-                      Go • processor • агрегация результатов • legacy fixes
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Критичный унаследованный вычислительный
-                        блок был сложным и хрупким.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Разбирал логику, исправлял ошибки, edge
-                        cases, стабилизировал интеграцию.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Повысилась надежность бизнес-критичной
-                        обработки результатов.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Ниже риск неправильных результатов и
-                        инцидентов в проде.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      4) Доставка новых фич в legacy без переписывания (BSSL,
-                      PHP 5.x)
-                    </h3>
-                    <div class="case-meta">
-                      PHP 5.x • MongoDB • legacy • enterprise
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Бизнесу нужны новые фичи в старой и
-                        чувствительной системе.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Реализовывал риск-aware изменения и
-                        клиентские доработки.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Платформа продолжала развиваться без
-                        срочного дорогостоящего rewrite.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Сохранение выручки/процессов клиентов и
-                        экономия бюджета.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>5) Отчеты и документы (Excel / PDF / HTML)</h3>
-                    <div class="case-meta">
-                      Отчеты • выгрузки • PDF • HTML templates
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Корпоративным клиентам нужны строгие
-                        форматы и повторяемый результат.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Разрабатывал и поддерживал отчетные
-                        потоки и шаблоны в условиях legacy.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Более предсказуемые выгрузки с меньшим
-                        количеством ручных правок.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Больше доверия клиентов и ниже нагрузка на
-                        поддержку.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      6) End-to-end поставка через участие во фронте (React
-                      Player)
-                    </h3>
-                    <div class="case-meta">
-                      React • frontend support • UX flow • backend/frontend
-                      bridge
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Часть проблем UX жила на границе
-                        backend/frontend и тормозила поставку.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Участвовал в итерациях React Player
-                        (загрузка/адаптивность/корректность flow).
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Быстрее и удобнее сценарий респондента
-                        на разных устройствах.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Выше качество продукта и меньше friction
-                        между командами.
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </details>
-
-            <details class="fold">
-              <summary>DevOps, инфраструктура и delivery-кейсы</summary>
-              <div class="fold-body">
-                <div class="grid2">
-                  <article class="case">
-                    <h3>
-                      7) “Человек-оркестр” по DevOps в продуктовой команде
-                    </h3>
-                    <div class="case-meta">
-                      GitLab CI/CD • Docker • Nginx • TLS • Redis
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Ценность backend зависит от
-                        воспроизводимой доставки и стабильной эксплуатации.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Настраивал/поддерживал пайплайны,
-                        контейнеры, Nginx, TLS, операционный контур.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Более повторяемые деплои и меньше
-                        сюрпризов в релизный момент.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Быстрее поставка фич и ниже операционный
-                        риск.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      8) Улучшение доставляемости email (Exim + SPF/DKIM/DMARC)
-                    </h3>
-                    <div class="case-meta">
-                      Exim • DNS • anti-spam • надежность почты
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Продуктовые уведомления/приглашения
-                        бизнес-критичны и не должны попадать в спам.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Настраивал Exim + DNS-записи + подписи +
-                        проверки deliverability.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Улучшилось качество доставки и
-                        уверенность в email-канале.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Надежнее коммуникация с пользователями и
-                        клиентами.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>9) Dockerized environments и воспроизводимый запуск</h3>
-                    <div class="case-meta">
-                      Dockerfiles • docker-compose • Makefile • DX
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Нестабильные локальные окружения
-                        тормозят команду и онбординг.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Стандартизировал контейнерные окружения
-                        и сценарии запуска/обслуживания.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Проще старт проекта локально и меньше
-                        “works on my machine”.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Быстрее онбординг и более предсказуемый
-                        процесс разработки.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>10) Linux-console driven troubleshooting в проде</h3>
-                    <div class="case-meta">
-                      Linux CLI • логи • сервисы • prod support
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Продакшн-задачи часто требуют быстрой
-                        CLI-диагностики и точечных действий.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Ежедневная работа через Linux-консоль:
-                        логи, конфиги, деплой/дебаг, infra-проверки.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Быстрее поиск причин и практичная
-                        поддержка эксплуатации.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Снижение downtime и ускорение
-                        восстановления.
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </details>
-
-            <details class="fold">
-              <summary>
-                Фриланс / инструменты / автоматизация / side engineering кейсы
-              </summary>
-              <div class="fold-body">
-                <div class="grid2">
-                  <article class="case">
-                    <h3>
-                      11) Go utility package: rarutils (RAR/UNRAR workflows)
-                    </h3>
-                    <div class="case-meta">
-                      Go packages • internal tooling • low-dependency подход
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Не все продуктовые задачи удобно решать
-                        внешними пакетами.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Написал Go-утилиту/пакет
-                        <b>rarutils</b> под практические архивные сценарии.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Более контролируемая реализация под
-                        реальные нужды проекта.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Ниже риск по зависимостям и проще
-                        долгосрочное владение кодом.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      12) Telegram-боты для уведомлений и внутренних сценариев
-                    </h3>
-                    <div class="case-meta">
-                      Telegram bots • deploy/error notifications • team tooling
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Команде нужен быстрый feedback loop по
-                        деплоям/ошибкам и событиям сервисов.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Создавал ботов для уведомлений о
-                        деплоях/ошибках и отдельные служебные сценарии.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Быстрее обратная связь и прозрачность
-                        технических событий.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Выше скорость реакции и лучше координация
-                        команды.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      13) Laravel API template: auth + filters + uploads + SMTP
-                    </h3>
-                    <div class="case-meta">
-                      Laravel • Eloquent • traits/enums • API design
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Нужна чистая API-основа, которую можно
-                        расширять без day-one техдолга.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Спроектировал auth, validation, filters,
-                        upload trait/enums, image endpoint, SMTP setup.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Стабильный API-контракт и
-                        поддерживаемая база под развитие.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Быстрее итерации и проще
-                        handoff/поддержка.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      14) Perfex PDF module: block editor + preview → generate
-                      flow
-                    </h3>
-                    <div class="case-meta">
-                      JS modules • JSON block types • PDF workflow
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Сложные блоки документов усложняли
-                        поддержку и ломали PDF-генерацию.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Ввел структурированные типы блоков,
-                        модульный JS и чистый preview→generate pipeline.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Безопаснее добавлять новые типы блоков
-                        и стабильнее итоговый PDF.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Ниже bug rate и дешевле развитие фич по
-                        документам.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>15) OCR docx → docx со строгой страничностью (1:1)</h3>
-                    <div class="case-meta">
-                      OCR workflow • большие документы • page preservation •
-                      print-ready
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Нужен редактируемый результат с
-                        сохранением порядка/количества страниц для печати и
-                        проверки.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Спроектировал per-page артефакты,
-                        очистку прогонов и merge с сохранением страниц.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Предсказуемый выходной артефакт для
-                        больших OCR-документов.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Экономия времени на постобработке и меньше
-                        ошибок по страницам.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      16) Python image processing: фото → алмазная мозаика + PDF
-                    </h3>
-                    <div class="case-meta">
-                      Python • image processing • printable PDF • freelance
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Нужен практичный pipeline для
-                        превращения фото в печатную схему алмазной мозаики.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Собрал обработку изображений +
-                        подготовку/цвета + генерацию PDF.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Рабочий pipeline для создания печатных
-                        мозаичных схем.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Демонстрация инженерной ширины: графика,
-                        автоматизация, документы.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      17) Интеграции сторонних API в продуктовых и
-                      фриланс-проектах
-                    </h3>
-                    <div class="case-meta">
-                      External APIs • контракты • ошибки • supportability
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Внешние системы нестабильны и часто
-                        ломают ожидания продукта.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Строил интеграции с учетом контрактов,
-                        ошибок, деградации и поддержки.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Более предсказуемое поведение
-                        интеграций в проде.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Быстрее запуск интеграций и меньше
-                        инцидентов.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      18) AI-assisted инженерные workflow и prompt engineering
-                    </h3>
-                    <div class="case-meta">
-                      AI tools • prompting • анализ • ускорение прототипирования
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Сложные задачи требуют быстрой
-                        структуризации, исследований и черновых решений.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Использую разные AI-инструменты и
-                        сильные промпты для анализа, docs и prototyping.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Быстрее итерации при сохранении
-                        инженерного контроля и ответственности.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Рост личной/командной продуктивности без
-                        потери качества.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      19) Python automation experiment (pump.fun / Solana)
-                    </h3>
-                    <div class="case-meta">
-                      Python • automation • APIs/network • новая доменная
-                      область
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Исследование автоматизации в быстро
-                        меняющейся торговой среде.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Написал экспериментальную
-                        Python-программу для взаимодействия с платформой/сетью.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Практический опыт автоматизации и
-                        работы в незнакомом домене.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Демонстрирует адаптивность и скорость
-                        освоения новых областей.
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="case">
-                    <h3>
-                      20) Фокус на тестируемости и документации в практической
-                      поставке
-                    </h3>
-                    <div class="case-meta">
-                      Maintainability • handoff • docs • testability thinking
-                    </div>
-                    <div class="kv4">
-                      <div class="mini">
-                        <b>Контекст</b> Решения трудно масштабировать и
-                        сопровождать без документации и testability-подхода.
-                      </div>
-                      <div class="mini">
-                        <b>Действие</b> Закладывал понятную структуру проекта,
-                        README/setup и границы логики под тесты.
-                      </div>
-                      <div class="mini">
-                        <b>Результат</b> Лучше handoff, онбординг и инженерная
-                        коммуникация.
-                      </div>
-                      <div class="mini">
-                        <b>Польза</b> Ниже bus factor и выше поддерживаемость в
-                        долгую.
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </details>
+            <div class="grid2">
+              <div class="card"><div class="title" style="margin-bottom:6px">Backend и API</div><ul style="margin-top:0"><li>Golang (Echo, gRPC-ready, service layer)</li><li>PHP (Laravel, Symfony, legacy 5.x)</li><li>REST API, JSON/XML</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Данные и хранилища</div><ul style="margin-top:0"><li>PostgreSQL / MySQL / MongoDB</li><li>Эволюция схемы и миграции</li><li>Redis / кэширование</li><li>Отчётность (Excel/PDF/HTML)</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">DevOps и эксплуатация</div><ul style="margin-top:0"><li>Linux-консоль</li><li>Docker / docker-compose</li><li>Nginx, TLS, Let's Encrypt</li><li>GitLab CI/CD</li><li>Exim, SPF/DKIM/DMARC</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Инженерная ширина</div><ul style="margin-top:0"><li>React / Vue / TypeScript (frontend support)</li><li>Python (FastAPI, автоматизация)</li><li>AI-assisted инженерные процессы</li></ul></div>
+            </div>
           </section>
-
           <section class="section">
             <div class="headline">
-              <h2>Selected Projects (GitHub)</h2>
-              <div class="tagline">Практические примеры кода и утилиты</div>
+              <h2>Избранные проекты (GitHub)</h2>
+              <div class="tagline">Практические примеры кода и собственные продукты</div>
             </div>
-
             <div class="grid2">
               <div class="project">
                 <div class="project-title">
-                  <div class="name">
-                    <a
-                      href="https://github.com/saifutdinov/vnv"
-                      target="_blank"
-                      rel="noopener"
-                      >vnv</a
-                    >
-                  </div>
-                  <div class="repo-badge">Game project</div>
-                </div>
-                <div class="small">
-                  Проект онлайн-игры «Верю / Не Верю». Демонстрирует продуктовое
-                  мышление, моделирование доменных правил и full-stack
-                  планирование архитектуры.
-                </div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        Проектирование доменных правил и игровых состояний.
-                      </li>
-                      <li>Координация backend/frontend и декомпозиция фич.</li>
-                      <li>
-                        Структурирование проекта под итеративную разработку.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
-              </div>
-
-              <div class="project">
-                <div class="project-title">
-                  <div class="name">
-                    <a
-                      href="https://github.com/saifutdinov/par-php-8.4"
-                      target="_blank"
-                      rel="noopener"
-                      >par-php-8.4</a
-                    >
-                  </div>
-                  <div class="repo-badge">PHP bootstrap template</div>
-                </div>
-                <div class="small">
-                  Минимальный шаблон на PHP 8.4 для быстрого старта
-                  микро-проектов (PHP + Composer + public directory).
-                </div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        Практичный подход к developer experience и быстрому
-                        запуску.
-                      </li>
-                      <li>Минималистичный low-overhead setup.</li>
-                      <li>
-                        Переиспользуемая база для небольших сервисов и утилит.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
-              </div>
-
-              <div class="project">
-                <div class="project-title">
-                  <div class="name">
-                    <a
-                      href="https://github.com/saifutdinov/rarutils"
-                      target="_blank"
-                      rel="noopener"
-                      >rarutils</a
-                    >
-                  </div>
-                  <div class="repo-badge">Go utility package</div>
-                </div>
-                <div class="small">
-                  Go-утилита для работы с RAR/UNRAR. Написана под реальные
-                  практические сценарии с ясным ownership и минимальным шумом
-                  зависимостей.
-                </div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>Умение писать свои Go-пакеты под реальные задачи.</li>
-                      <li>
-                        Инструментальный подход и прагматичная инженерия утилит.
-                      </li>
-                      <li>
-                        Предпочтение контролируемых и поддерживаемых решений.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
-              </div>
-
-              <div class="project">
-                <div class="project-title">
-                  <div class="name">
-                    <a
-                      href="https://github.com/saifutdinov/ca-ctx-tx"
-                      target="_blank"
-                      rel="noopener"
-                      >ca-ctx-tx</a
-                    >
-                  </div>
-                  <div class="repo-badge">Go architecture pattern</div>
-                </div>
-                <div class="small">
-                  Имплементация транзакций через context для Clean Architecture
-                  use case’ов. Полезно для явных и тестируемых транзакционных
-                  границ.
-                </div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>Оркестрация транзакций в духе Clean Architecture.</li>
-                      <li>Архитектурное мышление beyond CRUD.</li>
-                      <li>
-                        Переиспользуемость и инженерная коммуникация через код.
-                      </li>
-                    </ul>
-                  </div>
-                </details>
-              </div>
-
-              <div class="project">
-                <div class="project-title">
                   <div class="name">AI Support CRM</div>
-                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
-                    <div class="repo-badge">Go · мультитенантный SaaS</div>
-                    <div class="repo-badge">Приватный репозиторий</div>
-                  </div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · мультитенантный SaaS</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
-                <div class="small">
-                  Мультитенантная платформа бота поддержки (Telegram →
-                  WhatsApp) с базой знаний на RAG, эскалацией на менеджера и
-                  CRM-слоем поверх. White-label ядро, рассчитанное на
-                  нескольких клиентов-бизнесов из одной кодовой базы.
-                </div>
+                <div class="small">Мультитенантная платформа бота поддержки (Telegram → WhatsApp) с базой знаний на RAG, эскалацией на менеджера и CRM-слоем поверх. White-label ядро для нескольких клиентов-бизнесов из одной кодовой базы.</div>
                 <details class="fold">
                   <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        Архитектура бэкенда на Go: мультитенантность через
-                        row-level security, RAG-пайплайн, фоновые задачи.
-                      </li>
-                      <li>
-                        Провайдер-агностичный биллинг (Stripe + ЮKassa) с
-                        идемпотентной обработкой вебхуков.
-                      </li>
-                      <li>
-                        Безопасность: CORS-allowlist, rate limiting, защита
-                        от SSRF на исходящих вебхуках.
-                      </li>
-                      <li>
-                        Наблюдаемость через Prometheus/Grafana и
-                        документированная поэтапная эволюция архитектуры.
-                      </li>
-                    </ul>
-                  </div>
+                  <div class="fold-body"><ul><li>Архитектура бэкенда на Go: мультитенантность через row-level security, RAG-пайплайн, фоновые задачи.</li><li>Провайдер-агностичный биллинг (Stripe + ЮKassa) с идемпотентной обработкой вебхуков.</li><li>Безопасность: CORS-allowlist, rate limiting, защита от SSRF на исходящих вебхуках.</li><li>Наблюдаемость через Prometheus/Grafana и документированная поэтапная эволюция архитектуры.</li></ul></div>
                 </details>
               </div>
-
               <div class="project">
                 <div class="project-title">
                   <div class="name">PSN Deals</div>
-                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
-                    <div class="repo-badge">PHP · парсер и API</div>
-                    <div class="repo-badge">Приватный репозиторий</div>
-                  </div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">PHP · парсер и API</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
-                <div class="small">
-                  Готовый продукт "под ключ": публичный сайт с самыми
-                  дешёвыми играми PS Store и тарифами PS Plus по регионам +
-                  платный API для перепродавцов. Полностью управляется через
-                  встроенную админку — регионы, API-ключи, брендинг — без
-                  правки кода.
-                </div>
+                <div class="small">Готовый продукт «под ключ»: публичный сайт с самыми дешёвыми играми PS Store и тарифами PS Plus по регионам + платный API для перепродавцов. Полностью управляется через встроенную админку.</div>
                 <details class="fold">
                   <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        Сбор данных по расписанию (cron) по нескольким
-                        регионам с ручным запуском из админки.
-                      </li>
-                      <li>
-                        Публичный API с бесплатным лимитом на IP и платными
-                        API-ключами для B2B-клиентов.
-                      </li>
-                      <li>
-                        Сквозная поставка продукта: парсер, API и админка в
-                        одном Docker-стеке.
-                      </li>
-                    </ul>
-                  </div>
+                  <div class="fold-body"><ul><li>Сбор данных по расписанию (cron) по нескольким регионам с ручным запуском из админки.</li><li>Публичный API с бесплатным лимитом на IP и платными API-ключами для B2B.</li><li>Сквозная поставка продукта: парсер, API и админка в одном Docker-стеке.</li></ul></div>
                 </details>
               </div>
-
               <div class="project">
                 <div class="project-title">
                   <div class="name">Dimond</div>
-                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
-                    <div class="repo-badge">React + FastAPI</div>
-                    <div class="repo-badge">Приватный репозиторий</div>
-                  </div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">React + FastAPI</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
-                <div class="small">
-                  Генератор мозаики и схем из фото для алмазной живописи.
-                  Загрузите фото, выберите стиль — получите превью и
-                  печатную PDF-схему для сборки.
-                </div>
+                <div class="small">Генератор мозаики и схем из фото для алмазной живописи. Загрузите фото, выберите стиль — получите превью и печатную PDF-схему для сборки.</div>
                 <details class="fold">
                   <summary>Что показывает проект</summary>
-                  <div class="fold-body">
-                    <ul>
-                      <li>
-                        React SPA (за Nginx), работающий с бэкендом на
-                        FastAPI, всё в Docker.
-                      </li>
-                      <li>
-                        Пайплайн обработки изображений, доведённый до
-                        готового потребительского инструмента, а не скрипта.
-                      </li>
-                      <li>
-                        Полная поставка продукта за пределами типичной
-                        backend-работы.
-                      </li>
-                    </ul>
-                  </div>
+                  <div class="fold-body"><ul><li>React SPA (за Nginx), работающий с бэкендом на FastAPI, всё в Docker.</li><li>Пайплайн обработки изображений, доведённый до готового инструмента.</li><li>Полная поставка продукта за пределами типичной backend-работы.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Ant Colony</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · real-time game server</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Браузерная игра-симуляция колонии муравьёв. Игрок не управляет муравьями — он наблюдает, как колония добывает еду, растит потомство, копает тоннели и комнаты, переносит базу и воюет с соседними колониями. Вся игровая логика — на authoritative Go-сервере, браузер только рисует и отправляет команды.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Авторитетный игровой движок в одной горутине — без горутины на муравья и без мьютекса вокруг мира; состояние меняется только через команды, наружу отдаются неизменяемые снапшоты.</li><li>WebSocket-протокол с snapshot + delta кадрами и сжатым потоком чанков для живого персистентного мира.</li><li>Персистентность в SQLite с версионными снапшотами плюс Redis hot cache — симуляция переживает рестарт сервера.</li><li>Детерминированный seeded RNG, A*/flow-field навигация, тесты гоняются с -race.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
+                </div>
+                <div class="small">Сервис сверки платежей: сопоставляет входящие платежи с выставленными счетами, вычисляет статус счёта и ведёт полный аудит-лог. Построен на Clean Architecture с транзакциями PostgreSQL и row-level locking.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Идемпотентная обработка платежей при конкурентном доступе — row-level locking (SELECT ... FOR UPDATE) вокруг каждой транзакции сверки.</li><li>Статус счёта вычисляется из распределения платежей (unmatched / partially paid / paid / overpaid), с полным аудитом каждого расхождения.</li><li>Небольшой собственный планировщик (`chronos`) для фоновой сверки вместо внешнего брокера сообщений.</li><li>Деньги хранятся в минимальных единицах валюты (целые числа), чтобы избежать ошибок плавающей точки в финансовых расчётах.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">rats-langbot-tom</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Telegram · LLM</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Telegram-бот для изучения языков: перевод (движки Yandex/Google), объяснение фраз через LLM (OpenRouter) и автогенерируемые квизы-опросы.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Интегрирует несколько внешних API из Go (OpenRouter LLM, Yandex Translate, Google Translate) за одним интерфейсом команд.</li><li>Структурированный вывод LLM (вопрос + варианты + ответ) парсится и превращается в нативный опрос Telegram.</li><li>Задеплоен на Fly.io — небольшой, реальный, всегда включённый AI-инструмент, а не демка.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/vnv" target="_blank" rel="noopener">vnv</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Game project</div></div>
+                </div>
+                <div class="small">Проект онлайн-игры «Верю / Не Верю». Демонстрирует продуктовое мышление, моделирование доменных правил и full-stack планирование архитектуры.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Проектирование доменных правил и игровых состояний.</li><li>Координация backend/frontend и декомпозиция фич.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/par-php-8.4" target="_blank" rel="noopener">par-php-8.4</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">PHP bootstrap template</div></div>
+                </div>
+                <div class="small">Минимальный шаблон на PHP 8.4 для быстрого старта микро-проектов (PHP + Composer + public directory).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Практичный подход к developer experience и быстрому запуску.</li><li>Переиспользуемая база для небольших сервисов и утилит.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/rarutils" target="_blank" rel="noopener">rarutils</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go utility package</div></div>
+                </div>
+                <div class="small">Go-утилита для работы с RAR/UNRAR. Написана под реальные практические сценарии с ясным ownership и минимальным шумом зависимостей.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Умение писать свои Go-пакеты под реальные задачи.</li><li>Инструментальный подход и прагматичная инженерия утилит.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/ca-ctx-tx" target="_blank" rel="noopener">ca-ctx-tx</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go architecture pattern</div></div>
+                </div>
+                <div class="small">Имплементация транзакций через context для Clean Architecture use case'ов. Полезно для явных и тестируемых транзакционных границ.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Оркестрация транзакций в духе Clean Architecture.</li><li>Архитектурное мышление beyond CRUD.</li></ul></div>
                 </details>
               </div>
             </div>
           </section>
-
           <section class="section">
-            <div class="headline">
-              <h2>Технологии и инженерные практики</h2>
-              <div class="tagline">
-                Сгруппировано по пользе, а не по buzzwords
-              </div>
-            </div>
-
-            <div class="grid3">
-              <div class="card" style="margin: 0">
-                <div class="title">Backend & API</div>
-                <ul>
-                  <li>Golang (Echo, gRPC, middleware, service layer)</li>
-                  <li>PHP (Laravel, Symfony, legacy PHP 5.x)</li>
-                  <li>REST API, JSON/XML</li>
-                  <li>Auth, validation, error handling</li>
-                  <li>Интеграции сторонних API</li>
-                </ul>
-              </div>
-
-              <div class="card" style="margin: 0">
-                <div class="title">Данные и хранилища</div>
-                <ul>
-                  <li>PostgreSQL / MySQL / MongoDB</li>
-                  <li>SQL-оптимизация, индексы, сложные запросы</li>
-                  <li>Эволюция схемы и миграции</li>
-                  <li>Redis / кэширование</li>
-                  <li>Отчетность (Excel/PDF/HTML)</li>
-                </ul>
-              </div>
-
-              <div class="card" style="margin: 0">
-                <div class="title">DevOps & Эксплуатация</div>
-                <ul>
-                  <li>Linux-консоль (ежедневный рабочий инструмент)</li>
-                  <li>Docker / Dockerfile / docker-compose</li>
-                  <li>Nginx, TLS, Let’s Encrypt</li>
-                  <li>GitLab CE / Runner / CI/CD pipelines</li>
-                  <li>Exim, SPF/DKIM/DMARC, email deliverability</li>
-                </ul>
-              </div>
-
-              <div class="card" style="margin: 0">
-                <div class="title">Надежность & Производительность</div>
-                <ul>
-                  <li>Продакшн-диагностика</li>
-                  <li>Анализ узких мест и проблем с памятью</li>
-                  <li>Highload-oriented thinking</li>
-                  <li>Monitoring / logging mindset</li>
-                  <li>Prometheus / Grafana / ELK (рабочий контекст)</li>
-                </ul>
-              </div>
-
-              <div class="card" style="margin: 0">
-                <div class="title">Frontend Support</div>
-                <ul>
-                  <li>React / React.js</li>
-                  <li>Vue</li>
-                  <li>TypeScript / JavaScript</li>
-                  <li>Vite / Tailwind</li>
-                  <li>HTML5 / CSS / jQuery (в т.ч. legacy support)</li>
-                </ul>
-              </div>
-
-              <div class="card" style="margin: 0">
-                <div class="title">Инженерная ширина</div>
-                <ul>
-                  <li>Telegram-боты (уведомления / внутренние инструменты)</li>
-                  <li>Собственные Go-пакеты (например, rarutils)</li>
-                  <li>Python: обработка изображений и PDF-генерация</li>
-                  <li>AI-инструменты + prompt engineering</li>
-                  <li>Browser extensions (эксперименты)</li>
-                </ul>
-              </div>
+            <h2>Образование</h2>
+            <div class="card">
+              <div class="title">Московский политехнический университет (Московский Политех)</div>
+              <div class="meta">Бакалавр · Информационные системы и технологии · специализация «Веб-разработка» · Москва · 09.2015 — 06.2019</div>
             </div>
           </section>
-
-          <section class="section">
-            <div class="headline">
-              <h2>Подход к тестам и документации</h2>
-              <div class="tagline">Поддерживаемость = скорость команды</div>
-            </div>
-
-            <div class="muted">
-              В проектах, где важна долгосрочная скорость команды, фокусируюсь
-              не только на “код работает сейчас”, но и на
-              <b
-                >понятной структуре проекта, документации и границах логики,
-                удобных для тестирования</b
-              >.
-            </div>
-
-            <details class="fold" open>
-              <summary>
-                Развернуть (что делаю на практике и зачем это бизнесу)
-              </summary>
-              <div class="fold-body">
-                <div class="fold-grid">
-                  <div class="card" style="margin: 0">
-                    <div class="title">Что делаю на практике</div>
-                    <ul>
-                      <li>
-                        Документирую архитектурные решения и ограничения (чтобы
-                        команда не “изобретала заново”).
-                      </li>
-                      <li>
-                        Предпочитаю понятную модульную структуру для handoff и
-                        масштабирования.
-                      </li>
-                      <li>
-                        Добавляю README/setup-команды для воспроизводимого
-                        старта и онбординга.
-                      </li>
-                      <li>
-                        Думаю о тестируемости при проектировании границ
-                        бизнес-логики.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="card" style="margin: 0">
-                    <div class="title">Чем это полезно компании</div>
-                    <ul>
-                      <li>Быстрее онбординг новых разработчиков.</li>
-                      <li>
-                        Ниже bus factor и меньше “скрытых знаний в голове одного
-                        человека”.
-                      </li>
-                      <li>Проще сопровождать и развивать фичи после релиза.</li>
-                      <li>Лучше техническая коммуникация внутри команды.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </section>
-
-          <section class="section">
-            <div class="headline">
-              <h2>Образование</h2>
-              <div class="tagline">
-                Системная база + ранняя практическая разработка
-              </div>
-            </div>
-
-            <div class="card" style="margin: 0">
-              <div class="head">
-                <div>
-                  <div class="title">
-                    Московский политехнический университет (Московский Политех)
-                  </div>
-                  <div class="meta">
-                    Бакалавр • Информационные системы и технологии •
-                    Веб-разработка • Москва, Россия
-                  </div>
-                </div>
-                <div class="when">09.2015 — 06.2019</div>
-              </div>
-
-              <div class="outcomes" style="margin-top: 0">
-                <b>Тема диплома</b>
-                Система управления заявками на создание результатов
-                интеллектуальной деятельности (РИД) в системе высшего
-                образования: учет поступающих заявок, профилирование заявок на
-                создание РИД, формирование экспертной панели в организации
-                высшего образования, создание цифрового следа по каждой заявке.
-              </div>
-
-              <details class="fold">
-                <summary>
-                  Развернуть детали (релевантный практический опыт во время
-                  учебы)
-                </summary>
-                <div class="fold-body">
-                  <ul>
-                    <li>Совмещал обучение с практической разработкой.</li>
-                    <li>
-                      Разработал собственный PHP MVC-движок и frontend-часть для
-                      учебных/проектных задач.
-                    </li>
-                    <li>
-                      Участвовал в ежегодных командных проектах:
-                      backend/frontend/mobile + документация + защита.
-                    </li>
-                    <li>
-                      Прошел курс по продвижению проектов / SEO в рамках
-                      программы.
-                    </li>
-                    <li>
-                      Получил опыт полного цикла: от идеи и MVP до технической и
-                      продуктовой презентации.
-                    </li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </section>
-
-          <section class="section">
-            <div class="headline">
-              <h2>Почему я полезен команде</h2>
-              <div class="tagline">
-                Не только код — улучшаю систему и поставку
-              </div>
-            </div>
-
-            <details class="fold" open>
-              <summary>
-                Развернуть summary (техническое + командное влияние)
-              </summary>
-              <div class="fold-body">
-                <div class="grid2">
-                  <div class="card" style="margin: 0">
-                    <div class="title">Техническое влияние</div>
-                    <ul>
-                      <li>
-                        Могу закрыть backend end-to-end: архитектура, API, БД,
-                        оптимизация, релизы, продакшн-поддержка.
-                      </li>
-                      <li>
-                        Стабилизирую сложные и legacy-системы без остановки
-                        бизнеса.
-                      </li>
-                      <li>
-                        Закрываю “стыковые” технические зоны: infra, почта,
-                        отчеты, интеграции, внутренние инструменты.
-                      </li>
-                      <li>
-                        Уверенно работаю через Linux-консоль и быстро
-                        диагностирую практические проблемы.
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="card" style="margin: 0">
-                    <div class="title">Командное влияние</div>
-                    <ul>
-                      <li>
-                        Помогаю разработчикам быстрее входить в проект и
-                        становиться продуктивными.
-                      </li>
-                      <li>
-                        Использую code review не только для замечаний, но и для
-                        объяснения trade-off’ов.
-                      </li>
-                      <li>
-                        Упрощаю взаимодействие через более ясные технические
-                        решения и документацию.
-                      </li>
-                      <li>
-                        Комфортно работаю в динамичной среде и умею
-                        договариваться с разными ролями.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </section>
-
-          <div class="footer">
-            RU версия • HTML-резюме (расширенная версия с раскрываемыми блоками)
-            • адаптивно • готово к печати
-          </div>
+          <div class="footer">HTML-резюме · готово к печати (браузер → «Сохранить как PDF») · основано на реальном опыте и кейсах.</div>
         </main>
       </div>
     </div>
