@@ -97,13 +97,13 @@
               <h2>Profile</h2>
               <div class="tagline">Backend engineer who runs his own infra</div>
             </div>
-            <p>Not a dedicated ops career — DevOps skills built out of necessity while owning backend services end-to-end, and now a real strength. I set up CI/CD, run Docker in production, configure Nginx/TLS, and keep the email stack deliverable, on a live product and on three self-directed side projects.</p>
+            <p>Not a dedicated ops career — DevOps skills built out of necessity while owning backend services end-to-end, and now a real strength. I set up CI/CD, run Docker in production, configure Nginx/TLS, and keep the email stack deliverable, on a live product, on my own side projects, and inside a client's k3s/Argo CD platform.</p>
             <div class="outcomes">
               <b>Why this fits</b>
               <ul style="margin-top:0">
                 <li>Comfortable owning the full path from git push to a running container in production.
                 <li>Automated TLS renewal and CI/CD pipelines that the team stopped thinking about.
-                <li>Currently operating three independent Docker stacks solo, end to end.</li>
+                <li>Operate several independent Docker stacks solo, end to end, and work inside a client's k3s/Argo CD GitOps platform.</li>
               </ul>
             </div>
           </section>
@@ -116,7 +116,7 @@
               <div class="card"><div class="title" style="margin-bottom:6px">CI/CD & containers</div><ul style="margin-top:0"><li>GitLab CE/Runner pipelines</li><li>Docker / docker-compose</li><li>Makefile-driven deploys</li></ul></div>
               <div class="card"><div class="title" style="margin-bottom:6px">Web & infra</div><ul style="margin-top:0"><li>Nginx</li><li>TLS via Certbot / Let's Encrypt (automated renewal)</li><li>Linux console — daily driver</li></ul></div>
               <div class="card"><div class="title" style="margin-bottom:6px">Email infra</div><ul style="margin-top:0"><li>Exim</li><li>SPF / DKIM / DMARC deliverability</li></ul></div>
-              <div class="card"><div class="title" style="margin-bottom:6px">Observability & exposure</div><ul style="margin-top:0"><li>Prometheus + Grafana + ELK — running in production, not just exposure</li><li>k8s, RabbitMQ/Kafka (exposure)</li><li>Elasticsearch</li><li>Self-built health-check + Telegram alerting bot</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Observability & exposure</div><ul style="margin-top:0"><li>Prometheus + Grafana + ELK — running in production, not just exposure</li><li>k3s, Argo CD (GitOps), Terraform, CloudNativePG, Velero — working inside a client's platform</li><li>RabbitMQ/Kafka (exposure)</li><li>Elasticsearch</li><li>Self-built health-check + Telegram alerting bot</li></ul></div>
             </div>
           </section>
           <section class="section">
@@ -145,7 +145,18 @@
                 <div class="when">2024 — Present</div>
               </div>
               <div class="stackline">Docker Compose · Postgres · Prometheus/Grafana · Nginx</div>
-              <ul><li><b>Designed and operate the full Docker deploy for AI Support CRM</b> — Postgres, background workers, Prometheus/Grafana observability.</li><li><b>Built a cron-scheduled, multi-region parser + API + admin stack for PSN Deals</b> — one Docker Compose stack, Postgres, Adminer.</li><li><b>Deployed an Nginx-fronted React SPA + FastAPI backend for Dimond</b> as a single Docker stack.</li></ul>
+              <ul><li><b>Designed and operate the full Docker deploy for AI Support CRM</b> — Postgres, background workers, Prometheus/Grafana observability.</li><li><b>Built a cron-scheduled, multi-region parser + API + admin stack for PSN Deals</b> — one Docker Compose stack, Postgres, Adminer.</li><li><b>Deployed an Nginx-fronted React SPA + FastAPI backend for Dimond</b> as a single Docker stack.</li><li><b>Self-host a zero-ops E2EE chat server (Thread)</b> — one Go binary + SQLite behind Caddy/Docker, scripted install, encrypted daily backups to S3 with retention, Prometheus metrics.</li><li><b>Built the release pipeline for True Vision</b> — backup, restore-verification, migration and container swap, with a WebRTC stack (OBS → MediaMTX → browsers over UDP) behind nginx.</li></ul>
+            </div>
+            <div class="card">
+              <div class="head">
+                <div>
+                  <div class="title">Outsourced engineering — client's GitOps platform</div>
+                  <div class="meta">k3s · Argo CD · CloudNativePG · a Go service built for it</div>
+                </div>
+                <div class="when">2026</div>
+              </div>
+              <div class="stackline">k3s · Argo CD · Terraform · CloudNativePG · Prometheus/Grafana/Loki · GitHub Actions</div>
+              <ul><li><b>Adopted the client's platform template and contract for a Go service (Podhod)</b> → multi-arch image built in CI and set up to deploy through the client's Argo CD (first deploy pending).</li><li><b>Wired the service for the platform:</b> /healthz (liveness), /readyz (checks Postgres), Prometheus /metrics, JSON logs, CloudNativePG connection settings.</li><li><b>Contributed to access and tooling on the platform repo</b> — admin access, tunnel/kubeconfig script docs, a lint/CI toolchain bump.</li></ul>
             </div>
             </div>
           </section>
@@ -185,14 +196,57 @@
                   <div class="mini"><b>VALUE</b>Zero-cost, self-owned monitoring instead of another vendor bill.</div>
                 </div>
               </div>
+              <div class="case">
+                <h3>A release pipeline that verifies its own backup</h3>
+                <div class="case-meta">CI/CD · backups · Docker (True Vision)</div>
+                <div class="kv4">
+                  <div class="mini"><b>CONTEXT</b>Releases that migrate a database are risky when the backup has never been restored.</div>
+                  <div class="mini"><b>ACTION</b>On the server the release takes a database backup, proves it by restoring it, and only then migrates and swaps the container.</div>
+                  <div class="mini"><b>RESULT</b>A failed backup or failed restore check stops the release; the previous version keeps serving.</div>
+                  <div class="mini"><b>VALUE</b>Data safety is checked before the change, not after an incident.</div>
+                </div>
+              </div>
             </div>
           </section>
           <section class="section">
             <div class="headline">
               <h2>Infra I run</h2>
-              <div class="tagline">Docker stacks I designed and operate</div>
+              <div class="tagline">Docker stacks I operate, and an outsourced GitOps platform</div>
             </div>
             <div class="grid2">
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Stupitsa</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Platform · outsourced client project</div><div class="repo-badge">Private repo</div></div>
+                </div>
+                <div class="small">A client's shared hosting platform for its small services: one k3s node on Hetzner run by Argo CD from a single repo, with Terraform, TLS, per-project Postgres (CloudNativePG) with point-in-time backups and a documented restore path, metrics, logs and alerts, a project template, and a command that puts a new project on the server. I worked inside it: adopted its template for a service and contributed access, tooling docs and a CI toolchain fix.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Hands-on with a real GitOps stack: k3s, Argo CD, Terraform, CloudNativePG, Velero, Prometheus/Grafana/Loki, sealed secrets, cert-manager.</li><li>Worked within a deliberately cost-bounded design (one node, a bill under €20/month): the money goes into backups and a documented restore path rather than redundancy.</li><li>A shared agent rulebook and project template that every repo inherits: secret scanning, branch + PR + Conventional Commits, ADRs.</li><li>My part: adopted the platform template and contract for Podhod; contributed admin access, tunnel/kubeconfig tooling docs and a lint/CI toolchain bump.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">True Vision</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go + Vue · live streaming</div><div class="repo-badge">Private repo</div></div>
+                </div>
+                <div class="small">Private live streaming for games (sim racing first): the streamer goes live from OBS via WHIP or straight from the browser, viewers watch in the browser over WebRTC with sub-second latency. The owner decides who can watch — password, invite link, any signed-in account, or only themselves.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Signalling-only Go backend (Connect-RPC API, SQLite): video never passes through Go — it flows over UDP between OBS, MediaMTX and browsers.</li><li>Access control that is re-checked live: one decision function at connect time, a one-time ticket plus a MediaMTX hook that re-verifies, and a ~6-second reconciliation loop that kicks viewers whose access was revoked.</li><li>Release pipeline that backs up the database, proves the backup by restoring it, and only then migrates and swaps the container; a failed check stops the release and the old version keeps serving.</li><li>protobuf/buf-generated API, Go tests and real-browser E2E against a real MediaMTX.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/thread" target="_blank" rel="noopener">Thread</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · E2EE chat</div></div>
+                </div>
+                <div class="small">End-to-end encrypted chat for family and close friends that you run on your own server: one Go binary with SQLite, a Preact PWA, invite-only access, messages, media, 1:1 and group calls. The server stores only ciphertext. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Own E2EE design on standard WebCrypto primitives (ECDH/ECDSA P-256, AES-256-GCM, HKDF) with device approval and safety codes — and its limits stated openly (not independently audited).</li><li>Real-time core in Go: WebSocket hub, Web Push with ciphertext payloads, 1:1 WebRTC calls with sealed signalling and TURN, group calls through LiveKit with end-to-end encrypted frames.</li><li>Small-server engineering: runs on a 1 GB VPS — SQLite (WAL), argon2id passwords, SSRF-guarded link previews, encrypted daily backups to S3, Prometheus metrics.</li><li>Decisions recorded as ADRs; Go and TypeScript test suites, real-browser call tests and CI.</li></ul></div>
+                </details>
+              </div>
               <div class="project">
                 <div class="project-title">
                   <div class="name">AI Support CRM</div>

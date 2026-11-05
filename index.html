@@ -176,7 +176,7 @@
                 <div class="when">2023 — Present</div>
               </div>
               <div class="stackline">Laravel · Vue · Go (side products)</div>
-              <ul><li>Client delivery on Laravel/Vue, plus three self-directed products built and deployed solo</li></ul>
+              <ul><li>Client delivery on Laravel/Vue and outsourced Go backend work, plus several self-directed products built and deployed solo</li></ul>
             </div>
             </div>
           </section>
@@ -200,6 +200,28 @@
             <div class="grid2">
               <div class="project">
                 <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/thread" target="_blank" rel="noopener">Thread</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · E2EE chat</div></div>
+                </div>
+                <div class="small">End-to-end encrypted chat for family and close friends that you run on your own server: one Go binary with SQLite, a Preact PWA, invite-only access, messages, media, 1:1 and group calls. The server stores only ciphertext. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Own E2EE design on standard WebCrypto primitives (ECDH/ECDSA P-256, AES-256-GCM, HKDF) with device approval and safety codes — and its limits stated openly (not independently audited).</li><li>Real-time core in Go: WebSocket hub, Web Push with ciphertext payloads, 1:1 WebRTC calls with sealed signalling and TURN, group calls through LiveKit with end-to-end encrypted frames.</li><li>Small-server engineering: runs on a 1 GB VPS — SQLite (WAL), argon2id passwords, SSRF-guarded link previews, encrypted daily backups to S3, Prometheus metrics.</li><li>Decisions recorded as ADRs; Go and TypeScript test suites, real-browser call tests and CI.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/pdf-formatter" target="_blank" rel="noopener">pdf-formatter</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · PDF editor</div></div>
+                </div>
+                <div class="small">A PDF editor that runs on your computer and edits existing documents surgically: the touched block is rewritten inside the page's content stream and the rest of the page stays byte-for-byte identical. Built on its own Go PDF library (ISO 32000-1); downloadable builds for macOS, Windows and Linux. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Hand-written PDF library in Go: parser and writer, xref/object streams, filters, encryption (standard handler, revisions 2–6), fonts and CMaps, TrueType embedding, content-stream rewriting, forms and bookmarks — about 21k lines of Go with 24 test files.</li><li>Non-destructive model: the source file is never changed; a document is the source plus an operation log, the new PDF is a pure function of both, and undo removes the last operation.</li><li>Documents never leave the machine: the server listens on 127.0.0.1 only, and the interface and fonts are embedded into one executable per platform.</li><li>Shipped as releases (macOS .dmg, Windows and Linux builds); output files are verified with qpdf in the test image.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
                   <div class="name">AI Support CRM</div>
                   <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · multi-tenant SaaS</div><div class="repo-badge">Private repo</div></div>
                 </div>
@@ -207,6 +229,50 @@
                 <details class="fold">
                   <summary>What it demonstrates</summary>
                   <div class="fold-body"><ul><li>Go backend architecture: row-level-security multi-tenancy, RAG pipeline, background jobs.</li><li>Provider-agnostic billing (Stripe + ЮKassa) with idempotent webhook handling.</li><li>Security-conscious design: CORS allowlists, rate limiting, SSRF guarding on outbound webhooks.</li><li>Prometheus/Grafana observability and a documented, phased architecture evolution.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">True Vision</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go + Vue · live streaming</div><div class="repo-badge">Private repo</div></div>
+                </div>
+                <div class="small">Private live streaming for games (sim racing first): the streamer goes live from OBS via WHIP or straight from the browser, viewers watch in the browser over WebRTC with sub-second latency. The owner decides who can watch — password, invite link, any signed-in account, or only themselves.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Signalling-only Go backend (Connect-RPC API, SQLite): video never passes through Go — it flows over UDP between OBS, MediaMTX and browsers.</li><li>Access control that is re-checked live: one decision function at connect time, a one-time ticket plus a MediaMTX hook that re-verifies, and a ~6-second reconciliation loop that kicks viewers whose access was revoked.</li><li>Release pipeline that backs up the database, proves the backup by restoring it, and only then migrates and swaps the container; a failed check stops the release and the old version keeps serving.</li><li>protobuf/buf-generated API, Go tests and real-browser E2E against a real MediaMTX.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Shorts Studio</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · video editor & publishing (local)</div></div>
+                </div>
+                <div class="small">Local-first app for one operator that turns source videos into reviewed vertical short-form videos (9:16) with commentary, voice-over and subtitles, and prepares them for YouTube Shorts and Instagram Reels (optional YouTube upload through the official API — tested against fakes only — and an export package for Instagram). Nothing is published without an explicit approval step.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Full pipeline that works offline with no API keys: import → rights check → metadata → transcript (local speech-to-text) → events and script → subtitles → voice-over → 9:16 render → review → approval → export.</li><li>Local AI where it helps: a local vision-language model proposes events from frames and transcript; cloud analysis is optional and off by default.</li><li>Resumable job model: every stage has a state, logs and a retry that does not repeat the expensive stages; interrupted jobs are marked and resumable by retry.</li><li>Rights-first workflow — approval is blocked until the source's rights and privacy status are explicitly confirmed. Go 1.27 backend with PostgreSQL and a Vite/TypeScript frontend.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
+                </div>
+                <div class="small">Payment Reconciliation Service: matches incoming payments against issued invoices, computes invoice status, and keeps a full audit log. Built on Clean Architecture with PostgreSQL transactions and row-level locking.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Idempotent payment processing under concurrent access — row-level locking (SELECT ... FOR UPDATE) around every reconciliation transaction.</li><li>Invoice status computed from payment allocations (unmatched / partially paid / paid / overpaid), with a full audit trail of every discrepancy.</li><li>A small custom scheduler (`chronos`) for background reconciliation instead of pulling in a message broker.</li><li>Money stored as integer minor units to avoid floating-point errors in financial calculations.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/routecheck" target="_blank" rel="noopener">routecheck</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Python · network diagnostics CLI</div></div>
+                </div>
+                <div class="small">Command-line tool that answers “why is this IP reachable from one country or network but not from another, and where exactly does the route break?”. It checks from your machine and from other countries, shows who owns each network and how it is connected to the internet, draws the route as a chain of organisations and ends with a plain-language verdict. Python standard library only; MIT license.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Zero third-party dependencies: one ~950-line Python file with a 20-test suite, running on Windows, macOS and Linux.</li><li>Combines free open data: Globalping probes in other countries (ICMP and TCP from the same probes, so results compare fairly), regional registries, several geolocation databases and their disagreements, RIPE RIS views, IXPs and RPKI status.</li><li>Diagnoses real causes: a break inside the target network, at its neighbour or in transit; a blocked port vs. a healthy route; MTU loss; RPKI-invalid or single-upstream routes; geolocation disagreement behind false geoblocking.</li><li>Transparent about what leaves the machine and about its own limits.</li></ul></div>
                 </details>
               </div>
               <div class="project">
@@ -244,71 +310,29 @@
               </div>
               <div class="project">
                 <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
+                  <div class="name">Podhod</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · outsourced client project (MVP in progress)</div><div class="repo-badge">Private repo</div></div>
                 </div>
-                <div class="small">Payment Reconciliation Service: matches incoming payments against issued invoices, computes invoice status, and keeps a full audit log. Built on Clean Architecture with PostgreSQL transactions and row-level locking.</div>
+                <div class="small">Outsourced backend for a live remote-coaching app: the coach plans the week, the athlete trains and films every set, and the coach answers each clip inside the rest period. Go service on PostgreSQL with an OpenAPI-first contract (generated Dart client).</div>
                 <details class="fold">
                   <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Idempotent payment processing under concurrent access — row-level locking (SELECT ... FOR UPDATE) around every reconciliation transaction.</li><li>Invoice status computed from payment allocations (unmatched / partially paid / paid / overpaid), with a full audit trail of every discrepancy.</li><li>A small custom scheduler (`chronos`) for background reconciliation instead of pulling in a message broker.</li><li>Money stored as integer minor units to avoid floating-point errors in financial calculations.</li></ul></div>
+                  <div class="fold-body"><ul><li>Built the Go service foundation: one environment-driven config, JSON logs, embedded goose migrations, liveness/readiness probes, Prometheus metrics, an adapted CI pipeline and a multi-arch container image.</li><li>Spec-first delivery with the client's templates: SPEC, ADRs, enforced module boundaries, and an OpenAPI contract that generates server stubs and the client.</li><li>Targets the client's GitOps platform (k3s + Argo CD, CloudNativePG Postgres); first deploy pending.</li></ul></div>
                 </details>
               </div>
               <div class="project">
                 <div class="project-title">
-                  <div class="name">rats-langbot-tom</div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Telegram · LLM</div><div class="repo-badge">Private repo</div></div>
+                  <div class="name">Stupitsa</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Platform · outsourced client project</div><div class="repo-badge">Private repo</div></div>
                 </div>
-                <div class="small">Telegram bot for language learning: translation (Yandex/Google engines), LLM-powered phrase explanations via OpenRouter, and auto-generated quiz polls.</div>
+                <div class="small">A client's shared hosting platform for its small services: one k3s node on Hetzner run by Argo CD from a single repo, with Terraform, TLS, per-project Postgres (CloudNativePG) with point-in-time backups and a documented restore path, metrics, logs and alerts, a project template, and a command that puts a new project on the server. I worked inside it: adopted its template for a service and contributed access, tooling docs and a CI toolchain fix.</div>
                 <details class="fold">
                   <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Integrates multiple external APIs from Go (OpenRouter LLM, Yandex Translate, Google Translate) behind one command interface.</li><li>LLM-generated structured output (quiz question + variants + answer) parsed and turned into a native Telegram poll.</li><li>Deployed on Fly.io — a small, real, always-on AI-assisted tool, not a demo.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/vnv" target="_blank" rel="noopener">vnv</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Game project</div></div>
-                </div>
-                <div class="small">“Believe / Don't Believe” online game project. Demonstrates product thinking, game/domain modeling, and full-stack architectural planning.</div>
-                <details class="fold">
-                  <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Domain rules design and gameplay state thinking.</li><li>Backend/frontend coordination and feature decomposition.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/par-php-8.4" target="_blank" rel="noopener">par-php-8.4</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">PHP bootstrap template</div></div>
-                </div>
-                <div class="small">Minimal PHP 8.4 starter project for quickly launching micro-projects (PHP + Composer + public directory).</div>
-                <details class="fold">
-                  <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Practical developer experience and fast project bootstrapping.</li><li>Reusable foundation for small services/tools.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/rarutils" target="_blank" rel="noopener">rarutils</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go utility package</div></div>
-                </div>
-                <div class="small">Go utility for working with RAR/UNRAR flows. Built to solve practical archive handling tasks with clear ownership and minimal dependency noise.</div>
-                <details class="fold">
-                  <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Writing your own Go packages for real project needs.</li><li>Tooling mindset and pragmatic utility engineering.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/ca-ctx-tx" target="_blank" rel="noopener">ca-ctx-tx</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go architecture pattern</div></div>
-                </div>
-                <div class="small">Context-based transaction handling implementation for Clean Architecture use cases. Useful for keeping transaction boundaries explicit and testable.</div>
-                <details class="fold">
-                  <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Clean Architecture-oriented transaction orchestration.</li><li>Backend design thinking beyond basic CRUD.</li></ul></div>
+                  <div class="fold-body"><ul><li>Hands-on with a real GitOps stack: k3s, Argo CD, Terraform, CloudNativePG, Velero, Prometheus/Grafana/Loki, sealed secrets, cert-manager.</li><li>Worked within a deliberately cost-bounded design (one node, a bill under €20/month): the money goes into backups and a documented restore path rather than redundancy.</li><li>A shared agent rulebook and project template that every repo inherits: secret scanning, branch + PR + Conventional Commits, ADRs.</li><li>My part: adopted the platform template and contract for Podhod; contributed admin access, tunnel/kubeconfig tooling docs and a lint/CI toolchain bump.</li></ul></div>
                 </details>
               </div>
             </div>
+            <div class="title" style="margin:18px 0 4px">Smaller utilities & experiments</div>
+            <ul style="margin-top:6px"><li>rats-langbot-tom — Telegram language-learning bot in Go: Yandex/Google translation, LLM phrase explanations (OpenRouter), generated quiz polls; runs on Fly.io. Private repo.</li><li><a href="https://github.com/saifutdinov/rarutils" target="_blank" rel="noopener">rarutils</a> — Go package for RAR/UNRAR operations.</li><li><a href="https://github.com/saifutdinov/ca-ctx-tx" target="_blank" rel="noopener">ca-ctx-tx</a> — Context-based sql.Tx handling for Clean Architecture use cases (Go).</li><li><a href="https://github.com/saifutdinov/vnv" target="_blank" rel="noopener">vnv</a> — “Believe / Don't Believe” online card game — domain rules and game-state modeling.</li><li><a href="https://github.com/saifutdinov/par-php-8.4" target="_blank" rel="noopener">par-php-8.4</a> — Minimal PHP 8.4 starter for micro-projects (PHP + Composer).</li></ul>
           </section>
           <section class="section">
             <h2>Education</h2>

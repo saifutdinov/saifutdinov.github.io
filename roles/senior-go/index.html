@@ -97,7 +97,7 @@
               <h2>Profile</h2>
               <div class="tagline">Backend engineer, Go-first</div>
             </div>
-            <p>Senior backend engineer. Go-first since 2022, building and running the backend of azimuth.team (HR-tech, PostgreSQL, Redis, Docker) end-to-end: architecture, APIs, schema evolution, and the infra it runs on. 9 more years in PHP before that, so legacy/database instincts carry over.</p>
+            <p>Senior backend engineer. Go-first since 2022, building and running the backend of azimuth.team (HR-tech, PostgreSQL, Redis, Docker) end-to-end: architecture, APIs, schema evolution, and the infra it runs on. 9 more years in PHP before that, so legacy/database instincts carry over. Outside work I ship Go products end to end: an end-to-end encrypted chat server, a PDF editor on its own PDF library, a live-streaming backend.</p>
             <div class="outcomes">
               <b>Why this fits</b>
               <ul style="margin-top:0">
@@ -113,8 +113,8 @@
               <div class="tagline">Go-centric</div>
             </div>
             <div class="grid2">
-              <div class="card"><div class="title" style="margin-bottom:6px">Go</div><ul style="margin-top:0"><li>Echo framework, REST API design</li><li>Clean Architecture layering</li><li>Generics (see goslice)</li><li>Context-based transaction handling (ca-ctx-tx)</li><li>Custom packages: maps/slices/cache/errors</li></ul></div>
-              <div class="card"><div class="title" style="margin-bottom:6px">Data</div><ul style="margin-top:0"><li>PostgreSQL: schema evolution, migrations, indexes</li><li>Redis (caching)</li><li>MongoDB (legacy interop)</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Go</div><ul style="margin-top:0"><li>Echo framework, REST API design</li><li>Clean Architecture layering</li><li>Generics (see goslice)</li><li>Context-based transaction handling (ca-ctx-tx)</li><li>Custom packages: maps/slices/cache/errors</li><li>Connect-RPC + protobuf (buf), WebSocket hubs, WebRTC signalling (WHIP/WHEP)</li><li>Hand-written PDF library (ISO 32000-1): parsing, content streams, fonts</li><li>Security-minded backends: argon2id, E2EE key flows, SSRF guards</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Data</div><ul style="margin-top:0"><li>PostgreSQL: schema evolution, migrations, indexes</li><li>Redis (caching)</li><li>MongoDB (legacy interop)</li><li>SQLite (WAL) for small self-hosted servers, with encrypted backups</li></ul></div>
               <div class="card"><div class="title" style="margin-bottom:6px">Delivery</div><ul style="margin-top:0"><li>GitLab CI/CD for Go services</li><li>Docker / docker-compose</li><li>Nginx + TLS automation (Certbot)</li><li>Code-review-driven consistency</li></ul></div>
             </div>
           </section>
@@ -194,6 +194,28 @@
             <div class="grid2">
               <div class="project">
                 <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/thread" target="_blank" rel="noopener">Thread</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · E2EE chat</div></div>
+                </div>
+                <div class="small">End-to-end encrypted chat for family and close friends that you run on your own server: one Go binary with SQLite, a Preact PWA, invite-only access, messages, media, 1:1 and group calls. The server stores only ciphertext. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Own E2EE design on standard WebCrypto primitives (ECDH/ECDSA P-256, AES-256-GCM, HKDF) with device approval and safety codes — and its limits stated openly (not independently audited).</li><li>Real-time core in Go: WebSocket hub, Web Push with ciphertext payloads, 1:1 WebRTC calls with sealed signalling and TURN, group calls through LiveKit with end-to-end encrypted frames.</li><li>Small-server engineering: runs on a 1 GB VPS — SQLite (WAL), argon2id passwords, SSRF-guarded link previews, encrypted daily backups to S3, Prometheus metrics.</li><li>Decisions recorded as ADRs; Go and TypeScript test suites, real-browser call tests and CI.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/pdf-formatter" target="_blank" rel="noopener">pdf-formatter</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · PDF editor</div></div>
+                </div>
+                <div class="small">A PDF editor that runs on your computer and edits existing documents surgically: the touched block is rewritten inside the page's content stream and the rest of the page stays byte-for-byte identical. Built on its own Go PDF library (ISO 32000-1); downloadable builds for macOS, Windows and Linux. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Hand-written PDF library in Go: parser and writer, xref/object streams, filters, encryption (standard handler, revisions 2–6), fonts and CMaps, TrueType embedding, content-stream rewriting, forms and bookmarks — about 21k lines of Go with 24 test files.</li><li>Non-destructive model: the source file is never changed; a document is the source plus an operation log, the new PDF is a pure function of both, and undo removes the last operation.</li><li>Documents never leave the machine: the server listens on 127.0.0.1 only, and the interface and fonts are embedded into one executable per platform.</li><li>Shipped as releases (macOS .dmg, Windows and Linux builds); output files are verified with qpdf in the test image.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
                   <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
                   <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
                 </div>
@@ -205,6 +227,28 @@
               </div>
               <div class="project">
                 <div class="project-title">
+                  <div class="name">AI Support CRM</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · multi-tenant SaaS</div><div class="repo-badge">Private repo</div></div>
+                </div>
+                <div class="small">Multi-tenant support-bot platform (Telegram → WhatsApp) with a RAG knowledge base, human escalation, and a CRM layer on top. White-label core built to serve several client businesses from one codebase.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Go backend architecture: row-level-security multi-tenancy, RAG pipeline, background jobs.</li><li>Provider-agnostic billing (Stripe + ЮKassa) with idempotent webhook handling.</li><li>Security-conscious design: CORS allowlists, rate limiting, SSRF guarding on outbound webhooks.</li><li>Prometheus/Grafana observability and a documented, phased architecture evolution.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">True Vision</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go + Vue · live streaming</div><div class="repo-badge">Private repo</div></div>
+                </div>
+                <div class="small">Private live streaming for games (sim racing first): the streamer goes live from OBS via WHIP or straight from the browser, viewers watch in the browser over WebRTC with sub-second latency. The owner decides who can watch — password, invite link, any signed-in account, or only themselves.</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Signalling-only Go backend (Connect-RPC API, SQLite): video never passes through Go — it flows over UDP between OBS, MediaMTX and browsers.</li><li>Access control that is re-checked live: one decision function at connect time, a one-time ticket plus a MediaMTX hook that re-verifies, and a ~6-second reconciliation loop that kicks viewers whose access was revoked.</li><li>Release pipeline that backs up the database, proves the backup by restoring it, and only then migrates and swaps the container; a failed check stops the release and the old version keeps serving.</li><li>protobuf/buf-generated API, Go tests and real-browser E2E against a real MediaMTX.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
                   <div class="name">Ant Colony</div>
                   <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · real-time game server</div><div class="repo-badge">Private repo</div></div>
                 </div>
@@ -212,6 +256,17 @@
                 <details class="fold">
                   <summary>What it demonstrates</summary>
                   <div class="fold-body"><ul><li>Single-goroutine authoritative game engine — no per-entity goroutines, no world mutex; state changes only through commands, immutable snapshots handed outward.</li><li>WebSocket protocol with snapshot + delta frames and compressed chunk streaming for a live, persistent world.</li><li>SQLite persistence with versioned snapshots plus a Redis hot cache — the simulation survives server restarts.</li><li>Deterministic seeded RNG, A*/flow-field navigation, and a full test suite run with -race.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Podhod</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · outsourced client project (MVP in progress)</div><div class="repo-badge">Private repo</div></div>
+                </div>
+                <div class="small">Outsourced backend for a live remote-coaching app: the coach plans the week, the athlete trains and films every set, and the coach answers each clip inside the rest period. Go service on PostgreSQL with an OpenAPI-first contract (generated Dart client).</div>
+                <details class="fold">
+                  <summary>What it demonstrates</summary>
+                  <div class="fold-body"><ul><li>Built the Go service foundation: one environment-driven config, JSON logs, embedded goose migrations, liveness/readiness probes, Prometheus metrics, an adapted CI pipeline and a multi-arch container image.</li><li>Spec-first delivery with the client's templates: SPEC, ADRs, enforced module boundaries, and an OpenAPI contract that generates server stubs and the client.</li><li>Targets the client's GitOps platform (k3s + Argo CD, CloudNativePG Postgres); first deploy pending.</li></ul></div>
                 </details>
               </div>
               <div class="project">
@@ -245,17 +300,6 @@
                 <details class="fold">
                   <summary>What it demonstrates</summary>
                   <div class="fold-body"><ul><li>Clean Architecture-oriented transaction orchestration.</li><li>Backend design thinking beyond basic CRUD.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name">AI Support CRM</div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · multi-tenant SaaS</div><div class="repo-badge">Private repo</div></div>
-                </div>
-                <div class="small">Multi-tenant support-bot platform (Telegram → WhatsApp) with a RAG knowledge base, human escalation, and a CRM layer on top. White-label core built to serve several client businesses from one codebase.</div>
-                <details class="fold">
-                  <summary>What it demonstrates</summary>
-                  <div class="fold-body"><ul><li>Go backend architecture: row-level-security multi-tenancy, RAG pipeline, background jobs.</li><li>Provider-agnostic billing (Stripe + ЮKassa) with idempotent webhook handling.</li><li>Security-conscious design: CORS allowlists, rate limiting, SSRF guarding on outbound webhooks.</li><li>Prometheus/Grafana observability and a documented, phased architecture evolution.</li></ul></div>
                 </details>
               </div>
             </div>
