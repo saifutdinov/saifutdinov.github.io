@@ -176,7 +176,7 @@
                 <div class="when">2023 — н.в.</div>
               </div>
               <div class="stackline">Laravel · Vue · Go (собственные продукты)</div>
-              <ul><li>Поставка клиентам на Laravel/Vue, плюс три собственных продукта, построенных и задеплоенных соло</li></ul>
+              <ul><li>Поставка клиентам на Laravel/Vue и аутсорс-разработка backend на Go, плюс несколько собственных продуктов, построенных и задеплоенных соло</li></ul>
             </div>
             </div>
           </section>
@@ -200,6 +200,28 @@
             <div class="grid2">
               <div class="project">
                 <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/thread" target="_blank" rel="noopener">Thread</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · E2EE-чат</div></div>
+                </div>
+                <div class="small">Чат со сквозным шифрованием для семьи и близких друзей, который запускается на вашем сервере: один Go-бинарь с SQLite, PWA на Preact, вход только по приглашениям, сообщения, медиа, звонки 1:1 и групповые. Сервер хранит только шифртекст. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Собственная E2EE-схема на стандартных примитивах WebCrypto (ECDH/ECDSA P-256, AES-256-GCM, HKDF) с подтверждением устройств и кодами безопасности — и открыто описанными ограничениями (независимого аудита не было).</li><li>Realtime-ядро на Go: WebSocket-хаб, Web Push с шифрованным содержимым, звонки 1:1 по WebRTC с запечатанной сигнализацией и TURN, групповые звонки через LiveKit со сквозным шифрованием кадров.</li><li>Инженерия маленького сервера: работает на VPS с 1 ГБ — SQLite (WAL), пароли на argon2id, превью ссылок с защитой от SSRF, шифрованные ежедневные бэкапы в S3, метрики Prometheus.</li><li>Решения оформлены как ADR; тесты на Go и TypeScript, звонки проверяются в настоящем браузере, есть CI.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/pdf-formatter" target="_blank" rel="noopener">pdf-formatter</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · редактор PDF</div></div>
+                </div>
+                <div class="small">Редактор PDF, который работает на вашем компьютере и правит существующие документы аккуратно: изменённый блок переписывается прямо в потоке содержимого страницы, остальная страница остаётся байт в байт прежней. Построен на собственной PDF-библиотеке на Go (ISO 32000-1); есть сборки для macOS, Windows и Linux. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Собственная PDF-библиотека на Go: парсер и запись, xref и объектные потоки, фильтры, шифрование (стандартный обработчик, ревизии 2–6), шрифты и CMap, встраивание TrueType, переписывание потоков содержимого, формы и закладки — около 21 тыс. строк Go и 24 файла тестов.</li><li>Неразрушающая модель: исходный файл не меняется, документ — это исходник плюс журнал операций, новый PDF — чистая функция от них, отмена убирает последнюю операцию.</li><li>Документы не покидают компьютер: сервер слушает только 127.0.0.1, а интерфейс и шрифты встроены в один исполняемый файл на платформу.</li><li>Выпускается релизами (.dmg для macOS, сборки для Windows и Linux); выходные файлы проверяются qpdf в тестовом образе.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
                   <div class="name">AI Support CRM</div>
                   <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · мультитенантный SaaS</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
@@ -207,6 +229,50 @@
                 <details class="fold">
                   <summary>Что показывает проект</summary>
                   <div class="fold-body"><ul><li>Архитектура бэкенда на Go: мультитенантность через row-level security, RAG-пайплайн, фоновые задачи.</li><li>Провайдер-агностичный биллинг (Stripe + ЮKassa) с идемпотентной обработкой вебхуков.</li><li>Безопасность: CORS-allowlist, rate limiting, защита от SSRF на исходящих вебхуках.</li><li>Наблюдаемость через Prometheus/Grafana и документированная поэтапная эволюция архитектуры.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">True Vision</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go + Vue · live-стриминг</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Приватные трансляции игр (в первую очередь sim racing): стример выходит в эфир из OBS по WHIP или прямо из браузера, зрители смотрят в браузере по WebRTC с задержкой меньше секунды. Кто смотрит, решает владелец: пароль, ссылка-приглашение, любой вошедший аккаунт или только он сам.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Go-бэкенд только для сигнализации (API на Connect-RPC, SQLite): видео через Go не проходит — оно идёт по UDP между OBS, MediaMTX и браузерами.</li><li>Контроль доступа, который перепроверяется вживую: одна функция решения при подключении, одноразовый тикет и hook MediaMTX с повторной проверкой, сверка раз в ~6 секунд отключает зрителей, у которых отозвали право.</li><li>Релизный пайплайн: бэкап базы, проверка бэкапа восстановлением и только потом миграция и смена контейнера; провал проверки останавливает релиз, старая версия продолжает работать.</li><li>API на protobuf/buf, тесты на Go и E2E в настоящем браузере против настоящего MediaMTX.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Shorts Studio</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · видеоредактор и публикация (локально)</div></div>
+                </div>
+                <div class="small">Локальное приложение для одного оператора: превращает исходные видео в проверенные вертикальные ролики (9:16) с комментарием, озвучкой и субтитрами и готовит их для YouTube Shorts и Instagram Reels (необязательная загрузка на YouTube через официальный API — проверена только на фейках — и пакет экспорта для Instagram). Ничего не публикуется без явного шага одобрения.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Полный путь без интернета и без ключей API: импорт → проверка прав → метаданные → транскрипт (локальное распознавание речи) → события и сценарий → субтитры → озвучка → рендер 9:16 → проверка → одобрение → экспорт.</li><li>Локальный ИИ там, где он помогает: локальная vision-language модель предлагает события по кадрам и транскрипту; облачный анализ необязателен и по умолчанию выключен.</li><li>Возобновляемые задачи: у каждого этапа есть состояние, логи и повтор без пересчёта дорогих этапов; прерванные задачи помечаются и возобновляются повтором.</li><li>Подход «сначала права» — одобрение заблокировано, пока явно не подтверждены права и приватность источника. Бэкенд на Go 1.27 с PostgreSQL и фронтенд на Vite/TypeScript.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
+                </div>
+                <div class="small">Сервис сверки платежей: сопоставляет входящие платежи с выставленными счетами, вычисляет статус счёта и ведёт полный аудит-лог. Построен на Clean Architecture с транзакциями PostgreSQL и row-level locking.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Идемпотентная обработка платежей при конкурентном доступе — row-level locking (SELECT ... FOR UPDATE) вокруг каждой транзакции сверки.</li><li>Статус счёта вычисляется из распределения платежей (unmatched / partially paid / paid / overpaid), с полным аудитом каждого расхождения.</li><li>Небольшой собственный планировщик (`chronos`) для фоновой сверки вместо внешнего брокера сообщений.</li><li>Деньги хранятся в минимальных единицах валюты (целые числа), чтобы избежать ошибок плавающей точки в финансовых расчётах.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/routecheck" target="_blank" rel="noopener">routecheck</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Python · CLI для диагностики сети</div></div>
+                </div>
+                <div class="small">Утилита командной строки, которая отвечает на вопрос «почему этот IP доступен из одной страны или сети, но не из другой, и где именно ломается маршрут». Проверяет с вашего компьютера и из других стран, выясняет, чья это сеть и как она подключена к интернету, показывает маршрут как цепочку организаций и даёт вывод простыми словами. Только стандартная библиотека Python; лицензия MIT.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Ноль сторонних зависимостей: один файл на ~950 строк Python и 20 тестов, работает на Windows, macOS и Linux.</li><li>Объединяет открытые данные: пробы Globalping в других странах (ICMP и TCP с одних и тех же проб, поэтому результаты честно сравнимы), региональные регистраторы, несколько баз геолокации и их расхождения, данные RIPE RIS, точки обмена трафиком и статус RPKI.</li><li>Находит реальные причины: обрыв внутри сети цели, у соседа или на транзите; блокировка порта при исправном маршруте; потери из-за MTU; маршруты с невалидным RPKI или единственным провайдером; расхождение геобаз, из-за которого срабатывает ложный геоблок.</li><li>Прозрачна в том, что уходит наружу, и в собственных ограничениях.</li></ul></div>
                 </details>
               </div>
               <div class="project">
@@ -244,71 +310,29 @@
               </div>
               <div class="project">
                 <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
+                  <div class="name">Podhod</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · аутсорс-проект клиента (MVP в разработке)</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
-                <div class="small">Сервис сверки платежей: сопоставляет входящие платежи с выставленными счетами, вычисляет статус счёта и ведёт полный аудит-лог. Построен на Clean Architecture с транзакциями PostgreSQL и row-level locking.</div>
+                <div class="small">Аутсорс-бэкенд для приложения удалённого коучинга: тренер планирует неделю, атлет тренируется и снимает каждый подход, тренер отвечает на каждый ролик в паузу между подходами. Go-сервис на PostgreSQL с контрактом OpenAPI-first (генерируемый Dart-клиент).</div>
                 <details class="fold">
                   <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Идемпотентная обработка платежей при конкурентном доступе — row-level locking (SELECT ... FOR UPDATE) вокруг каждой транзакции сверки.</li><li>Статус счёта вычисляется из распределения платежей (unmatched / partially paid / paid / overpaid), с полным аудитом каждого расхождения.</li><li>Небольшой собственный планировщик (`chronos`) для фоновой сверки вместо внешнего брокера сообщений.</li><li>Деньги хранятся в минимальных единицах валюты (целые числа), чтобы избежать ошибок плавающей точки в финансовых расчётах.</li></ul></div>
+                  <div class="fold-body"><ul><li>Построил основу Go-сервиса: единая конфигурация из окружения, JSON-логи, встроенные миграции goose, пробы liveness/readiness, метрики Prometheus, адаптированный CI-пайплайн и мультиархитектурный образ.</li><li>Поставка spec-first по шаблонам клиента: SPEC, ADR, проверяемые границы модулей и контракт OpenAPI, из которого генерируются заглушки сервера и клиент.</li><li>Рассчитан на GitOps-платформу клиента (k3s + Argo CD, Postgres на CloudNativePG); первый деплой впереди.</li></ul></div>
                 </details>
               </div>
               <div class="project">
                 <div class="project-title">
-                  <div class="name">rats-langbot-tom</div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Telegram · LLM</div><div class="repo-badge">Приватный репозиторий</div></div>
+                  <div class="name">Stupitsa</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Платформа · аутсорс-проект клиента</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
-                <div class="small">Telegram-бот для изучения языков: перевод (движки Yandex/Google), объяснение фраз через LLM (OpenRouter) и автогенерируемые квизы-опросы.</div>
+                <div class="small">Общая хостинг-платформа клиента для его небольших сервисов: один k3s-узел на Hetzner, которым управляет Argo CD из одного репозитория, с Terraform, TLS, Postgres на проект (CloudNativePG) с point-in-time бэкапами и документированным путём восстановления, метриками, логами и алертами, шаблоном проекта и командой, которая заводит новый проект на сервере. Работал внутри неё: взял её шаблон для сервиса и вносил правки по доступам, документации инструментов и тулчейну CI.</div>
                 <details class="fold">
                   <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Интегрирует несколько внешних API из Go (OpenRouter LLM, Yandex Translate, Google Translate) за одним интерфейсом команд.</li><li>Структурированный вывод LLM (вопрос + варианты + ответ) парсится и превращается в нативный опрос Telegram.</li><li>Задеплоен на Fly.io — небольшой, реальный, всегда включённый AI-инструмент, а не демка.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/vnv" target="_blank" rel="noopener">vnv</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Game project</div></div>
-                </div>
-                <div class="small">Проект онлайн-игры «Верю / Не Верю». Демонстрирует продуктовое мышление, моделирование доменных правил и full-stack планирование архитектуры.</div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Проектирование доменных правил и игровых состояний.</li><li>Координация backend/frontend и декомпозиция фич.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/par-php-8.4" target="_blank" rel="noopener">par-php-8.4</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">PHP bootstrap template</div></div>
-                </div>
-                <div class="small">Минимальный шаблон на PHP 8.4 для быстрого старта микро-проектов (PHP + Composer + public directory).</div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Практичный подход к developer experience и быстрому запуску.</li><li>Переиспользуемая база для небольших сервисов и утилит.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/rarutils" target="_blank" rel="noopener">rarutils</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go utility package</div></div>
-                </div>
-                <div class="small">Go-утилита для работы с RAR/UNRAR. Написана под реальные практические сценарии с ясным ownership и минимальным шумом зависимостей.</div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Умение писать свои Go-пакеты под реальные задачи.</li><li>Инструментальный подход и прагматичная инженерия утилит.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name"><a href="https://github.com/saifutdinov/ca-ctx-tx" target="_blank" rel="noopener">ca-ctx-tx</a></div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go architecture pattern</div></div>
-                </div>
-                <div class="small">Имплементация транзакций через context для Clean Architecture use case'ов. Полезно для явных и тестируемых транзакционных границ.</div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Оркестрация транзакций в духе Clean Architecture.</li><li>Архитектурное мышление beyond CRUD.</li></ul></div>
+                  <div class="fold-body"><ul><li>Практика с настоящим GitOps-стеком: k3s, Argo CD, Terraform, CloudNativePG, Velero, Prometheus/Grafana/Loki, sealed secrets, cert-manager.</li><li>Работа в рамках осознанно ограниченного по стоимости дизайна (один узел, счёт до €20 в месяц): деньги идут в бэкапы и документированный путь восстановления, а не в избыточность.</li><li>Общий свод правил для агентов и шаблон проекта, которые наследует каждый репозиторий: проверка секретов, ветка + PR + Conventional Commits, ADR.</li><li>Моя часть: взял шаблон и контракт платформы для Podhod; внёс доступы администратора, документацию по туннелю/kubeconfig-скриптам и обновление тулчейна lint/CI.</li></ul></div>
                 </details>
               </div>
             </div>
+            <div class="title" style="margin:18px 0 4px">Небольшие утилиты и эксперименты</div>
+            <ul style="margin-top:6px"><li>rats-langbot-tom — Telegram-бот для изучения языков на Go: перевод Yandex/Google, объяснение фраз через LLM (OpenRouter), генерируемые квизы; работает на Fly.io. Приватный репозиторий.</li><li><a href="https://github.com/saifutdinov/rarutils" target="_blank" rel="noopener">rarutils</a> — Go-пакет для операций с RAR/UNRAR.</li><li><a href="https://github.com/saifutdinov/ca-ctx-tx" target="_blank" rel="noopener">ca-ctx-tx</a> — Транзакции sql.Tx через context для use case'ов Clean Architecture (Go).</li><li><a href="https://github.com/saifutdinov/vnv" target="_blank" rel="noopener">vnv</a> — Онлайн-игра «Верю / Не Верю» — доменные правила и моделирование состояния игры.</li><li><a href="https://github.com/saifutdinov/par-php-8.4" target="_blank" rel="noopener">par-php-8.4</a> — Минимальный шаблон PHP 8.4 для микро-проектов (PHP + Composer).</li></ul>
           </section>
           <section class="section">
             <h2>Образование</h2>

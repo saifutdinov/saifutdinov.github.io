@@ -97,13 +97,13 @@
               <h2>Профиль</h2>
               <div class="tagline">Backend-инженер, который сам ведёт инфраструктуру</div>
             </div>
-            <p>Не отдельная карьера в ops — навыки DevOps выросли из необходимости владеть backend-сервисами end-to-end и стали реальной силой. Настраиваю CI/CD, веду Docker в проде, конфигурирую Nginx/TLS и слежу за доставляемостью почты — на живом продукте и на трёх своих сайд-проектах.</p>
+            <p>Не отдельная карьера в ops — навыки DevOps выросли из необходимости владеть backend-сервисами end-to-end и стали реальной силой. Настраиваю CI/CD, веду Docker в проде, конфигурирую Nginx/TLS и слежу за доставляемостью почты — на живом продукте, на своих сайд-проектах и внутри платформы клиента (k3s + Argo CD).</p>
             <div class="outcomes">
               <b>Почему это подходит</b>
               <ul style="margin-top:0">
                 <li>Комфортно веду весь путь от git push до работающего контейнера в проде.
                 <li>Автоматизировал обновление TLS-сертификатов и CI/CD так, что команда об этом забыла.
-                <li>Сейчас самостоятельно эксплуатирую три независимых Docker-стека end-to-end.</li>
+                <li>Самостоятельно эксплуатирую несколько независимых Docker-стеков end-to-end и работаю внутри GitOps-платформы клиента (k3s + Argo CD).</li>
               </ul>
             </div>
           </section>
@@ -116,7 +116,7 @@
               <div class="card"><div class="title" style="margin-bottom:6px">CI/CD и контейнеры</div><ul style="margin-top:0"><li>GitLab CE/Runner пайплайны</li><li>Docker / docker-compose</li><li>Деплой через Makefile</li></ul></div>
               <div class="card"><div class="title" style="margin-bottom:6px">Web и инфра</div><ul style="margin-top:0"><li>Nginx</li><li>TLS через Certbot / Let's Encrypt (автопродление)</li><li>Linux-консоль — ежедневный инструмент</li></ul></div>
               <div class="card"><div class="title" style="margin-bottom:6px">Почтовая инфра</div><ul style="margin-top:0"><li>Exim</li><li>Доставляемость SPF / DKIM / DMARC</li></ul></div>
-              <div class="card"><div class="title" style="margin-bottom:6px">Наблюдаемость</div><ul style="margin-top:0"><li>Prometheus + Grafana + ELK — реально работают в проде, не просто «знаком»</li><li>k8s, RabbitMQ/Kafka (знаком)</li><li>Elasticsearch</li><li>Свой health-check + Telegram-алертинг бот</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Наблюдаемость</div><ul style="margin-top:0"><li>Prometheus + Grafana + ELK — реально работают в проде, не просто «знаком»</li><li>k3s, Argo CD (GitOps), Terraform, CloudNativePG, Velero — работа внутри платформы клиента</li><li>RabbitMQ/Kafka (знаком)</li><li>Elasticsearch</li><li>Свой health-check + Telegram-алертинг бот</li></ul></div>
             </div>
           </section>
           <section class="section">
@@ -145,7 +145,18 @@
                 <div class="when">2024 — н.в.</div>
               </div>
               <div class="stackline">Docker Compose · Postgres · Prometheus/Grafana · Nginx</div>
-              <ul><li><b>Спроектировал и веду полный Docker-деплой AI Support CRM</b> — Postgres, фоновые воркеры, наблюдаемость Prometheus/Grafana.</li><li><b>Построил cron-стек парсер + API + админка для PSN Deals</b> — один Docker Compose стек, Postgres, Adminer.</li><li><b>Развернул React SPA за Nginx + FastAPI backend для Dimond</b> одним Docker-стеком.</li></ul>
+              <ul><li><b>Спроектировал и веду полный Docker-деплой AI Support CRM</b> — Postgres, фоновые воркеры, наблюдаемость Prometheus/Grafana.</li><li><b>Построил cron-стек парсер + API + админка для PSN Deals</b> — один Docker Compose стек, Postgres, Adminer.</li><li><b>Развернул React SPA за Nginx + FastAPI backend для Dimond</b> одним Docker-стеком.</li><li><b>Self-host сервера E2EE-чата без операционной рутины (Thread)</b> — один Go-бинарь + SQLite за Caddy/Docker, скриптовая установка, шифрованные ежедневные бэкапы в S3 с ретеншном, метрики Prometheus.</li><li><b>Построил релизный пайплайн для True Vision</b> — бэкап, проверка восстановлением, миграция и смена контейнера, со стеком WebRTC (OBS → MediaMTX → браузеры по UDP) за nginx.</li></ul>
+            </div>
+            <div class="card">
+              <div class="head">
+                <div>
+                  <div class="title">Аутсорс — GitOps-платформа клиента</div>
+                  <div class="meta">k3s · Argo CD · CloudNativePG · Go-сервис, сделанный под неё</div>
+                </div>
+                <div class="when">2026</div>
+              </div>
+              <div class="stackline">k3s · Argo CD · Terraform · CloudNativePG · Prometheus/Grafana/Loki · GitHub Actions</div>
+              <ul><li><b>Взял шаблон и контракт платформы клиента для Go-сервиса (Podhod)</b> → мультиархитектурный образ собирается в CI, деплой через Argo CD клиента подготовлен (первый выкат впереди).</li><li><b>Подготовил сервис к платформе:</b> /healthz (liveness), /readyz (проверка Postgres), Prometheus /metrics, JSON-логи, параметры подключения CloudNativePG.</li><li><b>Вносил правки по доступам и инструментам в репозитории платформы</b> — доступы администратора, документация по туннелю/kubeconfig-скриптам, обновление тулчейна lint/CI.</li></ul>
             </div>
             </div>
           </section>
@@ -185,14 +196,57 @@
                   <div class="mini"><b>ПОЛЬЗА</b>Бесплатный собственный мониторинг вместо очередного счёта от вендора.</div>
                 </div>
               </div>
+              <div class="case">
+                <h3>Релизный пайплайн, который проверяет собственный бэкап</h3>
+                <div class="case-meta">CI/CD · бэкапы · Docker (True Vision)</div>
+                <div class="kv4">
+                  <div class="mini"><b>КОНТЕКСТ</b>Релизы с миграцией базы рискованны, если бэкап ни разу не восстанавливали.</div>
+                  <div class="mini"><b>ДЕЙСТВИЕ</b>На сервере релиз делает бэкап базы, проверяет его восстановлением и только потом мигрирует и меняет контейнер.</div>
+                  <div class="mini"><b>РЕЗУЛЬТАТ</b>Провал бэкапа или проверки восстановления останавливает релиз; предыдущая версия продолжает работать.</div>
+                  <div class="mini"><b>ПОЛЬЗА</b>Сохранность данных проверяется до изменения, а не после инцидента.</div>
+                </div>
+              </div>
             </div>
           </section>
           <section class="section">
             <div class="headline">
               <h2>Инфраструктура, которую я веду</h2>
-              <div class="tagline">Docker-стеки, которые я спроектировал</div>
+              <div class="tagline">Docker-стеки, которые я веду, и аутсорс-платформа (GitOps)</div>
             </div>
             <div class="grid2">
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Stupitsa</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Платформа · аутсорс-проект клиента</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Общая хостинг-платформа клиента для его небольших сервисов: один k3s-узел на Hetzner, которым управляет Argo CD из одного репозитория, с Terraform, TLS, Postgres на проект (CloudNativePG) с point-in-time бэкапами и документированным путём восстановления, метриками, логами и алертами, шаблоном проекта и командой, которая заводит новый проект на сервере. Работал внутри неё: взял её шаблон для сервиса и вносил правки по доступам, документации инструментов и тулчейну CI.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Практика с настоящим GitOps-стеком: k3s, Argo CD, Terraform, CloudNativePG, Velero, Prometheus/Grafana/Loki, sealed secrets, cert-manager.</li><li>Работа в рамках осознанно ограниченного по стоимости дизайна (один узел, счёт до €20 в месяц): деньги идут в бэкапы и документированный путь восстановления, а не в избыточность.</li><li>Общий свод правил для агентов и шаблон проекта, которые наследует каждый репозиторий: проверка секретов, ветка + PR + Conventional Commits, ADR.</li><li>Моя часть: взял шаблон и контракт платформы для Podhod; внёс доступы администратора, документацию по туннелю/kubeconfig-скриптам и обновление тулчейна lint/CI.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">True Vision</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go + Vue · live-стриминг</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Приватные трансляции игр (в первую очередь sim racing): стример выходит в эфир из OBS по WHIP или прямо из браузера, зрители смотрят в браузере по WebRTC с задержкой меньше секунды. Кто смотрит, решает владелец: пароль, ссылка-приглашение, любой вошедший аккаунт или только он сам.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Go-бэкенд только для сигнализации (API на Connect-RPC, SQLite): видео через Go не проходит — оно идёт по UDP между OBS, MediaMTX и браузерами.</li><li>Контроль доступа, который перепроверяется вживую: одна функция решения при подключении, одноразовый тикет и hook MediaMTX с повторной проверкой, сверка раз в ~6 секунд отключает зрителей, у которых отозвали право.</li><li>Релизный пайплайн: бэкап базы, проверка бэкапа восстановлением и только потом миграция и смена контейнера; провал проверки останавливает релиз, старая версия продолжает работать.</li><li>API на protobuf/buf, тесты на Go и E2E в настоящем браузере против настоящего MediaMTX.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/thread" target="_blank" rel="noopener">Thread</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · E2EE-чат</div></div>
+                </div>
+                <div class="small">Чат со сквозным шифрованием для семьи и близких друзей, который запускается на вашем сервере: один Go-бинарь с SQLite, PWA на Preact, вход только по приглашениям, сообщения, медиа, звонки 1:1 и групповые. Сервер хранит только шифртекст. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Собственная E2EE-схема на стандартных примитивах WebCrypto (ECDH/ECDSA P-256, AES-256-GCM, HKDF) с подтверждением устройств и кодами безопасности — и открыто описанными ограничениями (независимого аудита не было).</li><li>Realtime-ядро на Go: WebSocket-хаб, Web Push с шифрованным содержимым, звонки 1:1 по WebRTC с запечатанной сигнализацией и TURN, групповые звонки через LiveKit со сквозным шифрованием кадров.</li><li>Инженерия маленького сервера: работает на VPS с 1 ГБ — SQLite (WAL), пароли на argon2id, превью ссылок с защитой от SSRF, шифрованные ежедневные бэкапы в S3, метрики Prometheus.</li><li>Решения оформлены как ADR; тесты на Go и TypeScript, звонки проверяются в настоящем браузере, есть CI.</li></ul></div>
+                </details>
+              </div>
               <div class="project">
                 <div class="project-title">
                   <div class="name">AI Support CRM</div>

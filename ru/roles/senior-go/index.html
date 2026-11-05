@@ -97,7 +97,7 @@
               <h2>Профиль</h2>
               <div class="tagline">Backend-инженер, Go в приоритете</div>
             </div>
-            <p>Senior backend-инженер. С 2022 года Go — основной стек: разрабатываю и веду backend azimuth.team (HR-tech, PostgreSQL, Redis, Docker) end-to-end — архитектура, API, эволюция схемы и инфраструктура. До этого 9 лет PHP, поэтому чутьё на legacy и базы данных перенеслось и сюда.</p>
+            <p>Senior backend-инженер. С 2022 года Go — основной стек: разрабатываю и веду backend azimuth.team (HR-tech, PostgreSQL, Redis, Docker) end-to-end — архитектура, API, эволюция схемы и инфраструктура. До этого 9 лет PHP, поэтому чутьё на legacy и базы данных перенеслось и сюда. Вне работы довожу Go-продукты до конца: сервер чата со сквозным шифрованием, редактор PDF на собственной PDF-библиотеке, бэкенд live-стриминга.</p>
             <div class="outcomes">
               <b>Почему это подходит</b>
               <ul style="margin-top:0">
@@ -113,8 +113,8 @@
               <div class="tagline">Go в центре</div>
             </div>
             <div class="grid2">
-              <div class="card"><div class="title" style="margin-bottom:6px">Go</div><ul style="margin-top:0"><li>Фреймворк Echo, проектирование REST API</li><li>Слои Clean Architecture</li><li>Дженерики (см. goslice)</li><li>Транзакции через context (ca-ctx-tx)</li><li>Свои пакеты: maps/slices/cache/errors</li></ul></div>
-              <div class="card"><div class="title" style="margin-bottom:6px">Данные</div><ul style="margin-top:0"><li>PostgreSQL: эволюция схемы, миграции, индексы</li><li>Redis (кэш)</li><li>MongoDB (взаимодействие с legacy)</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Go</div><ul style="margin-top:0"><li>Фреймворк Echo, проектирование REST API</li><li>Слои Clean Architecture</li><li>Дженерики (см. goslice)</li><li>Транзакции через context (ca-ctx-tx)</li><li>Свои пакеты: maps/slices/cache/errors</li><li>Connect-RPC + protobuf (buf), WebSocket-хабы, WebRTC-сигнализация (WHIP/WHEP)</li><li>Собственная PDF-библиотека (ISO 32000-1): парсинг, потоки содержимого, шрифты</li><li>Безопасные backend'ы: argon2id, E2EE-ключи, защита от SSRF</li></ul></div>
+              <div class="card"><div class="title" style="margin-bottom:6px">Данные</div><ul style="margin-top:0"><li>PostgreSQL: эволюция схемы, миграции, индексы</li><li>Redis (кэш)</li><li>MongoDB (взаимодействие с legacy)</li><li>SQLite (WAL) для небольших self-hosted серверов, с шифрованными бэкапами</li></ul></div>
               <div class="card"><div class="title" style="margin-bottom:6px">Поставка</div><ul style="margin-top:0"><li>GitLab CI/CD для Go-сервисов</li><li>Docker / docker-compose</li><li>Nginx + автоматизация TLS (Certbot)</li><li>Консистентность через код-ревью</li></ul></div>
             </div>
           </section>
@@ -194,6 +194,28 @@
             <div class="grid2">
               <div class="project">
                 <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/thread" target="_blank" rel="noopener">Thread</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · E2EE-чат</div></div>
+                </div>
+                <div class="small">Чат со сквозным шифрованием для семьи и близких друзей, который запускается на вашем сервере: один Go-бинарь с SQLite, PWA на Preact, вход только по приглашениям, сообщения, медиа, звонки 1:1 и групповые. Сервер хранит только шифртекст. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Собственная E2EE-схема на стандартных примитивах WebCrypto (ECDH/ECDSA P-256, AES-256-GCM, HKDF) с подтверждением устройств и кодами безопасности — и открыто описанными ограничениями (независимого аудита не было).</li><li>Realtime-ядро на Go: WebSocket-хаб, Web Push с шифрованным содержимым, звонки 1:1 по WebRTC с запечатанной сигнализацией и TURN, групповые звонки через LiveKit со сквозным шифрованием кадров.</li><li>Инженерия маленького сервера: работает на VPS с 1 ГБ — SQLite (WAL), пароли на argon2id, превью ссылок с защитой от SSRF, шифрованные ежедневные бэкапы в S3, метрики Prometheus.</li><li>Решения оформлены как ADR; тесты на Go и TypeScript, звонки проверяются в настоящем браузере, есть CI.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name"><a href="https://github.com/saifutdinov/pdf-formatter" target="_blank" rel="noopener">pdf-formatter</a></div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · редактор PDF</div></div>
+                </div>
+                <div class="small">Редактор PDF, который работает на вашем компьютере и правит существующие документы аккуратно: изменённый блок переписывается прямо в потоке содержимого страницы, остальная страница остаётся байт в байт прежней. Построен на собственной PDF-библиотеке на Go (ISO 32000-1); есть сборки для macOS, Windows и Linux. Open source (AGPL-3.0).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Собственная PDF-библиотека на Go: парсер и запись, xref и объектные потоки, фильтры, шифрование (стандартный обработчик, ревизии 2–6), шрифты и CMap, встраивание TrueType, переписывание потоков содержимого, формы и закладки — около 21 тыс. строк Go и 24 файла тестов.</li><li>Неразрушающая модель: исходный файл не меняется, документ — это исходник плюс журнал операций, новый PDF — чистая функция от них, отмена убирает последнюю операцию.</li><li>Документы не покидают компьютер: сервер слушает только 127.0.0.1, а интерфейс и шрифты встроены в один исполняемый файл на платформу.</li><li>Выпускается релизами (.dmg для macOS, сборки для Windows и Linux); выходные файлы проверяются qpdf в тестовом образе.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
                   <div class="name"><a href="https://github.com/saifutdinov/go-invoices-api" target="_blank" rel="noopener">go-invoices-api</a></div>
                   <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · Clean Architecture</div></div>
                 </div>
@@ -205,6 +227,28 @@
               </div>
               <div class="project">
                 <div class="project-title">
+                  <div class="name">AI Support CRM</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · мультитенантный SaaS</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Мультитенантная платформа бота поддержки (Telegram → WhatsApp) с базой знаний на RAG, эскалацией на менеджера и CRM-слоем поверх. White-label ядро для нескольких клиентов-бизнесов из одной кодовой базы.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Архитектура бэкенда на Go: мультитенантность через row-level security, RAG-пайплайн, фоновые задачи.</li><li>Провайдер-агностичный биллинг (Stripe + ЮKassa) с идемпотентной обработкой вебхуков.</li><li>Безопасность: CORS-allowlist, rate limiting, защита от SSRF на исходящих вебхуках.</li><li>Наблюдаемость через Prometheus/Grafana и документированная поэтапная эволюция архитектуры.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">True Vision</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go + Vue · live-стриминг</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Приватные трансляции игр (в первую очередь sim racing): стример выходит в эфир из OBS по WHIP или прямо из браузера, зрители смотрят в браузере по WebRTC с задержкой меньше секунды. Кто смотрит, решает владелец: пароль, ссылка-приглашение, любой вошедший аккаунт или только он сам.</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Go-бэкенд только для сигнализации (API на Connect-RPC, SQLite): видео через Go не проходит — оно идёт по UDP между OBS, MediaMTX и браузерами.</li><li>Контроль доступа, который перепроверяется вживую: одна функция решения при подключении, одноразовый тикет и hook MediaMTX с повторной проверкой, сверка раз в ~6 секунд отключает зрителей, у которых отозвали право.</li><li>Релизный пайплайн: бэкап базы, проверка бэкапа восстановлением и только потом миграция и смена контейнера; провал проверки останавливает релиз, старая версия продолжает работать.</li><li>API на protobuf/buf, тесты на Go и E2E в настоящем браузере против настоящего MediaMTX.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
                   <div class="name">Ant Colony</div>
                   <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · real-time game server</div><div class="repo-badge">Приватный репозиторий</div></div>
                 </div>
@@ -212,6 +256,17 @@
                 <details class="fold">
                   <summary>Что показывает проект</summary>
                   <div class="fold-body"><ul><li>Авторитетный игровой движок в одной горутине — без горутины на муравья и без мьютекса вокруг мира; состояние меняется только через команды, наружу отдаются неизменяемые снапшоты.</li><li>WebSocket-протокол с snapshot + delta кадрами и сжатым потоком чанков для живого персистентного мира.</li><li>Персистентность в SQLite с версионными снапшотами плюс Redis hot cache — симуляция переживает рестарт сервера.</li><li>Детерминированный seeded RNG, A*/flow-field навигация, тесты гоняются с -race.</li></ul></div>
+                </details>
+              </div>
+              <div class="project">
+                <div class="project-title">
+                  <div class="name">Podhod</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · аутсорс-проект клиента (MVP в разработке)</div><div class="repo-badge">Приватный репозиторий</div></div>
+                </div>
+                <div class="small">Аутсорс-бэкенд для приложения удалённого коучинга: тренер планирует неделю, атлет тренируется и снимает каждый подход, тренер отвечает на каждый ролик в паузу между подходами. Go-сервис на PostgreSQL с контрактом OpenAPI-first (генерируемый Dart-клиент).</div>
+                <details class="fold">
+                  <summary>Что показывает проект</summary>
+                  <div class="fold-body"><ul><li>Построил основу Go-сервиса: единая конфигурация из окружения, JSON-логи, встроенные миграции goose, пробы liveness/readiness, метрики Prometheus, адаптированный CI-пайплайн и мультиархитектурный образ.</li><li>Поставка spec-first по шаблонам клиента: SPEC, ADR, проверяемые границы модулей и контракт OpenAPI, из которого генерируются заглушки сервера и клиент.</li><li>Рассчитан на GitOps-платформу клиента (k3s + Argo CD, Postgres на CloudNativePG); первый деплой впереди.</li></ul></div>
                 </details>
               </div>
               <div class="project">
@@ -245,17 +300,6 @@
                 <details class="fold">
                   <summary>Что показывает проект</summary>
                   <div class="fold-body"><ul><li>Оркестрация транзакций в духе Clean Architecture.</li><li>Архитектурное мышление beyond CRUD.</li></ul></div>
-                </details>
-              </div>
-              <div class="project">
-                <div class="project-title">
-                  <div class="name">AI Support CRM</div>
-                  <div style="display:flex;gap:6px;flex-wrap:wrap"><div class="repo-badge">Go · мультитенантный SaaS</div><div class="repo-badge">Приватный репозиторий</div></div>
-                </div>
-                <div class="small">Мультитенантная платформа бота поддержки (Telegram → WhatsApp) с базой знаний на RAG, эскалацией на менеджера и CRM-слоем поверх. White-label ядро для нескольких клиентов-бизнесов из одной кодовой базы.</div>
-                <details class="fold">
-                  <summary>Что показывает проект</summary>
-                  <div class="fold-body"><ul><li>Архитектура бэкенда на Go: мультитенантность через row-level security, RAG-пайплайн, фоновые задачи.</li><li>Провайдер-агностичный биллинг (Stripe + ЮKassa) с идемпотентной обработкой вебхуков.</li><li>Безопасность: CORS-allowlist, rate limiting, защита от SSRF на исходящих вебхуках.</li><li>Наблюдаемость через Prometheus/Grafana и документированная поэтапная эволюция архитектуры.</li></ul></div>
                 </details>
               </div>
             </div>
